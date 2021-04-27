@@ -24,7 +24,7 @@
 Background
 ++++++++++
 
-You are the Security Engineer at Blips and Chitz Inc., a hugely popular entertainment arcade that has to support gaming machines, a payment application, some desktops for corporate staff, and a customer information database.
+You are the Security Engineer at **Blips and Chitz Inc.**, a hugely popular entertainment arcade that has to support gaming machines, a payment application, some desktops for corporate staff, and a customer information database.
 
 All of the collected customer information and payment card details have to be kept confidential due to strict regulatory guidelines such like; PCI DSS, CCPA, and GDPR to name a few, but from a strategic perspective properly protecting this data helps maintain the corporate competitive advantages.
 
