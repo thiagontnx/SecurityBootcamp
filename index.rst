@@ -17,7 +17,7 @@
    :hidden:
 
    detect/start/start
-   detect/auth/auth
+   detect/category/category
 
 .. toctree::
    :maxdepth: 2
