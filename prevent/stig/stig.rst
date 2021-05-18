@@ -4,9 +4,13 @@
 STIG
 ------------------------------------------------
 
-STIG reports on Nutanix nodes:	6
-Analyzing the STIG Report	8
-Ricks’ SCMA (Saltstack) Self-Healing Lab:
+Security is in our DNA at Nutanix. A significant proportion of our business is from sectors of industry that care deeply about security, including Federal Government, State Government, Local Government, Financial Services, Healthcare, Retail and more. This is why we build in security as an automated part of every configuration and deployment and by default it is on, and it is continuously monitored for compliance against the security baselines and Security Technical Implementation Guides. Unlike some vendors in the HCI space Nutanix doesn’t just have a single STIG, we apply multiple STIG’s, automatically, and continuously verify against them. But what is this STIG anyway?
+
+
+The description of what STIG’s are is available on the Defense Information Systems Agency, Information Assurance Support Environment web site:
+
+“The Security Technical Implementation Guides (STIGs) are the configuration standards for DOD IA and IA-enabled devices/systems. Since 1998, DISA has played a critical role enhancing the security posture of DoD’s security systems by providing the Security Technical Implementation Guides (STIGs). The STIGs contain technical guidance to “lock down” information systems/software that might otherwise be vulnerable to a malicious computer attack.”
+
 
 STIG reports on Nutanix nodes
 +++++++++++++
@@ -19,7 +23,7 @@ The steps to run the STIG report are as follows:
 
    cd / 
 
-#.List the files available to the root user within the /root directory. Executable files contain x in the permission string.
+#. List the files available to the root user within the /root directory. Executable files contain x in the permission string.
    
    .. note:: 
 
@@ -71,7 +75,100 @@ The output will go into the root user log folder.
    .. note::
    sudo -u root chown nutanix:nutanix /home/nutanix/STIG-report-**-**-****-**-**-**
 
-#.1 Use a secure copy tool (SCP, WINSCP, PSCP, etc) to copy the report results file to your workstation from the CVM.
+#. Use a secure copy tool (SCP, WINSCP, PSCP, etc) to copy the report results file to your workstation from the CVM.
    
    .. note::
    Note: Be sure to login to the CVM using the nutanix username and browse to its home directory to find the file we created above.
+
+Analyzing the STIG Report
++++++++++++++
+
+Obtain the STIG report generated in the previous step and use it to gather the current compliance state of the system.
+You can leverage this report for validation and accreditation requirements for security compliance.
+This will report the results of all elements that make up the Nutanix STIG, and the report will show the compliance result for each of the checks inside the STIG.
+The first sentence says the check name
+The second sentence is an explanation of the check
+The third sentence is the legend for the result of the check
+The fourth sentence is the result of the check
+The fifth sentence is the completion status of the check
+Examples results shown in the two checks below:
+Example of a finding:
+CAT I RHEL-07-021710 SRG-OS-000095-GPOS-00049 CCI-000381 CM-7 a, CM-7 b
+The telnet-server package must not be installed.
+The result of the check should be yes.  If no, then it's a finding
+no
+Completed.
+ 
+Example of a non-finding:
+CAT II RHEL-07-021030 SRG-OS-000480-GPOS-00227 CCI-000366 CM-5 (1)
+All world-writable directories must be group-owned by root, sys, bin, or an application group.
+The result of the check should be yes.  If no, then it's a finding
+yes
+Completed.
+
+Ricks’ SCMA (Saltstack) Self-Healing Lab: 
++++++++++++++
+
+To make a system truly scalable you need to build a system that can address security misconfigurations automatically. Whether you’re managing 4 nodes or 400, security shouldn’t be compromised by an inability to have more people typing into keyboards.
+With Nutanix nodes, Security Configuration Management is Automated, with SCMA. SCMA is a saltstack daemon that runs as a scheduled cron job. If the daemon spots an inconsistency it corrects it and logs the event. The CVM self-corrects and heals from deviations to the secure state. This state is established according to industry best practices and our own experience in the Hyper-Converged Infrastructure space.  
+It’s not necessary to complete the following section but read through it and see the effectiveness of self-healing technology: 
+Testing Automation:
+The following text was extracted from one of the security checks under the AOS STIGs:
+Rule Version (STIG-ID): NTNX-51-000034
+Rule Title: The /etc/shadow file must be group-owned by root.
+Fix Text: salt-call state.sls security/CVM/fdpermsownerCVM
+Change to the root directory of the CVM
+cd /
+
+Verify the current ownership:
+sudo -u root ls -l /etc/shadow
+----------. 1 root root 943 Dec 18 15:37 /etc/shadow
+
+Change the group ownership:
+sudo -u root chown root:nutanix /etc/shadow
+ls -l /etc/shadow
+----------. 1 root nutanix 943 Dec 18 15:37 /etc/shadow
+
+
+Manually run the salt call to fix this vulnerability:
+sudo -u root salt-call state.sls security/CVM/fdpermsownerCVM
+
+Verify the fix has taken place:
+sudo -u root ls -l /etc/shadow
+
+Compromise a world-writable directory /tmp. 
+From the report you generated in a previous section, download it or access it from the console in order to get the state of the following check:
+All world-writable directories must be group-owned by root, sys, bin, or an application group. The result of the check should be yes.
+Change to the root directory of the CVM
+cd /
+
+You can search for this specific report from the CVM console where the report was run and using the following command, substituting the actual file name for the asterisks.:
+sudo -u root grep -A 4 -B 1 "All world-writable directories " /home/log/STIG-report-**-**-****-**-**-**
+
+It should say yes by default.
+Let’s compromise the system so that this check says “no” and then manually fix the issue.
+Verify the current ownership:
+sudo -u root ls -l / | grep tmp
+drwxrwxrwt.  14 root root  1024 Dec 21 02:59 tmp
+
+Change the group ownership:
+sudo -u root chown root:nutanix /tmp
+
+Verify the ownership change:
+sudo -u root ls -l / | grep  tmp
+drwxrwxrwt.  14 root nutanix  1024 Dec 21 03:16 tmp
+
+After we have achieved this, let’s re-run the report to see if this change has been detected
+sudo -u root ./root/report_stig.sh
+sudo -u root grep -A 4 -B 1 "All world-writable directories " /home/log/STIG-report-**-**-****-**-**-**
+
+You should see a “no” this time, indicating a finding. So now you can manually run the salt call to fix this vulnerability:
+sudo -u root salt-call state.sls security/CVM/fdpermsownerCVM
+
+List the / directory again and note that the ‘compromise’ has been reverted back.
+sudo -u root ls -l / | grep tmp
+drwxrwxrwt.  14 root root  1024 Dec 21 03:42 tmp
+ 
+Takeaways
+Nutanix uses STIGs to verify compliance.
+Nutanix uses daily checks to self-remediate issues
