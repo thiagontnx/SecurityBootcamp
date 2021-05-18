@@ -15,6 +15,9 @@
    :name: _detect
    :hidden:
 
+   detect/stig/stig
+   prevent/auth/auth
+
 .. toctree::
    :maxdepth: 2
    :caption: Recover
@@ -40,6 +43,6 @@ Due to resource constraints you forward all logs to a Syslog server then use a S
 
 Your boss, Roy, was sold on this new platform called “Nutanix” and has just requested that the Nutanix cluster be ready to support production workloads by the end of the week, this tight timeline is driven in part because a new Qualified Security Assessor (QSA) will be visiting next week to begin to conduct the annual Blips and Chitz security audit for PCI DSS. You immediately voiced your concerns that this timeframe isn’t feasible, but Roy knows you’ll try your best to get something to him.
 
-Roy has also informed you that a new variant of ransomware known as Krombopulous is gaining notoriety and has recently been effective at disrupting the local hospital. This new malware variant is highly adaptable and pervasive which is what prompted Blips and Chitz into purchasing the portfolio products Flow, Files, and Objects since they further protect the sensitive data on this cluster. Roy hands you a Tech Brief which outlines their benefits.
+Roy has also informed you that a new variant of ransomware known as Krombopulous is gaining notoriety and has recently been effective at disrupting the local hospital. This new malware variant is highly adaptable and pervasive which is what prompted Blips and Chitz into purchasing the portfolio products Flow, Files, and Objects since they further protect the sensitive data on this cluster. Roy hands you a Tech Brief (https://www.nutanix.com/viewer?type=pdf&path=/content/dam/nutanix/resources/solution-briefs/tb-ransomware.pdf) which outlines their benefits.
 
 Finally, Roy wants you to demonstrate to the board by the end of the week how these tools can be used to limit the exposure of the Krombopulos Ransomware virus within the Nutanix cluster thus giving the board members peace of mind when considering repeat Nutanix purchases.
