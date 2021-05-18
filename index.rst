@@ -16,8 +16,14 @@
    :name: _detect
    :hidden:
 
-   detect/start/start
+   detect/day2/day2
    detect/category/category
+   detect/security/security
+   detect/isolate/isolate
+   detect/day3/day3
+   detect/fa/fa
+   detect/faransom/faransom
+   detect/objects/objects
 
 .. toctree::
    :maxdepth: 2
