@@ -6,9 +6,9 @@
    :name: _prevent
    :hidden:
 
+   prevent/start/start
    prevent/stig/stig
    prevent/auth/auth
-   prevent/start/start
 
 .. toctree::
    :maxdepth: 2

@@ -1,7 +1,7 @@
 .. _prevent_start:
 
 ------------------------------------------------
-Prevent:
+Prevent
 ------------------------------------------------
 Day One: Secure Access & System Hardening
 +++++++++++++
