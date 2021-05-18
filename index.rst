@@ -8,6 +8,7 @@
 
    prevent/stig/stig
    prevent/auth/auth
+   prevent/start/start
 
 .. toctree::
    :maxdepth: 2
@@ -16,7 +17,7 @@
    :hidden:
 
    detect/stig/stig
-   prevent/auth/auth
+   detect/auth/auth
 
 .. toctree::
    :maxdepth: 2
