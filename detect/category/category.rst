@@ -1,9 +1,5 @@
 .. _detect_category:
 
-------------------------------------------------
-Day Two: Securing the Virtual Infrastructure
-------------------------------------------------
-
 Categorization
 ++++++++++++++
 Logging into Prism Central, and navigating to the Virtual Infrastructure > VMs page, you can see VM’s are already being created to support one of the most popular gaming apps, King Drog FaceRace. This workload is supported centrally by the Nutanix cluster compute and storage and delivered via the gaming machines on the game floor by the following VMs (## = User number): 
