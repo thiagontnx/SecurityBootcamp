@@ -16,7 +16,7 @@
    :name: _detect
    :hidden:
 
-   detect/stig/stig
+   detect/start/start
    detect/auth/auth
 
 .. toctree::
