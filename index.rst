@@ -9,6 +9,8 @@
    prevent/start/start
    prevent/stig/stig
    prevent/auth/auth
+   prevent/syslog/syslog
+
 
 .. toctree::
    :maxdepth: 2
@@ -25,11 +27,13 @@
    detect/faransom/faransom
    detect/objects/objects
 
+   
 .. toctree::
    :maxdepth: 2
    :caption: Recover
    :name: _recover
    :hidden:
+
    recover/day4/day4
    recover/protect/protect
    recover/day5/leap
