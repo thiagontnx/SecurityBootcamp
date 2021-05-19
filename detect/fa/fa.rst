@@ -4,7 +4,7 @@
 Monitoring Storage Services
 ------------------------------------------------
 
-Files Analytics
+Recap
 +++++++++++++
 
 Another beautiful day at Blips and Chitz, after just two days you’ve managed to secure the Nutanix Platform data lane. This feels disconcerting, almost like it can’t be this simple, can it?! 
