@@ -1,7 +1,7 @@
 .. _detect_fa:
 
 ------------------------------------------------
-Monitoring Storage Services
+Monitoring Data Services
 ------------------------------------------------
 
 Files Analytics
