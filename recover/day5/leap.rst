@@ -1,8 +1,11 @@
 .. _recover_leap:
 
 ------------------------------------------------
-Optional: Unplanned Failover with Leap
+Day Five: Optional Labs
 ------------------------------------------------
+
+Optional: Unplanned Failover with Leap
+++++++++++++++++++++++++++++++++++++++
 
 There are 3 types of failovers: Test, Planned and Unplanned.
 
