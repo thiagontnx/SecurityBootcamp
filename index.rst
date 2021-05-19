@@ -30,6 +30,11 @@
    :caption: Recover
    :name: _recover
    :hidden:
+   recover/day4/day4
+   recover/protect/protect
+   recover/leap
+   recover/mine 
+
 
 Background
 ++++++++++

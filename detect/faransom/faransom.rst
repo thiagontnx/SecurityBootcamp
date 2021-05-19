@@ -9,6 +9,7 @@ File Analytics also monitors shares for self-service restore (SSR) policies and 
 
 Enabling Ransomware Protection
 +++++++++++++
+
 To Enable Ransomware Protection, click hamburger menu > Ransomware
 
 Click Enable Ransomware Protection, and then click Enable.
