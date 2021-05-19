@@ -32,8 +32,8 @@
    :hidden:
    recover/day4/day4
    recover/protect/protect
-   recover/leap
-   recover/mine 
+   recover/day5/leap
+   recover/day5/mine 
 
 
 Background
