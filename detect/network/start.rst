@@ -34,5 +34,6 @@ The Enable Microsegmentation dialog box is displayed.
    .. figure:: images/enableflow.gif
 
 
-   .. note::
-      “Compared to competitive products, this is the simplest microsegmentation product to install and use.” Roy, CSO for Blips and Chipz
+   .. glossary:: 
+         “Compared to competitive products, this is the simplest microsegmentation product to install and use.”
+         Roy, CSO for Blips and Chipz
