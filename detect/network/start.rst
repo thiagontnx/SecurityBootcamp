@@ -35,5 +35,5 @@ The Enable Microsegmentation dialog box is displayed.
 
 
    .. glossary:: 
-         “Compared to competitive products, this is the simplest microsegmentation product to install and use.”
+         “Compared to competitive products, this is the easiest microsegmentation product to install and use.”
          Roy, CSO for Blips and Chipz
