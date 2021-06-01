@@ -5,20 +5,26 @@ Protecting Your Environment
 ------------------------------------------------
 
 Creating a Protection Policy
-++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++
 
-   #. In Prism Central, select  > Policies > Protection Policies.
-   #. Click Create Protection Policy and fill out the following:
-   #. Policy name - USER##-Local (ex. USER01-Local)
-   #. Primary Location > Location - Local AZ:<Your Cluster>
+   #. In **Prism Central**, select :fa:`bars`  **> Policies > Protection Policies**.
+   #. Click **Create Protection Policy** and fill out the following:
+      - Policy name - **USER##-Local** (ex. USER01-Local)
+      - Primary Location > Location - **Local AZ:<Your Cluster>**
 
-   #. Click Save
-   #. Click Add Local Schedule
-   #. Set Take Snapshot  Every 1 Hour, Retention Type: Linear and Retention on Local AZ to 5 Recover Points
+.. figure:: images/localaz.png
+
+   #. Click **Save**.
+   #. Click **Add Local Schedule**.
+   #. Set:
+      - Take Snapshot  
+      - Every 1 Hour 
+      - Retention Type: Linear 
+      - Retention on Local AZ to 5 Recover Points
  
 
-   #. Click Save Schedule
-   #. Within the Recovery Location, click Cancel.
+   #. Click **Save Schedule**
+   #. Within the **Recovery Location, click Cancel.
    #. Click Next.
  
  

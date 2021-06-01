@@ -1,7 +1,7 @@
 .. _prevent_start:
-:orphan:
+
 ------------------------------------------------
-Day One: Secure Access & System Hardening
+Secure Access & System Hardening
 ------------------------------------------------
 
 You have just been informed that the deployment of the cluster is completed and the access details have been emailed to you. Your first job is to ensure that the platform is hardened according to NIST SP800-53 guidelines and that all system default passwords are changed from the vendor-supplied defaults. 

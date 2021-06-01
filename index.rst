@@ -2,11 +2,12 @@
 
 .. toctree::
    :maxdepth: 2
-   :caption: Background
-   :name: _background
+   :caption: Getting Started
+   :name: _info
    :hidden:
 
-   background/background
+   info/start
+
 .. toctree::
    :maxdepth: 2
    :caption: Prevent
@@ -14,37 +15,53 @@
    :hidden:
 
    prevent/start/start
-   prevent/stig/stig
    prevent/auth/auth
+   prevent/stig/stig
    prevent/syslog/syslog
 
 
 .. toctree::
    :maxdepth: 2
-   :caption: Detect
-   :name: _detect
+   :caption: Detect - Networking
+   :name: _detectnet
    :hidden:
 
-   detect/day2/day2
-   detect/category/category
-   detect/security/security
-   detect/isolate/isolate
-   detect/day3/day3
-   detect/fa/fa
-   detect/faransom/faransom
-   detect/objects/objects
+   detect/network/start
+   detect/network/category/category
+   detect/network/security/security
+   detect/network/isolate/isolate
+   detect/network/infection/im
 
-   
+.. toctree::
+   :maxdepth: 2
+   :caption: Detect - Data Services
+   :name: _detectstg
+   :hidden:
+
+   detect/storage/start
+   detect/storage/fa/fa
+   detect/storage/faransom/faransom
+   detect/storage/objects/objects
+
+
 .. toctree::
    :maxdepth: 2
    :caption: Recover
    :name: _recover
    :hidden:
 
-   recover/day4/day4
+   recover/start
    recover/protect/protect
-   recover/day5/leap
-   recover/day5/mine 
+
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Optional Labs
+   :name: _optional
+   :hidden:
+   
+   optional/leap/leap
+   optional/mine/mine
 
 
 Background
