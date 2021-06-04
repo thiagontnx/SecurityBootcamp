@@ -9,7 +9,6 @@ Another beautiful day at Blips and Chitz, after just two days you’ve managed t
 .. sidebar:: easy peasy lemon squeezy
 
    .. figure:: images/nhack.png
-      :figwidth: 40%
       :align: right
 
 But if it is, you’re ready to start leveraging more tools to help in the Monitoring and Alerting of potentially malicious activity. 
