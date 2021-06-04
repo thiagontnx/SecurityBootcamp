@@ -84,4 +84,4 @@ Now we can assign the Database category to the User##-FaceRace-DB VM. De-select 
 .. figure:: images/16.png
 
 
-Now, we can proceed to creating an security policy.
+Now, we can proceed to creating a security policy.

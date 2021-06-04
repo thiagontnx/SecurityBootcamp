@@ -30,7 +30,6 @@
    detect/network/category/category
    detect/network/security/security
    detect/network/isolate/isolate
-   detect/network/infection/im
 
 .. toctree::
    :maxdepth: 2
@@ -60,8 +59,10 @@
    :name: _optional
    :hidden:
    
+   optional/infection/im
    optional/leap/leap
    optional/mine/mine
+
 
 
 Background

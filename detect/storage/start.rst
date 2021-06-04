@@ -6,7 +6,10 @@ Monitoring Data Services
 
 Another beautiful day at Blips and Chitz, after just two days you’ve managed to secure the Nutanix Platform basic features by changing all the default passwords and going further into securing mission-critical applications. This feels disconcerting, almost like it can’t be this simple, can it?! 
 
+.. sidebar:: easy peasy lemon squeezy
+
    .. figure:: images/nhack.png
+      :figwidth: 40%
       :align: right
 
 But if it is, you’re ready to start leveraging more tools to help in the Monitoring and Alerting of potentially malicious activity. 

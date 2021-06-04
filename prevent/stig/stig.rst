@@ -213,13 +213,16 @@ You should see a similar output:
 
       drwxrwxrwt.  14 root **nutanix**  1024 Dec 21 03:16 tmp
 
-After we have achieved this, let’s re-run the report to see if this change has been detected
+After we have achieved this, let’s re-run the report to see if this change has been detected.
+
+#. Run the following commands:
 
 ``sudo -u root ./root/report_stig.sh``
 
 ``sudo -u root grep -A 4 -B 1 "All world-writable directories " /home/log/STIG-report-**-**-****-**-**-**``
 
-You should see a “no” this time, indicating a finding. So now you can manually run the salt call to fix this vulnerability:
+You should see a “no” this time, indicating a finding. 
+#. So now you can manually run the salt call to fix this vulnerability:
 
 ``sudo -u root salt-call state.sls security/CVM/fdpermsownerCVM``
 

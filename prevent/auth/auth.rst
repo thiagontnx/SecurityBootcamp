@@ -85,4 +85,4 @@ A local account is great for when you’re in a jam and need access when other a
 
 .. raw:: html
 
-   <strong><font color="red">From now on, you'll be using you assigned adminuser## (example: adminuser01). Failing to do so will impact how data is displayed during the rest of the labs</font></strong></br></br>
+   <strong><font color="red">From now on, you'll be using your assigned adminuser## (example: adminuser01). Failing to do so will impact how data is displayed during the rest of the labs</font></strong></br></br>
