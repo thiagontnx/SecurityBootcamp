@@ -14,7 +14,7 @@ The description of what STIG’s are is available on the Defense Information Sys
 STIG Reports on Nutanix Nodes
 +++++++++++++++++++++++++++++
 
-You can run a STIG report, which will check on all the STIGs and verify which are compliant with your system or not.
+You can run a STIG report, which will check on all the individual STIG controls and verify which are compliant with your system and which are not.
 The steps to run the STIG report are as follows:
 #. Connect to any Controller VM (CVM) as the nutanix user via SSH (Using Terminal, PuTTy, or similar program)
 
@@ -112,72 +112,21 @@ This will report the results of all elements that make up the Nutanix STIG, and 
 Ricks’ SCMA (Saltstack) Self-Healing Lab
 +++++++++++++++++++++++++++++++++++++++++
 
-To make a system truly scalable you need to build a system that can address security misconfigurations automatically. Whether you’re managing 4 nodes or 400, security shouldn’t be compromised by an inability to have more people typing into keyboards.
-With Nutanix nodes, Security Configuration Management is Automated, with SCMA. SCMA is a saltstack daemon that runs as a scheduled cron job. If the daemon spots an inconsistency it corrects it and logs the event. The CVM self-corrects and heals from deviations to the secure state. This state is established according to industry best practices and our own experience in the Hyper-Converged Infrastructure space.  
-It’s not necessary to complete the following section but read through it and see the effectiveness of self-healing technology. 
+To make a system truly scalable you need to build a system that can address security misconfigurations automatically. Whether you’re managing 4 nodes or 400, security shouldn’t be compromised by an inability to have more SecOps minions typing into keyboards.
+With Nutanix nodes, Security Configuration Management is Automated, with SCMA. SCMA is a saltstack daemon that runs as a scheduled cron job. If the daemon spots an inconsistency it corrects it and logs the event. The CVM self-corrects and heals from deviations to the secure state. This state is established according to industry best practices and our own experience in the Hyper-Converged Infrastructure space.
+
+
+**It’s not necessary to complete the following section but read through it and see the effectiveness of self-healing technology.**
 
 **Testing Automation:**
-
-The following text was extracted from one of the security checks under the AOS STIGs:
-
-   - Rule Version (STIG-ID): NTNX-51-000034
-   - Rule Title: The /etc/shadow file must be group-owned by root.
-   - Fix Text: salt-call state.sls security/CVM/fdpermsownerCVM
-
-
-#. Connect via SSH to the CVM using nutanix user
-
-#. Change to the root directory of the CVM
-
-``cd /``
-
-#. Verify the current ownership by running:
-
-``sudo -u root ls -l /etc/shadow``
-
-You should see a similar output:
-
-   .. code-block::
-
-      ----------. 1 root root 943 Dec 18 15:37 /etc/shadow
-
-#. Change the group ownership, run the command:
-
-``sudo -u root chown root:nutanix /etc/shadow``
-
-#. Check if user changed from root to nutanix by running:
-
-
-``ls -l /etc/shadow``
-You should see a similar output:
-
-   .. code-block::
-
-      ----------. 1 root nutanix 943 Dec 18 15:37 /etc/shadow
-
-#. Manually run the salt call to fix this vulnerability:
-
-
-``sudo -u root salt-call state.sls security/CVM/fdpermsownerCVM``
-
-#. Verify the fix has taken place, run:
-
-
-``sudo -u root ls -l /etc/shadow``
-
-You should see a similar output, note the owner is the "root" user once again:
-
-   .. code-block::
-
-      ----------. 1 root root 943 Dec 18 15:37 /etc/shadow
-
-
-**Compromise a world-writable directory /tmp**
 
 From the report you generated in `STIG Reports on Nutanix Nodes`_, download it or access it from the console in order to get the state of the following check:
 All world-writable directories must be group-owned by root, sys, bin, or an application group. The result of the check should be yes.
 
-Change to the root directory of the CVM
+Let us test if self-healing from security violations works with SCMA: 
+#. Connect to any Controller VM (CVM) as the nutanix user via SSH (Using Terminal, PuTTy, or similar program)
+#. Change to the root directory of the CVM
+
 ``cd /``
 
 You can search for this specific report from the CVM console where the report was run and using the following command, substituting the actual file name for the asterisks:
@@ -234,6 +183,10 @@ You should see a “no” this time, indicating a finding.
 
       drwxrwxrwt.  14 root root  1024 Dec 21 03:42 tmp
  
+   .. note::
+      In this example we manually ran the salt call, which is set to run against all checks daily by default. You can adjust the cadence of this check to run hourly if desired. 
+
+
    - Takeaways
       - Nutanix uses STIGs to verify compliance.
       - Nutanix uses daily checks to self-remediate issues
