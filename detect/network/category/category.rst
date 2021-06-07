@@ -28,15 +28,17 @@ Prism Central uses categories as metadata to tag VMs to determine how policies w
 #. Click the **“+ icon”** to add an additional Category value.
 #. Specify **##-FaceRace** as the value name.   (## = Your user number)
 
-.. figure:: images/11.png
+.. figure:: images/apptype01.png
 
 #. Click **Save**.
 
 
 Next up, we need to create values to begin to define the different tiers of the FaceRace application. The names given the VM’s thankfully help you to identify the possible tiers that are necessary to support this particular application. 
 
-- **User##**-FaceRace-Web  	(Web tier)
-- **User##**-FaceRace-DB	(Database tier)
+- **User##**-Prod-FaceRace-Web  	(Web tier)
+- **User##**-Prod-FaceRace-DB	(Database tier)
+- **User##**-Dev-FaceRace-Web  	(Web tier)
+- **User##**-Dev-FaceRace-DB (Database tier)
 
 Now within Prism Central; 
 
@@ -60,7 +62,7 @@ In this exercise, you’ll add your newly-created custom categories to the VMs s
 #. Select :fa:`bars` **> Virtual Infrastructure > VMs**.
 #. Using the checkboxes, select both the **##-FaceRace** VM’s, and click **Actions > Manage Categories**.
 
-.. figure:: images/13.png
+.. figure:: images/categ001.png
 
 .. note::
 
@@ -69,19 +71,19 @@ In this exercise, you’ll add your newly-created custom categories to the VMs s
  
 #. In the search bar, begin typing AppType:## auto-complete should help you complete the search query, and now you can click the + icon and hit save.
 
-.. figure:: images/14.png
+.. figure:: images/categ02.png
 
 We now need to assign the appropriate tier category value to each of the VM’s. 
-Deselect the **User##-FaceRace-DB** VM and proceed to **Actions > Manage** categories for **User##-FaceRace-Web**
+Deselect both **User##-Prod-FaceRace-DB** and **User##-Dev-FaceRace-DB** VMs and proceed to **Actions > Manage Categories** for **User##-Prod-FaceRace-Web** and **User##-Dev-FaceRace-Web**
 
-#. In the search bar, begin typing **AppTier:Web** and hit the **"+ icon"** before you click save.
+#. In the search bar, begin typing **Web** and hit the **"+ icon"** before you click save.
 
-.. figure:: images/15.png
+.. figure:: images/categweb.png
 
-Now we can assign the Database category to the User##-FaceRace-DB VM. De-select the Web VM and select the DB VM, and proceed to click Actions > Manage Categories. 
-#. In the search bar, begin typing **AppTier:DB** and hit the **"+ icon"** before you click save.
+Now we can assign the **Database** category to the **User##-Prod-FaceRace-DB** and **User##-Dev-FaceRace-DB** VMs. De-select the Web VMs and select the DB VM, and proceed to click **Actions > Manage Categories**. 
+#. In the search bar, begin typing **Database** and hit the **"+ icon"** before you click save.
 
-.. figure:: images/16.png
+.. figure:: images/categdb.png
 
 
 Now, we can proceed to creating a security policy.

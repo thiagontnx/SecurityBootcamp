@@ -19,9 +19,9 @@ Microsegmentation is a component of Flow that uses simple policy-based managemen
 
 - Name - User##-FaceRace
 - Purpose - Restrict unnecessary access to the FaceRace gaming machines
-- Secure this app - AppType: User##-FaceRace
+- Secure this app - start typing your *##* and look for **User##-FaceRace**
 
-   .. figure:: images/policy01.png
+   .. figure:: images/appsec01.png
 
 #. Click **Next**.
 
@@ -105,7 +105,7 @@ Each tier of the application communicates with other tiers and the policy must a
 
    .. figure:: images/withinapp.png
 
-#. Click **AppTier:Web > Edit** and select **No** to prevent communication between VMs in this tier. There is only a single web VM within the tier currently but scale-out operations will apply this policy to all VMs in this category preventing their ability to communicate with one another. **True Micro-segmentation!**
+#. Click **AppTier:Web > Edit** and select **No** to prevent communication between VMs in this tier. There are only two VMs (Prod and Dev) within the tier currently but scale-out operations will apply this policy to all VMs in this category preventing their ability to communicate with one another. **True Micro-segmentation!**
 #. While **AppTier:Web** is still selected, click the **+ icon** to the right of **AppTier:DB** to create a tier-to-tier rule.
 #. Fill out the following fields to allow communication on **TCP port 3306** between the web and database tiers:
 
@@ -121,4 +121,71 @@ Each tier of the application communicates with other tiers and the policy must a
    .. figure:: images/save.png
 
 
-** ADD PING VERIFICATION HERE **
+Testing Security Policy
++++++++++++++++++++++++++
+
+Now that we have created our first security policy, we need to test it.
+Note that we configured our policy in **Monitor** mode, which means that we are not yet enforcing any Inbound and Outbound traffic.
+
+#. In **Prism Central**, select :fa:`bars` **> Virtual Infrastructure > VM**.
+#. Go to your **User##-Prod-FaceRace-Web**, right-click and select **Launch Console**.
+#. Use **username: centos** and **password: CENTOS** to logon.
+#. Start a ping to your **User##-Dev-FaceRace-Web** VM IP.
+
+.. figure:: images/ping01.png
+
+#. Similar to the previous steps, in **Prism Central**, select :fa:`bars` **> Virtual Infrastructure > VM**.
+#. Go to your **User##-Prod-FaceRace-DB**, right-click and select **Launch Console**.
+#. Use **username: centos** and **password: CENTOS** to logon.
+#. Start a ping to your **User##-Dev-FaceRace-DB** VM IP.
+
+.. figure:: images/ping02.png
+
+#. To enforce the Security Policy we created, select :fa:`bars` **> Policies > Security** and select your **User##-FaceRace**.
+#. You'll notice that **Flow** is observing the traffic between the VMs in the policy.
+
+.. figure:: images/monitor.png
+
+#. Within your **AppType ##-FaceRace**, hover the mouse cursor over the dotted line between two circles and see how you configured the communication within the application tiers.
+
+.. figure:: images/webtier.png
+
+.. figure:: images/dbtier.png
+
+.. note:: 
+   If you click **Discovered**, immediately bellow the **Database** tier, you'll see the traffic of those pings you started.
+
+   .. figure:: images/blocked.png
+
+#. To start blocking traffic and making this security policy work, click **Enforce**, in the upper-right corner of your screen.
+
+.. figure:: images/enforce01.png
+
+#. Type **ENFORCE** and click **Confirm**.
+
+.. figure:: images/enforce02.png
+
+#. Now, go back to the **Console** of the VMs (**User##-Prod-FaceRace-Web** and **User##-Prod-FaceRace-DB**) you started the pings.
+#. You should notice that, while **User##-Prod-FaceRace-Web** cannot ping **User##-Dev-FaceRace-Web**, **User##-Prod-FaceRace-DB** can ping **User##-Dev-FaceRace-DB**. Just like you configured
+
+.. figure:: images/ping03.png
+
+Another way to test if the application is working properly is to open a browser and test its functionality.
+
+#. Get the IP of your **User##-Prod-FaceRace-Web** by going to **Prism Central**, select :fa:`bars` **> Virtual Infrastructure > VM**.
+#. Open a browser tab and type **User##-Prod-FaceRace-Web**'s IP Address.
+
+.. figure:: images/store01.png
+
+#. Select **Stores**.
+#. Click **Add New Store**.
+
+.. figure:: images/store02.png
+
+#. Fill out the information and click **Submit**.
+#. Check if your store was created, confirm that your application is working as expected.
+
+.. figure:: images/store03.png
+
+
+**Congratulations, your Security Policy is working to restrict the required traffic to the VMs supporting FaceRace app.**

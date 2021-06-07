@@ -4,35 +4,38 @@
 Protecting Your Environment
 ------------------------------------------------
 
+Need to make sense of categories used in the Flow steps - TO BE FIXED.
+
 Creating a Protection Policy
 +++++++++++++++++++++++++++++
 
-   #. In **Prism Central**, select :fa:`bars`  **> Policies > Protection Policies**.
-   #. Click **Create Protection Policy** and fill out the following:
-      - Policy name - **USER##-Local** (ex. USER01-Local)
-      - Primary Location > Location - **Local AZ:<Your Cluster>**
+#. In **Prism Central**, select :fa:`bars`  **> Policies > Protection Policies**.
+#. Click **Create Protection Policy** and fill out the following:
+
+   - Policy name - **USER##-Local** (ex. USER01-Local)
+   - Primary Location > Location - **Local AZ:<Your Cluster>**
 
 .. figure:: images/localaz.png
 
-   #. Click **Save**.
-   #. Click **Add Local Schedule**.
-   #. Set:
-      - Take Snapshot  
-      - Every 1 Hour 
-      - Retention Type: Linear 
-      - Retention on Local AZ to 5 Recover Points
+#. Click **Save**.
+#. Click **Add Local Schedule**.
+#. Set:
+
+   - Take Snapshot every **1 Hour**
+   - Retention Type: **Linear** 
+   - Retention on Local AZ to **5 Recover Points**
  
 
-   #. Click **Save Schedule**
-   #. Within the **Recovery Location, click Cancel.
-   #. Click Next.
+#. Click **Save Schedule**
+#. Within the **Recovery Location**, click **Cancel**.
+#. Click **Next**.
  
  
 Now, type User## in the search box  and select AppType:User##-FaceRace (ex:User01-FaceRace)
 
  
-   #. Click Add
-   #. Click Create
+#. Click **Add**.
+#. Click **Create**.
  
 You now have a continuous stream of snapshots protecting these VMs, making it possible to roll back your FaceRace Application to a previous point in time.
 
@@ -62,13 +65,11 @@ You can Launch the console or RDP to any other VMs from your assigned VMs (User#
 
 
 Bring an infected VM back to a stable state
-++++++++++++++++++++++++++++
-
-**Recommend putting Protection Policy steps here for review**
+++++++++++++++++++++++++++++++++++++++++++++
 
 Remember one of your first tasks was to create a Protection Policy and apply it to your assigned VMs? This easily accomplished task will now pay off.
 
-   #. In Prism Central, select |||, Virtual Infrastructure > VMs
+   #. In **Prism Central**, select :fa:`bars` **> Virtual Infrastructure > VMs**.
    #. Click User##-WinTools VM
    #. Look for Recovery Point tab on the top taskbar and click on it
 
