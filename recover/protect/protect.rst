@@ -87,3 +87,4 @@ Your first tasks was to create a Protection Policy and apply it to your assigned
    #. Go back to :fa:`bars` **> Virtual Infrastructure > VMs**.
    #. Look for the newly-created clone (ex: **User01-Dev-FaceRace-Web_clone1**).
    #. Confirm you are able to access it and the VM is working properly.
+
