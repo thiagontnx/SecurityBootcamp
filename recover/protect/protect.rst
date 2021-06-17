@@ -4,8 +4,6 @@
 Protecting Your Environment
 ------------------------------------------------
 
-Need to make sense of categories used in the Flow steps - TO BE FIXED.
-
 Creating a Protection Policy
 +++++++++++++++++++++++++++++
 
@@ -30,9 +28,7 @@ Creating a Protection Policy
 #. Within the **Recovery Location**, click **Cancel**.
 #. Click **Next**.
  
- 
-Now, type User## in the search box  and select AppType:User##-FaceRace (ex:User01-FaceRace)
-
+Now, type **your user ##** in the search box  and select **AppType:##-FaceRace** (ex: 01-FaceRace)
  
 #. Click **Add**.
 #. Click **Create**.
@@ -47,40 +43,47 @@ Recover from an attack on an isolated VM
 Quarantine VM 
 ++++++++++++++++++++++++++++
 
-You identified that your User##WinTools VM was attacked and is now compromised by Ransomware, so you want to act fast and disable any sort of communication coming from or going to the VM.
+You've identified that your **User##-Dev-FaceRace-Web** VM was attacked and is now compromised by Ransomware, so you want to act fast and disable any sort of communication coming from or going to the VM.
 
-   #. In Prism Central, select |||, Virtual Infrastructure > VMs
-   #. Check User##WinTools VM, click Action > Quarantine VMs
+   #. In Prism Central, select :fa:`bars`, ** > Virtual Infrastructure > VMs**.
+   #. Check **User##-Dev-FaceRace-Web** VM, click **Action > Quarantine VMs**.
 
+   .. figure:: images/quar01.png
 
-   #. Select Strict
+   #. Select **Strict**
+
+   .. figure:: images/quar02.png
+
    #. Click Quarantine
 
-Note:
-As you can see, Quarantining a VM in Strict Mode will block all traffic into and out of the VM. You can also use Forensics Mode, which allows the VM to communicate to certain VMs for security teams to investigate what is wrong.
+.. note::
+   As you can see, Quarantining a VM in Strict Mode will block all traffic into and out of the VM. You can also use Forensics Mode, which allows the VM to communicate to certain VMs for security teams to investigate what is wrong.
 
-The red icon next to the VM name means that it has been quarantined.
-You can Launch the console or RDP to any other VMs from your assigned VMs (User##FaceRace-Web or User##-FaceRace-DB) and ping User##-WinTools VM and observe pings failing to reach the targeted VM.
+   The red icon next to the VM name means that it has been quarantined.
+
+   .. figure:: images/quar03.png
+
+   You can Launch the console or RDP to any other VMs from your assigned VMs (User##-Dev-FaceRace-DB or User##-WindowsTools) and ping **User##-Dev-FaceRace-Web** VM and observe pings failing to reach the targeted VM.
 
 
 
 Bring an infected VM back to a stable state
 ++++++++++++++++++++++++++++++++++++++++++++
 
-Remember one of your first tasks was to create a Protection Policy and apply it to your assigned VMs? This easily accomplished task will now pay off.
+Your first tasks was to create a Protection Policy and apply it to your assigned VMs, now that easily accomplished task will pay off.
 
    #. In **Prism Central**, select :fa:`bars` **> Virtual Infrastructure > VMs**.
-   #. Click User##-WinTools VM
-   #. Look for Recovery Point tab on the top taskbar and click on it
+   #. Click on any of your **User##-FaceRace** VMs
+   #. Look for Recovery Point tab on the top taskbar and click on it.
 
-   #. Check the list of the Recovery Points created by your policy
+   #. Check the list of the **Recovery Points** created by your policy.
 
-   #. Select the latest snapshot created and click Actions
-   #. Select Restore
-   #. You have the chance to change the VM name or leave it with the suffix _clone1
+   #. Select the latest snapshot created and click **Actions**.
+   #. Select **Restore**.
+   #. You have the chance to change the VM name or leave it with the suffix _clone1.
 
-   #. Click Restore
+   #. Click **Restore**
 
-   #. Go back to ||| > Virtual Infrastructure > VMs
-   #. Look for the newly-created clone (ex: User01-WinTools_clone1)
-   #. Confirm you are able to access it and the VM is not infected
+   #. Go back to :fa:`bars` **> Virtual Infrastructure > VMs**.
+   #. Look for the newly-created clone (ex: **User01-Dev-FaceRace-Web_clone1**).
+   #. Confirm you are able to access it and the VM is working properly.

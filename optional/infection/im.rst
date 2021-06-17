@@ -124,4 +124,4 @@ View the Infection Map and Security Reports
 Conclusion
 ++++++++++
 
-   - Once completed with the initial runs of **Infection Monkey**, create a **Flow Security Policy** to lock down your application. Then, **rerun** Infection Monkey to determine weather your security policy is now preventing Infection Monkey from discovering and exploiting your VMs protected by the Security Policy. 
+   - Once completed with the initial runs of **Infection Monkey**, create a **Flow Security Policy** to lock down your application. Then, **rerun** Infection Monkey to determine whether your security policy is now preventing Infection Monkey from discovering and exploiting your VMs protected by the Security Policy. 

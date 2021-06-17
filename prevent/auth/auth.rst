@@ -21,9 +21,11 @@ username = ADMIN		Password = node-serial-number
 
 Even though the Nutanix cluster you are using is dedicated to the Bootcamp, all of our automation is based on the current configured passwords. Changing those passwords will break our internal automation system so we'll provide you with a video describing the process. We do have the process documented, if you need to perform the steps showed bellow, let your instructor know.
 
-.. raw:: html
+**Changing CVM Password**
 
-   <strong><font color="red">ADD CHANGING PASSWORDS VIDEOS HERE.</font></strong></br></br>
+   .. raw:: html
+
+    <iframe width="560" height="315" src="https://players.brightcove.net/5850956868001/default_default/index.html?videoId=6259137776001" frameborder="0" allowfullscreen></iframe>
 
 Cluster Lockdown
 +++++++++++++++++

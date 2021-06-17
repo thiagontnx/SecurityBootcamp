@@ -131,7 +131,7 @@ Accessing & Creating Buckets With Objects Browser
 
 In this exercise, you will use **Objects Browser** to create and use buckets in the object store using your generated access key.
 
-#. Click `here <https://s3.amazonaws.com/get-ahv-images/sample-pictures.zip>` to download the sample images to your local computer. Once the download is complete, extract the contents of the .zip file.
+#. Click `here <https://s3.amazonaws.com/get-ahv-images/sample-pictures.zip>`_ to download the sample images to your local computer. Once the download is complete, extract the contents of the .zip file.
 
 #. From the **Objects UI**, Locate the **Objects Public IPs**.
 
