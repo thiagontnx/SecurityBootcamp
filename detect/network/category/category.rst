@@ -43,11 +43,11 @@ Next up, we need to create values to begin to define the different tiers of the 
 Now within Prism Central; 
 
 #. Select  :fa:`bars` **> Virtual Infrastructure > Categories**.
-#. Select the checkbox for AppTier and click **Actions > Update**.
+#. Select the checkbox for **AppTier** and click **Actions > Update**.
 #. Again, using the **"+ icon"** you can create more category values, create a category for: 
 
-- Web
-- Database
+- **##-Web**   (## = Your user number)
+- **##-Database**   (## = Your user number)
    
 .. figure:: images/12.png
 
@@ -60,28 +60,32 @@ Adding Categories to VMs
 In this exercise, you’ll add your newly-created custom categories to the VMs supporting King Drog FaceRace. This will help align access to the proper resources and help with both security and protection policies within the environment
 
 #. Select :fa:`bars` **> Virtual Infrastructure > VMs**.
-#. Using the checkboxes, select both the **##-FaceRace** VM’s, and click **Actions > Manage Categories**.
+#. Using the checkboxes, select all the **User##-FaceRace** VM’s, and click **Actions > Manage Categories**.
 
 .. figure:: images/categ001.png
 
 .. note::
 
-   By selecting both Virtual machines we’re defining categories values that will be common to both of them. Namely the AppType Category value that we defined earlier.
+   By selecting more than one Virtual Machines we’re defining categories values that will be common to all of them. Namely the AppType Category value that we defined earlier.
 
  
-#. In the search bar, begin typing AppType:## auto-complete should help you complete the search query, and now you can click the + icon and hit save.
+#. In the search bar, begin typing **AppType:##** auto-complete should help you complete the search query, and now you can click the **+ icon** and hit **Save**.
 
 .. figure:: images/categ02.png
 
-We now need to assign the appropriate tier category value to each of the VM’s. 
-Deselect both **User##-Prod-FaceRace-DB** and **User##-Dev-FaceRace-DB** VMs and proceed to **Actions > Manage Categories** for **User##-Prod-FaceRace-Web** and **User##-Dev-FaceRace-Web**
+We now need to assign the appropriate tier category value to each of the VM’s.
 
-#. In the search bar, begin typing **Web** and hit the **"+ icon"** before you click save.
+#. Deselect both **User##-Prod-FaceRace-DB** and **User##-Dev-FaceRace-DB** VMs and proceed to **Actions > Manage Categories** for **User##-Prod-FaceRace-Web** and **User##-Dev-FaceRace-Web**
+
+#. In the search bar, begin typing your user number (ie: **01-Web**) and hit the **"+ icon"** before you click **Save**.
 
 .. figure:: images/categweb.png
 
-Now we can assign the **Database** category to the **User##-Prod-FaceRace-DB** and **User##-Dev-FaceRace-DB** VMs. De-select the Web VMs and select the DB VM, and proceed to click **Actions > Manage Categories**. 
-#. In the search bar, begin typing **Database** and hit the **"+ icon"** before you click save.
+Now we can assign the **User##-Database** category to the **User##-Prod-FaceRace-DB** and **User##-Dev-FaceRace-DB** VMs. 
+
+#. De-select the Web VMs and select the DB VM, and proceed to click **Actions > Manage Categories**. 
+
+#. In the search bar, begin typing your user number (ie: **01-Database** and hit the **"+ icon"** before you click save.
 
 .. figure:: images/categdb.png
 

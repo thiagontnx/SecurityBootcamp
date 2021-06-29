@@ -21,12 +21,27 @@ username = ADMIN		Password = node-serial-number
 
 Even though the Nutanix cluster you are using is dedicated to the Bootcamp, all of our automation is based on the current configured passwords. Changing those passwords will break our internal automation system so we'll provide you with a video describing the process. We do have the process documented, if you need to perform the steps showed bellow, let your instructor know.
 
+**Changing AHV Password**
+
+   .. raw:: html
+
+    <iframe width="560" height="315" src="https://players.brightcove.net/5850956868001/default_default/index.html?videoId=6259137776001" frameborder="0" allowfullscreen></iframe>
+
+
 **Changing CVM Password**
 
    .. raw:: html
 
     <iframe width="560" height="315" src="https://players.brightcove.net/5850956868001/default_default/index.html?videoId=6259137776001" frameborder="0" allowfullscreen></iframe>
 
+
+**Changing IPMI Password**
+
+    .. raw:: html
+ 
+     <iframe width="560" height="315" src="https://players.brightcove.net/5850956868001/default_default/index.html?videoId=6259137776001" frameborder="0" allowfullscreen></iframe>
+
+     
 Cluster Lockdown
 +++++++++++++++++
 
@@ -42,8 +57,10 @@ You can then choose to add the new Public Key, give it a name and paste the publ
 .. figure:: images/clusterlockdown.png
 
 
+.. _prevent_auth_dirservices:
+
 Directory Services and Identity Providers
-++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++++
 
 A local account is great for when you’re in a jam and need access when other authentication measures have failed, hence why this Local Admin user account should be protected via SSH keys rather than a password. For regular day-to-day access by team members and end-users, a more secure way to provide member access to Prism is with the use of Directory Services. No passwords or hashes are stored on the cluster for directory services users and authentication is passed through to the directory.
 
