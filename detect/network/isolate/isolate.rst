@@ -13,20 +13,22 @@ This separation could be to ensure isolation between Development and Production 
 
 Using the same method we used earlier we’re going to create some environments to delineate between entities that are part of the scope for a PCI assessment, namely this gaming application: 
 
+Like in the last section, here we will add two more environmental Categories: **CDE & Non-CDE**
+
 #. In **Prism Central**, select :fa:`bars` **> Virtual Infrastructure > Categories**.
 #. Select **Environment > Actions > Update**.
-#. Here we will add two more environmental Categories: **CDE & Non-CDE**
+#. Under **Values** and using your **User##**, create **##-CDE** and **##Non-CDE**.
 
    .. figure:: images/envcat.png
 
-#. Click Save
+#. Click **Save**.
 
 Now we need to assign the CDE category value to the **User##-Prod-FaceRace** VMs and the Non-CDE category value to EVERYTHING else.
 
 #. In **Prism Central**, select :fa:`bars` **> Virtual Infrastructure > VMs**.
 #. Select **both** **User##-Prod-FaceRace-Web** and **User##-Prod-FaceRace-DB** that support our gaming application and click **Actions > Manage Categories**. 
-#. In the search box type **Environment:CDE**
-#. Click Save
+#. In the search box type **Environment:##-CDE**.  (Use your User Number)
+#. Click **Save**.
 
    .. figure:: images/cdecat01.png
 
@@ -36,8 +38,8 @@ Now we need to assign the CDE category value to the **User##-Prod-FaceRace** VMs
 
 #. In **Prism Central**, select :fa:`bars` **> Virtual Infrastructure > VMs**.
 #. Select **both** **User##-Dev-FaceRace-Web** and **User##-Dev-FaceRace-DB** that support the development of our gaming application and click **Actions > Manage Categories**. 
-#. In the search box type **Environment:Non-CDE**
-#. Click Save
+#. In the search box type **Environment:##-Non-CDE**.  (Use your User Number)
+#. Click **Save**.
 
 .. figure:: images/cdecat02.png
 
