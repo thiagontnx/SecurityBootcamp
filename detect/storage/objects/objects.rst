@@ -121,11 +121,6 @@ basis.
 .. figure:: images/access.png
 
 
-------------------------------------------------
-Versioning and Access Control
-------------------------------------------------
-
-
 Accessing & Creating Buckets With Objects Browser
 ++++++++++++++++++++++++++++++++++++++++++++++++++
 
