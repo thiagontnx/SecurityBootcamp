@@ -36,12 +36,9 @@ Now, type **your user ##** in the search box  and select **AppType:##-FaceRace**
 You now have a continuous stream of snapshots protecting these VMs, making it possible to roll back your FaceRace Application to a previous point in time.
 
 
-------------------------------------------------
-Recover from an attack on an isolated VM
-------------------------------------------------
+Recover from an attack on an isolated VM - Quarantine VM 
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-Quarantine VM 
-++++++++++++++++++++++++++++
 
 You've identified that your **User##-Dev-FaceRace-Web** VM was attacked and is now compromised by Ransomware, so you want to act fast and disable any sort of communication coming from or going to the VM.
 
