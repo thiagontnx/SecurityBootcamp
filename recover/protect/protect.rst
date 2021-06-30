@@ -36,11 +36,11 @@ Now, type **your user ##** in the search box  and select **AppType:##-FaceRace**
 You now have a continuous stream of snapshots protecting these VMs, making it possible to roll back your FaceRace Application to a previous point in time.
 
 
-Recover from an attack on an isolated VM - Quarantine VM 
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+Recover from an attack on an isolated VM 
+++++++++++++++++++++++++++++++++++++++++++++
 
 
-You've identified that your **User##-Dev-FaceRace-Web** VM was attacked and is now compromised by Ransomware, so you want to act fast and disable any sort of communication coming from or going to the VM.
+You've identified that your **User##-Dev-FaceRace-Web** VM was attacked and is now compromised by Ransomware, so you want to act fast and disable any sort of communication coming from or going to the VM. To do this, we're going to **Quarantine** the VM.
 
    #. In Prism Central, select :fa:`bars`, ** > Virtual Infrastructure > VMs**.
    #. Check **User##-Dev-FaceRace-Web** VM, click **Action > Quarantine VMs**.
