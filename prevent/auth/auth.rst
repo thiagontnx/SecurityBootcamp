@@ -25,21 +25,21 @@ Even though the Nutanix cluster you are using is dedicated to the Bootcamp, all 
 
    .. raw:: html
 
-    <iframe width="560" height="315" src="https://players.brightcove.net/5850956868001/default_default/index.html?videoId=6259137776001" frameborder="0" allowfullscreen></iframe>
+    <iframe width="560" height="315" src="https://players.brightcove.net/5850956868001/default_default/index.html?videoId=6262880324001" frameborder="0" allowfullscreen></iframe>
 
 
 **Changing CVM Password**
 
    .. raw:: html
 
-    <iframe width="560" height="315" src="https://players.brightcove.net/5850956868001/default_default/index.html?videoId=6259137776001" frameborder="0" allowfullscreen></iframe>
+    <iframe width="560" height="315" src="https://players.brightcove.net/5850956868001/default_default/index.html?videoId=6262879852001" frameborder="0" allowfullscreen></iframe>
 
 
 **Changing IPMI Password**
 
     .. raw:: html
  
-     <iframe width="560" height="315" src="https://players.brightcove.net/5850956868001/default_default/index.html?videoId=6259137776001" frameborder="0" allowfullscreen></iframe>
+     <iframe width="560" height="315" src="https://players.brightcove.net/5850956868001/default_default/index.html?videoId=6262879977001" frameborder="0" allowfullscreen></iframe>
 
      
 Cluster Lockdown
