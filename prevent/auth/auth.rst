@@ -4,8 +4,8 @@
 Authentication
 ------------------------------------------------
 
-Changing vendor default PWs & Cluster Lockdown:
-++++++++++++++++++++++++++++++++++++++++++++++++
+Changing vendor default PWs
++++++++++++++++++++++++++++++
 
 Changing vendor default passwords is an essential first step in the adoption of new platforms and often tested and measured in many compliance assessments. Failure to address this early critical step in system configuration can result in effectively leaving an open door to an attacker. 
 
