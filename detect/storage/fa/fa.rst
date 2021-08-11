@@ -53,9 +53,11 @@ In this step we are mimicking what an attack or deliberately mean behavior shoul
 Now, let’s generate activity on the File Server, you will be required to connect to your **User##-WinTools VM** via RDP (preferred) or console, using NTNXLAB\\adminuser## (from the :ref:`prevent_auth_dirservices` step) **pass: nutanix/4u**. You can check its IP by going to **Virtual Infrastructure > VMs > User##-WinTools VM IP column**.
 
 Once you connect to your **User##WinTools VM**, ensure that you have mapped out **TheRocketFS** File Server to **drive Z:**
-If not mapped, open **Windows Explorer**, right click on **Computer > Map Network Drive > \\TheRocketFS.ntnxlab.local\User##-FaceRace**
+If not mapped, open **Windows Explorer**, right click on **Computer > Map Network Drive > \\\\TheRocketFS.ntnxlab.local\\User##-FaceRace**
 
    .. figure:: images/winmap.png
+
+#. First, download the `Sample Data <https://peerresources.blob.core.windows.net/sample-data/SampleData_Small.zip>`_ and extract it to your newly mapped **Z: Drive**.
 
 #. Open **PowerShell** console and navigate to:
 
