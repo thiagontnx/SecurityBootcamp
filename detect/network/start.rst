@@ -8,11 +8,11 @@ The first-day hands-on with Nutanix was pretty busy but productive. You were imp
 
 Now that you’re happy that you’ve sufficiently secured the platform plane, the work begins to secure the data plane. 
 
-In the morning, after sipping your coffee you log into the Nutanix console and notice that VM’s are already starting to be created. Your peers don’t waste any time! 
+In the morning, after sipping your coffee, you log into the Nutanix console and notice that VM’s are already starting to be created. Your peers don’t waste any time! 
 
    .. figure:: images/cafe.png
 
-This gives you pause for concern, this cloud-like consumption method, although great for end-users, could quite easily get out of hand if the VM’s aren’t appropriately protected. You remember that one of the sessions that the Nutanix SE: Rick hosted was on Flow Micro-segmentation and it began by requiring you to “Categorize” the VM’s so they could later be protected with policies for security and backup. 
+This gives you pause for concern, this cloud-like consumption method, although great for end-users, could quite easily get out of hand if the VM’s aren’t appropriately protected. You remember that one of the sessions that the Nutanix SE, Rick, hosted was on Flow Micro-segmentation and it began by requiring you to “Categorize” the VM’s so they could later be protected with policies for security and backup. 
 Flow provides multiple System categories out of the box, such as AppType, AppTier, and Environment, that are used to quickly group virtual machines. Security policies are applied using these categories. You can start using these pre-existing categories right away, or add your own categories for custom grouping.
 
 Flow Micro-segmentation

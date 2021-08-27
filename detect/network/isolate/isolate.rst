@@ -17,7 +17,7 @@ Like in the last section, here we will add two more environmental Categories: **
 
 #. In **Prism Central**, select :fa:`bars` **> Virtual Infrastructure > Categories**.
 #. Select **Environment > Actions > Update**.
-#. Under **Values** and using your **User##**, create **##-CDE** and **##Non-CDE**.
+#. Under **Values** and using your **User##**, create **##-CDE** and **##-Non-CDE**.
 
    .. figure:: images/envcat.png
 
@@ -85,7 +85,7 @@ Just like we did during our **Security Policy** testing, we will **Enforce** the
 
 #. Similar to the previous steps, in **Prism Central**, select :fa:`bars` **> Virtual Infrastructure > VM**.
 #. Go to your **User##-Prod-FaceRace-DB**, right-click and select **Launch Console**.
-#. Use **username: centos** and **password: CENTOS** to logon.
+#. Use **username: centos** and **password: nutanix/4u** to logon.
 #. If you have stopped the pings from last exercise, start another ping to your **User##-Dev-FaceRace-DB** VM IP.
 #. Notice the pings will fail this time around, as we are blocking Production environment from Development (and potentially everything else).
 

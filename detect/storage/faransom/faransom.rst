@@ -43,11 +43,10 @@ Optionally, you can add an email address to receive notifications
       This is **informational only** - don’t change the default Blocked File Types or the rest of the lab won’t work as desired.
  
  
-#. Back to your **User##-WinTools** VM, using your NTNXLAB\adminuser##, open folder **Z:\Sample Data_Small\Sample Data\Documents** and create a .txt file
-#. Rename to Bootcamp.txt
-#. Rename it again, changing only the extension to Bootcamp**.jpg**
+#. Back to your **User##-WinTools** VM, using your NTNXLAB\adminuser##, open folder **Z:\Sample Data_Small\Sample Data\Documents** and create a Bootcamp.txt file
+#. Rename it, changing only the extension to Bootcamp **.jpg**
 
-#. Once again, try to change the extension to Bootcamp**.Valley** (which is one of the blocked extensions by Ransomware Protection)
+#. Once again, try to change the extension to Bootcamp **.Valley** (which is one of the blocked extensions by Ransomware Protection)
 
 .. figure:: images/block.png
 

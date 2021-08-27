@@ -129,14 +129,14 @@ Note that we configured our policy in **Monitor** mode, which means that we are 
 
 #. In **Prism Central**, select :fa:`bars` **> Virtual Infrastructure > VM**.
 #. Go to your **User##-Prod-FaceRace-Web**, right-click and select **Launch Console**.
-#. Use **username: centos** and **password: CENTOS** to logon.
+#. Use **username: centos** and **password: nutanix/4u** to logon.
 #. Start a ping to your **User##-Dev-FaceRace-Web** VM IP.
 
 .. figure:: images/ping01.png
 
 #. Similar to the previous steps, in **Prism Central**, select :fa:`bars` **> Virtual Infrastructure > VM**.
 #. Go to your **User##-Prod-FaceRace-DB**, right-click and select **Launch Console**.
-#. Use **username: centos** and **password: CENTOS** to logon.
+#. Use **username: centos** and **password: nutanix/4u** to logon.
 #. Start a ping to your **User##-Dev-FaceRace-DB** VM IP.
 
 .. figure:: images/ping02.png
