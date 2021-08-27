@@ -6,7 +6,7 @@ Configuring Flow
 
 Categorization
 +++++++++++++++
-Logging into Prism Central, and navigating to the Virtual Infrastructure > VMs page, you can see VM’s are already being created to support one of the most popular gaming apps, King Drog FaceRace. This workload is supported centrally by the Nutanix cluster compute and storage and delivered via the gaming machines on the game floor by the following VMs: 
+Logging into Prism Central, and navigating to the **Virtual Infrastructure > VMs** page, you can see VM’s are already being created to support one of the most popular gaming apps, King Drog FaceRace. This workload is supported centrally by the Nutanix cluster compute and storage and delivered via the gaming machines on the game floor by the following VMs: 
 
 .. raw:: html
 
@@ -35,10 +35,10 @@ Prism Central uses categories as metadata to tag VMs to determine how policies w
 
 Next up, we need to create values to begin to define the different tiers of the FaceRace application. The names given the VM’s thankfully help you to identify the possible tiers that are necessary to support this particular application. 
 
-- **User##**-Prod-FaceRace-Web  	(Web tier)
-- **User##**-Prod-FaceRace-DB	(Database tier)
-- **User##**-Dev-FaceRace-Web  	(Web tier)
-- **User##**-Dev-FaceRace-DB (Database tier)
+- **User##**-Prod-FaceRace-Web  	(Production Web tier)
+- **User##**-Prod-FaceRace-DB	(Production Database tier)
+- **User##**-Dev-FaceRace-Web  	(Development Web tier)
+- **User##**-Dev-FaceRace-DB (Development Database tier)
 
 Now within Prism Central; 
 

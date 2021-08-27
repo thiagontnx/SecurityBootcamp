@@ -50,7 +50,19 @@ Let’s create an Anomaly Rule to detect suspicious activity based on action
 
 In this step we are mimicking what an attack or deliberately mean behavior should look like. Examples are a malicious script repeatedly accessing data or someone trying to steal multiple files, private information from the company.
 
-Now, let’s generate activity on the File Server, you will be required to connect to your **User##-WinTools VM** via RDP (preferred) or console, using NTNXLAB\\adminuser## (from the :ref:`prevent_auth_dirservices` step) **pass: nutanix/4u**. You can check its IP by going to **Virtual Infrastructure > VMs > User##-WinTools VM IP column**.
+#. First, we need to make sure you'll be able to connect to your **User##-WinTools VM** using the **NTNXLAB\adminuser##** assigned to you.
+#. Go to **Virtual Infrastructure > VMs**, identify your **User##-WinTools VM** and launch its console.
+#. Login using **User: Administrator** and **Password: nutanix/4u** and go to **Server Manager > Local Server**.
+
+   .. figure:: images/server.png
+
+#. Select **Remote Desktop > Select Users...**.
+#. Make sure either **NTNXLAB\Domain User** and/or your **NTNXLAB\adminuser##** is on the list.
+
+   .. figure:: images/users.png
+
+
+Now, let’s generate activity on the File Server, you will be required to connect to your **User##-WinTools VM** via RDP (preferred) or console, using **NTNXLAB\\adminuser##** (from the :ref:`prevent_auth_dirservices` step) **pass: nutanix/4u**. You can check its IP by going to **Virtual Infrastructure > VMs > User##-WinTools VM IP column**.
 
 Once you connect to your **User##WinTools VM**, ensure that you have mapped out **TheRocketFS** File Server to **drive Z:**
 If not mapped, open **Windows Explorer**, right click on **Computer > Map Network Drive > \\\\TheRocketFS.ntnxlab.local\\User##-FaceRace**
@@ -63,7 +75,7 @@ If not mapped, open **Windows Explorer**, right click on **Computer > Map Networ
 
 .. code-block::
 
-   Z:\Sample Data_Small\Sample Data\Technical PDFs 
+   Z:\Sample Data\Technical PDFs 
 
 
 #. Run the following command:

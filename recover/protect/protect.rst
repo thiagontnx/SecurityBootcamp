@@ -11,7 +11,7 @@ Creating a Protection Policy
 #. Click **Create Protection Policy** and fill out the following:
 
    - Policy name - **USER##-Local** (ex. USER01-Local)
-   - Primary Location > Location - **Local AZ:<Your Cluster>**
+   - Primary Location > Location: **Local AZ** Cluster: **<Your Cluster>**
 
 .. figure:: images/localaz.png
 

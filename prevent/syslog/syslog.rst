@@ -11,7 +11,7 @@ The last task for today is setting up a syslog server to collect all the system 
 
 Setting up log forwarding in Prism is super simple but there is often a snag in collection if we don’t appropriately specify the log level or log type that we want to forward. The steps below will walk you through the process.
 
-Because this is a shared environment between you and the rest of the group, and this is a one-time operation per cluster, this should be performed by your instructor and followed as a groups.
+Because this is a shared environment between you and the rest of the group, and this is a one-time operation per cluster, this should be performed by your instructor and followed as a group.
 
 #. In **Prism Central**, select :fa:`bars` **> VM Infrastructure > VMs**, search for a VM named KiwiSyslog and copy its IP address.
 
@@ -19,7 +19,7 @@ Because this is a shared environment between you and the rest of the group, and 
 
       You can take this opportunity to check KiwiSyslog VM's console and see that it's not collecting any data yet.
 
-#. In **Prism Central**, select :fa:`bars` **> Prism Central Settings > Syslog Server**.
+#. In **Prism Central**, select :fa:`bars` **> Prism Central Settings > Alerts and Notifications > Syslog Server**.
 
 #. Click **Add Syslog Server**.
 
