@@ -31,26 +31,35 @@ You realize your colleagues didn’t enable **WORM** and **Versioning** settings
    .. figure:: images/enableworm.png
 
 
-#. Go back to **Object Store landing page** and check your bucket (**user##-bucket**) again then **Actions > Update**.
-#. Now set **Permanently delete past versions after** 3 months
+#. Go back to **Object Store landing page** and click on your bucket (**user##-bucket**) and select **Lifecycle** on the left-side menu.
 
-   .. figure:: images/worm01.png
+   .. figure:: images/createrule.png
+
+#. Click **Create Rule** and set the following parameteres:
+   Name: User##-Expiration Rule 
+   Scope: All Objects
+#. Then, click next and check **Expiration**.
+#. Set Expire **Curent Version** to **3 years**.
+
+   .. figure:: images/exp.png
 
    .. note::
 
-      You can configure WORM settings to align with your company’s security policy.
-      After you commit to these configurations, you will have a 24-hour grace period window where you can disable its settings, after 24 hours you can no longer change it and the system will follow this behavior. Not even Nutanix support can modify it.
+      You can configure WORM and Expire settings to align with your company’s security policy.
+      After you commit to the WORM configuration, you will have a 24-hour grace period window where you can disable its settings, after 24 hours you can no longer change it and the system will follow this behavior. Not even Nutanix support can modify it.
 
-#. Click **Save**.
+#. Click **Next** and **Done**.
 
    .. note::
 
       WORM storage prevents the editing, overwriting, renaming, or deleting of data and is crucial in heavily regulated industries (finance, healthcare, public agencies, etc.) where sensitive data is collected and stored. Examples include emails, account information, voice mails, and more.
+      Note that if WORM is enabled on the bucket, this will supersede any lifecycle expiration policy, in this case, you set it to 3 years.
 
 
    .. note::
 
-      Note that if WORM is enabled on the bucket, this will supersede any lifecycle policy, in this case, you set it to 3 years.
+      Tiering allows for infrequently used objects to be moved to the configured endpoints according to the configured lifecycle rule for tiering. The supported endpoints are AWS S3 and a different Objects instance.
+
 
 
 User Management
@@ -160,7 +169,7 @@ Object versioning allows the upload of new versions of the same object for requi
 #. In **Objects Browser**, upload the text file to your **user##-bucket** bucket.
 #. Make changes to the text file in Notepad and save it with the same name, **overwriting** the original file.
 #. Upload the **modified file** to your bucket. If desired, you can update and upload the file multiple times.
-#. Back on the **Objects UI**, click on the **ntnx-objects** Object Store.
+#. Back on the **Objects UI**, click on the **mortynightrun** Object Store.
 #. Look at the **Num. Objects** column for your **user##-bucket** bucket.
 
 .. figure:: images/props.png
