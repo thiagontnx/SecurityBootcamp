@@ -223,5 +223,5 @@ Nutanix Version Info
 ++++++++++++++++++++
 
 - **AHV Version** - AHV 20190916.294
-- **AOS Version** - 5.19.2
-- **PC Version** - pc.2021.3
+- **AOS Version** - 5.20
+- **PC Version** - pc.2021.7

@@ -13,7 +13,7 @@ Flow is an application-centric network security product tightly integrated into 
 
 Microsegmentation is a component of Flow that uses simple policy-based management to secure VM networking. Using Prism Central categories (logical groups), you can create a powerful distributed firewall. Combining this with Calm allows automated deployment of applications that are secured as they are created.
 
-#. In **Prism Central**, select :fa:`bars` **> Policies > Security**
+#. In **Prism Central**, select :fa:`bars` **> Network and Security > Security Policies**
 #. Click **Create Security Policy > Secure Applications (App Policy) > Create**.
 #. Fill out the following fields:
 
@@ -127,7 +127,7 @@ Testing Security Policy
 Now that we have created our first security policy, we need to test it.
 Note that we configured our policy in **Monitor** mode, which means that we are not yet enforcing any Inbound and Outbound traffic.
 
-#. In **Prism Central**, select :fa:`bars` **> Virtual Infrastructure > VM**.
+#. In **Prism Central**, select :fa:`bars` **> Compute and Storage > VM**.
 #. Go to your **User##-Prod-FaceRace-Web**, right-click and select **Launch Console**.
 #. Use **username: centos** and **password: nutanix/4u** to logon.
 #. Start a ping to your **User##-Dev-FaceRace-Web** VM IP.
