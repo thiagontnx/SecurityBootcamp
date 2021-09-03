@@ -6,7 +6,7 @@ Configuring Flow
 
 Categorization
 +++++++++++++++
-Logging into Prism Central, and navigating to the **Virtual Infrastructure > VMs** page, you can see VM’s are already being created to support one of the most popular gaming apps, King Drog FaceRace. This workload is supported centrally by the Nutanix cluster compute and storage and delivered via the gaming machines on the game floor by the following VMs: 
+Logging into **Prism Central**, and navigating to the **Compute and Storage > VMs** page, you can see VM’s are already being created to support one of the most popular gaming apps, King Drog FaceRace. This workload is supported centrally by the Nutanix cluster compute and storage and delivered via the gaming machines on the game floor by the following VMs: 
 
 .. raw:: html
 
@@ -20,7 +20,7 @@ Logging into Prism Central, and navigating to the **Virtual Infrastructure > VMs
 Customers insert or swipe their payment cards for access to game credits and login with their IDs to track high scores. These machines collect Cardholder data (CHD) such as the Primary Account Number (PAN) and other Personally Identifiable Information (PII) and as such need to be isolated from the rest of the network in order to meet PCI DSS guidelines for segmentation of the Cardholder Data Environment (CDE). The payment and user information must be protected from unauthorized access.
 Prism Central uses categories as metadata to tag VMs to determine how policies will be applied. We need to add categories to identify all of our FaceRace application VMs.
 
-#. In **Prism Central**, select :fa:`bars` **> Virtual Infrastructure > Categories**.
+#. In **Prism Central**, select :fa:`bars` **> Adminstration > Categories**.
 #. Select the checkbox for **AppType** and click **Actions > Update**.
 
 .. figure:: images/10.png
@@ -42,7 +42,7 @@ Next up, we need to create values to begin to define the different tiers of the 
 
 Now within Prism Central; 
 
-#. Select  :fa:`bars` **> Virtual Infrastructure > Categories**.
+#. Select  :fa:`bars` **> Administration > Categories**.
 #. Select the checkbox for **AppTier** and click **Actions > Update**.
 #. Again, using the **"+ icon"** you can create more category values, create a category for: 
 
@@ -59,7 +59,7 @@ Adding Categories to VMs
 
 In this exercise, you’ll add your newly-created custom categories to the VMs supporting King Drog FaceRace. This will help align access to the proper resources and help with both security and protection policies within the environment
 
-#. Select :fa:`bars` **> Virtual Infrastructure > VMs**.
+#. Select :fa:`bars` **> Compute and Storage > VMs**.
 #. Using the checkboxes, select all the **User##-FaceRace** VM’s, and click **Actions > Manage Categories**.
 
 .. figure:: images/categ001.png

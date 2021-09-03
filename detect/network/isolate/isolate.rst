@@ -15,7 +15,7 @@ Using the same method we used earlier we’re going to create some environments 
 
 Like in the last section, here we will add two more environmental Categories: **CDE & Non-CDE**
 
-#. In **Prism Central**, select :fa:`bars` **> Virtual Infrastructure > Categories**.
+#. In **Prism Central**, select :fa:`bars` **> Administration > Categories**.
 #. Select **Environment > Actions > Update**.
 #. Under **Values** and using your **User##**, create **##-CDE** and **##-Non-CDE**.
 
@@ -25,7 +25,7 @@ Like in the last section, here we will add two more environmental Categories: **
 
 Now we need to assign the CDE category value to the **User##-Prod-FaceRace** VMs and the Non-CDE category value to EVERYTHING else.
 
-#. In **Prism Central**, select :fa:`bars` **> Virtual Infrastructure > VMs**.
+#. In **Prism Central**, select :fa:`bars` **> Compute and Storage > VMs**.
 #. Select **both** **User##-Prod-FaceRace-Web** and **User##-Prod-FaceRace-DB** that support our gaming application and click **Actions > Manage Categories**. 
 #. In the search box type **Environment:##-CDE**.  (Use your User Number)
 #. Click **Save**.
@@ -36,7 +36,7 @@ Now we need to assign the CDE category value to the **User##-Prod-FaceRace** VMs
 
       Normally we would create the inverse category value to assign to all other (Non-CDE) VMs within the environment. But for the purposes of this exercise, we will only add the **User##-Dev-FaceRace** and go straight to policy creation. 
 
-#. In **Prism Central**, select :fa:`bars` **> Virtual Infrastructure > VMs**.
+#. In **Prism Central**, select :fa:`bars` **> Compute and Storage > VMs**.
 #. Select **both** **User##-Dev-FaceRace-Web** and **User##-Dev-FaceRace-DB** that support the development of our gaming application and click **Actions > Manage Categories**. 
 #. In the search box type **Environment:##-Non-CDE**.  (Use your User Number)
 #. Click **Save**.
@@ -46,7 +46,7 @@ Now we need to assign the CDE category value to the **User##-Prod-FaceRace** VMs
 
 Now that category values have been created and appropriately assigned to the VM’s we can create an Environment/Isolation policy. 
 
-#. Go to **Prism Central**, select :fa:`bars` **> Policies > Security**.
+#. Go to **Prism Central**, select :fa:`bars` **> Network and Security > Security Policies**.
 #. Create **Security Policy**.
 #. Click the radio button next to **Isolate Environments (Isolation Policy) > Create**.
 #. In the fields enter the following information: 
@@ -73,7 +73,7 @@ Testing the Isolation Policy
 
 Just like we did during our **Security Policy** testing, we will **Enforce** the new **Isolation Policy** and check if it is working.
 
-#. To enforce the **Isolation Policy** we created, select :fa:`bars` **> Policies > Security** and select your **User##-PCIPolicy**.
+#. To enforce the **Isolation Policy** we created, select :fa:`bars` **> Network and Security > Security Policies** and select your **User##-PCIPolicy**.
 #. You'll notice that **Flow** is observing the traffic between the VMs in the policy.
 #. To start blocking traffic and making this isolation policy work, click **Enforce**, in the upper-right corner of your screen.
 
@@ -83,7 +83,7 @@ Just like we did during our **Security Policy** testing, we will **Enforce** the
 
 .. figure:: images/enforce002.png
 
-#. Similar to the previous steps, in **Prism Central**, select :fa:`bars` **> Virtual Infrastructure > VM**.
+#. Similar to the previous steps, in **Prism Central**, select :fa:`bars` **> Compute and Storage > VM**.
 #. Go to your **User##-Prod-FaceRace-DB**, right-click and select **Launch Console**.
 #. Use **username: centos** and **password: nutanix/4u** to logon.
 #. If you have stopped the pings from last exercise, start another ping to your **User##-Dev-FaceRace-DB** VM IP.
