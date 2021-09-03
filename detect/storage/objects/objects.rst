@@ -22,7 +22,7 @@ A bucket is a repository within an object store that can have policies applied t
 
    .. figure:: images/worm.png
 
-You realize your colleagues didn’t enable **WORM** and **Versioning** settings, so you have to do it yourself to protect the company’s data from attackers and for audit purposes.
+You realize your colleagues didn’t enable **WORM** and **Expiration** settings, so you have to do it yourself to protect the company’s data from attackers and for audit purposes.
 
 #. Click **Enable Version**.
 #. Click **Enable WORM** and set the **Retention Period** to 3 years.

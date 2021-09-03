@@ -13,7 +13,7 @@ Setting up log forwarding in Prism is super simple but there is often a snag in 
 
 Because this is a shared environment between you and the rest of the group, and this is a one-time operation per cluster, this should be performed by your instructor and followed as a group.
 
-#. In **Prism Central**, select :fa:`bars` **> VM Infrastructure > VMs**, search for a VM named KiwiSyslog and copy its IP address.
+#. In **Prism Central**, select :fa:`bars` **> Compute and Storage > VMs**, search for a VM named KiwiSyslog and copy its IP address.
 
    .. note::
 
@@ -48,7 +48,7 @@ Because this is a shared environment between you and the rest of the group, and 
    .. figure:: images/sysloglist.png
 
 
-Now, in **Prism Central**, select :fa:`bars` **VM Infrastructure > VMs**, search for a VM named KiwiSyslog and capture its console. You should see logs being collected by our newly-configured Syslog Server.
+Now, in **Prism Central**, select :fa:`bars` **Compute and Storage > VMs**, search for a VM named KiwiSyslog and capture its console. You should see logs being collected by our newly-configured Syslog Server.
 
    .. figure:: images/syslogdata.png
 

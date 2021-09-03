@@ -134,14 +134,14 @@ Note that we configured our policy in **Monitor** mode, which means that we are 
 
 .. figure:: images/ping01.png
 
-#. Similar to the previous steps, in **Prism Central**, select :fa:`bars` **> Virtual Infrastructure > VM**.
+#. Similar to the previous steps, in **Prism Central**, select :fa:`bars` **> Compute and Storage > VM**.
 #. Go to your **User##-Prod-FaceRace-DB**, right-click and select **Launch Console**.
 #. Use **username: centos** and **password: nutanix/4u** to logon.
 #. Start a ping to your **User##-Dev-FaceRace-DB** VM IP.
 
 .. figure:: images/ping02.png
 
-#. To enforce the Security Policy we created, select :fa:`bars` **> Policies > Security** and select your **User##-FaceRace**.
+#. To enforce the Security Policy we created, select :fa:`bars` **> Network and Security > Security Policies** and select your **User##-FaceRace**.
 #. You'll notice that **Flow** is observing the traffic between the VMs in the policy.
 
 .. figure:: images/monitor.png
