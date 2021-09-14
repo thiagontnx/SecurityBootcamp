@@ -18,7 +18,7 @@ A bucket is a repository within an object store that can have policies applied t
 
 #. Go to Prism Central :fa:`bars` **> Services > Objects**
 #. Click on the existing **Object Store (mortynightrun)** to manage it.
-#. Check the existing **user##-bucket** and click **Actions > Configure WORM** to view its settings
+#. Check the existing **##-bucket** and click **Actions > Configure WORM** to view its settings
 
    .. figure:: images/worm.png
 
@@ -31,7 +31,7 @@ You realize your colleagues didn’t enable **WORM** and **Versioning** settings
    .. figure:: images/enableworm.png
 
 
-#. Go back to **Object Store landing page** and check your bucket (**user##-bucket**) again then **Actions > Update**.
+#. Go back to **Object Store landing page** and check your bucket (**##-bucket**) again then **Actions > Update**.
 #. Now set **Permanently delete past versions after** 3 months
 
    .. figure:: images/worm01.png
@@ -110,7 +110,7 @@ Adding Users to buckets_share
 
 #. From the **Objects UI**, click on **Object Stores**.
 #. Within the **Object Store list**, click **mortynightrun**.
-#. Check the box next to your **user##-bucket bucket**, and click **Share** from the **Actions** dropdown.
+#. Check the box next to your **##-bucket bucket**, and click **Share** from the **Actions** dropdown.
 
 This is where you will be able to share your bucket with other users. You can configure read access (download), write access (upload), or both, on a per user 
 basis.
@@ -157,11 +157,11 @@ Object versioning allows the upload of new versions of the same object for requi
 
 #. Open **Notepad** on your local machine.
 #. Type “version 1.0” in Notepad, then save the file as UserXX.txt.
-#. In **Objects Browser**, upload the text file to your **user##-bucket** bucket.
+#. In **Objects Browser**, upload the text file to your **##-bucket** bucket.
 #. Make changes to the text file in Notepad and save it with the same name, **overwriting** the original file.
 #. Upload the **modified file** to your bucket. If desired, you can update and upload the file multiple times.
 #. Back on the **Objects UI**, click on the **ntnx-objects** Object Store.
-#. Look at the **Num. Objects** column for your **user##-bucket** bucket.
+#. Look at the **Num. Objects** column for your **##-bucket** bucket.
 
 .. figure:: images/props.png
 

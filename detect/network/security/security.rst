@@ -1,191 +1,222 @@
 .. _detect_security:
 
-----------------------
+#####################
 Securing Applications
-----------------------
+#####################
 
-Security Policy Creation
-+++++++++++++++++++++++++
+Creating Security Policy
+========================
 
-Now that we’ve defined some Categories and assigned them to the respective VM’s we can begin to use those categories to form Security Policies that will be used to isolate traffic to and from these VM’s. This capability is part of Flow micro-segmentation. 
+Now that we’ve defined some categories, and assigned them to the respective VMs, we can begin to use those categories to form security policies that will be used to control traffic among these VMs. This capability is part of Flow micro-segmentation.
 
-Flow is an application-centric network security product tightly integrated into Nutanix AHV and Prism Central. Flow provides rich network traffic visualization, automation, and security for VMs running on AHV.
+Flow is an application-centric network security product, which is tightly integrated into Nutanix AHV and Prism Central. Flow provides rich network traffic visualization, automation, and security for VMs running on AHV.
 
-Microsegmentation is a component of Flow that uses simple policy-based management to secure VM networking. Using Prism Central categories (logical groups), you can create a powerful distributed firewall. Combining this with Calm allows automated deployment of applications that are secured as they are created.
+Microsegmentation is a component of Flow that uses simple policy-based management to secure VM networking. Using Prism Central categories, you can create a powerful distributed firewall. Combining this with Calm [TODO: Pete: Do they know what Calm is?] allows automated deployment of applications that are secured as they are created. 
 
-#. In **Prism Central**, select :fa:`bars` **> Policies > Security**
+#. Within **Prism Central**, select :fa:`bars` **> Network & Security > Security Policies**.
+
 #. Click **Create Security Policy > Secure Applications (App Policy) > Create**.
-#. Fill out the following fields:
 
-- Name - User##-FaceRace
-- Purpose - Restrict unnecessary access to the FaceRace gaming machines
-- Secure this app - start typing your *##* and look for **User##-FaceRace**
+#. Fill out the following fields, and then click **Next**.
+
+   - **Name** - *USER##*\-FaceRace
+   - **Purpose** - Restrict unnecessary access to the FaceRace gaming machines
+   - **Secure This App** - Apptype:##-FaceRace
 
    .. figure:: images/appsec01.png
 
-#. Click **Next**.
+   .. note::
+      If prompted, click *OK, Got it!* on the tutorial diagram of the *Create App Security Policy* wizard.
 
+#. To allow for a more granular configuration of the security policy, click **Set rules on App Tiers, instead**, rather than applying the same rules to all components of the application.
+
+   .. figure:: images/apptierrules.png [TODO: Pete: Screenshot incorrect.]
+
+#. Select **##-Web** from the drop-down.
+
+#. Select **##-DataBase** from the drop-down.
+
+   .. figure:: images/apptiers.png [TODO: Pete: Screenshot incorrect.]
+
+   Next, you will define the *Inbounds* rules, which control which sources you will allow to communicate with the FaceRace VMs. You can allow all inbound traffic, or define whitelisted sources. By default, the security policy is set to deny all incoming traffic.
+
+   In this scenario, we will allow inbound TCP traffic to the FaceRace web tier on TCP port 80 from all clients.
+
+#. Under **Inbounds**, click :fa:`fa-plus-circle` **Add Source**.
+
+#. Fill out the following fields to allow all inbound IP addresses, and then click **Add**.
+
+   - **Add source by:** - Subnet/IP
+   - **Enter a subnet.** - 0.0.0.0/0
 
    .. note::
-      If prompted, click OK, Got it! on the tutorial diagram of the Create App Security Policy wizard.
+      
+      Sources can also be specified by category, allowing for greater flexibility as this data can follow a VM regardless of changes to its network location.
 
+#. To create an inbound rule, ensure the *Subnet/IP* of 0.0.0.0/0 is still highlighted, and then select :fa:`fa-plus-circle` to the left of **AppTier ##-Web**.
 
-#. To allow for a more granular configuration of the security policy, click **Set rules on App Tiers** instead, rather than applying the same rules to all components of the application.
+#. Choose **Select a Service**, fill out the following fields, and then click **Save**:
 
-   .. figure:: images/apptierrules.png
+   - **Protocol/Service** - TCP
+   - **Ports/Service Details** - 80
 
-
-#. Select **Web** from the drop-down.
-#. Select **DataBase** from the drop-down.
-
-   .. figure:: images/apptiers.png
-
-Next, you will define the Inbound rules, which control which sources you will allow to communicate with the FaceRace application VMs. You can allow all inbound traffic, or define whitelisted sources. By default, the security policy is set to deny all incoming traffic.
-
-In this scenario, we want to allow inbound TCP traffic to the FaceRace web tier on TCP port 80 from all clients.
-
-#. Under **Inbound**, click **+ Add Source**.
-#. Fill out the following fields to allow all inbound IP addresses:
-
-- Add source by: - Select Subnet/IP
-- Specify 0.0.0.0/0
-
-#. Click **Add**.
+   .. figure:: images/inbound.png [TODO: Pete: Screenshot incorrect.]
 
    .. note::
-      Sources can also be specified by Categories, allowing for greater flexibility as this data can follow a VM regardless of changes to its network location.
-
-#. To create an inbound rule, select the **+ icon** that appears to the left of **AppTier:Web**.
-#. Choose Select a Service.
-#. Fill out the following fields:
-
-- Protocol/Service - TCP
-- Ports/Service Details - 80
-
-   .. figure:: images/inbound.png
-
-   .. note::
+      
       Multiple protocols and ports can be added to a single rule.
 
-#. Click **Save**.
-#. Under **Inbound**, click **+ Add Source**.
-#. Fill out the following fields:
+#. Under **Inbounds**, click :fa:`fa-plus-circle` **Add Source**.
 
-- Add source by: - Select Subnet/IP
-- Specify Your Prism Central IP/32
+#. Fill out the following fields, and then click **Add**.
+
+   - **Add source by:** - Subnet/IP
+   - **Enter a subnet.** - <PRISM-CENTRAL-IP-ADDRESS>/32 (ex. 10.42.52.39/32)
 
    .. note::
-      The /32 denotes a single IP as opposed to a subnet range.
 
-#. Click **Add**.
-#. Select the **+ icon** that appears to the left of **AppTier:Web**, specify **TCP port 22** and click **Save**.
-#. Repeat previous step for **AppTier:Database** to allow communication with the database VM.
+      The /32 denotes a single IP address, as opposed to a subnet range.
 
-   .. figure:: images/tierconfig.png
+#. Choose **Select a Service**, fill out the following fields, and then click **Save**:
 
-By default, the security policy allows the application to send all outbound traffic to any destination. The only outbound communication required for your application is to communicate with your DNS server.
+   - **Protocol/Service** - TCP
+   - **Ports/Service Details** - 22
 
-#. Under **Outbound**, select **Allowed List Only** from the drop-down menu, and click **+ Add Destination**.
-#. Fill out the following fields:
+#. Repeat previous step for **AppTier ##-Database** to allow communication with the database VM.
 
-- Add source by: - Select Subnet/IP
-- Specify Your Domain Controller IP/32
+   .. figure:: images/tierconfig.png [TODO: Pete: Screenshot incorrect.]
 
-   .. figure:: images/domainip.png
+   By default, the security policy allows the application to send all outbound traffic to any destination. The only outbound communication required for your application is to communicate with your DNS server.
 
-#. Click Add.
-#. Select the **+ icon** that appears to the right of **AppTier:Web**, specify **UDP port 53** and click **Save** to allow DNS traffic. 
-#. Repeat this for **AppTier:Database**.
+#. Under **Outbound**, select **Allowed List Only** from the drop-down menu, and then click :fa:`fa-plus-circle` **Add Destination**.
 
-   .. figure:: images/tierconfig02.png
+#. Fill out the following fields, and then click **Add**:
 
-Each tier of the application communicates with other tiers and the policy must allow this traffic. Some tiers such as the Web tier do not require communication within the same tier.
+   - **Add source by:** - Subnet/IP
+   - **Enter a subnet.** - <AUTOAD-IP-ADDRESS>/32 (ex. 10.42.52.41/32)
 
-#. To define intra-app communication, click **Set Rules within the App**.
+   .. figure:: images/domainip.png [TODO: Pete: Screenshot is super blurry.]
 
-   .. figure:: images/withinapp.png
+#. Select :fa:`fa-plus-circle` to the right of **AppTier ##-Web**.
 
-#. Click **AppTier:Web > Edit** and select **No** to prevent communication between VMs in this tier. There are only two VMs (Prod and Dev) within the tier currently but scale-out operations will apply this policy to all VMs in this category preventing their ability to communicate with one another. **True Micro-segmentation!**
-#. While **AppTier:Web** is still selected, click the **+ icon** to the right of **AppTier:DB** to create a tier-to-tier rule.
-#. Fill out the following fields to allow communication on **TCP port 3306** between the web and database tiers:
+#. Choose **Select a Service**, fill out the following fields, and then click **Save**:
 
-- Protocol - TCP
-- Ports - 3306
+   - **Protocol/Service** - UDP
+   - **Ports/Service Details** - 53
 
-   .. figure:: images/tiertotier.png
+#. Repeat this for **AppTier ##-Database**.
 
-#. Click **Save**.
+   .. figure:: images/tierconfig02.png [TODO: Pete: Screenshot incorrect.]
+
+Each tier of the application communicates with other tiers, and the policy must allow this traffic. Some tiers such as the Web tier do not require communication within the same tier.
+
+#. To define intra-app communication, click **Set Rules within App**.
+
+   .. figure:: images/withinapp.png [TODO: Pete: Screenshot incorrect.]
+
+#. Click **AppTier ##-Web > Edit**, and under *Can VMs in this tier talk to each other?* select **No** to prevent communication between VMs in this tier.
+
+   There are only two VMs (Prod and Dev) within the tier currently, but scale-out operations will apply this policy to all VMs in this category preventing their ability to communicate with one another - regardless of how many VMs are deployed.
+
+#. While **AppTier:Web** is still selected, click :fa:`fa-plus-circle` to the right of **AppTier ##-Database** to create a tier-to-tier rule.
+
+#. Choose **Select a Service**, fill out the following fields, and then click **Save**:
+
+   - **Protocol/Service** - TCP
+   - **Ports/Service Details** - 3306
+
+   .. figure:: images/tiertotier.png [TODO: Pete: Screenshot incorrect.]
+
 #. Click **Next** to review the security policy.
+
 #. Click **Save and Monitor** to save the policy.
 
    .. figure:: images/save.png
 
-
 Testing Security Policy
-+++++++++++++++++++++++++
+=======================
 
 Now that we have created our first security policy, we need to test it.
-Note that we configured our policy in **Monitor** mode, which means that we are not yet enforcing any Inbound and Outbound traffic.
+Note that we configured our policy in *Monitor* mode, which means that we are not yet enforcing any inbound and outbound traffic rules.
 
-#. In **Prism Central**, select :fa:`bars` **> Virtual Infrastructure > VM**.
-#. Go to your **User##-Prod-FaceRace-Web**, right-click and select **Launch Console**.
-#. Use **username: centos** and **password: CENTOS** to logon.
-#. Start a ping to your **User##-Dev-FaceRace-Web** VM IP.
+#. Within **Prism Central**, select :fa:`bars` **> Compute & Storage > VM**.
 
-.. figure:: images/ping01.png
+#. Note the IP address for *USER##*\-Dev-FaceRace-Web.
 
-#. Similar to the previous steps, in **Prism Central**, select :fa:`bars` **> Virtual Infrastructure > VM**.
-#. Go to your **User##-Prod-FaceRace-DB**, right-click and select **Launch Console**.
-#. Use **username: centos** and **password: CENTOS** to logon.
-#. Start a ping to your **User##-Dev-FaceRace-DB** VM IP.
+#. Go to your *USER##*\-Prod-FaceRace-Web*, right-click, and then select **Launch Console**.
 
-.. figure:: images/ping02.png
+#. Login using the following credentials:
 
-#. To enforce the Security Policy we created, select :fa:`bars` **> Policies > Security** and select your **User##-FaceRace**.
-#. You'll notice that **Flow** is observing the traffic between the VMs in the policy.
+   - **Username** - centos
+   - **Password** - nutanix/4u
 
-.. figure:: images/monitor.png
+#. Start a continuous ping to your *USER##*\-Dev-FaceRace-Web VM IP by entering the command ``ping <USER##-DEV-FACERACE-WEB-IP-ADDRESS>``. Let this run for a few moments to confirm communication, and then cancel it by hitting CTRL+C.
 
-#. Within your **AppType ##-FaceRace**, hover the mouse cursor over the dotted line between two circles and see how you configured the communication within the application tiers.
+   .. figure:: images/ping01.png
 
-.. figure:: images/webtier.png
+. Within **Prism Central**, select :fa:`bars` **> Compute & Storage > VM**.
 
-.. figure:: images/dbtier.png
+#. Note the IP address for *USER##*\-Dev-FaceRace-DB.
 
-.. note:: 
-   If you click **Discovered**, immediately bellow the **Database** tier, you'll see the traffic of those pings you started.
+#. Go to your *USER##*\-Prod-FaceRace-DB*, right-click, and then select **Launch Console**.
+
+#. Login using the following credentials:
+
+   - **Username** - centos
+   - **Password** - nutanix/4u
+
+#. Start a continuous ping to your *USER##*\-Dev-FaceRace-DB VM IP by entering the command ``ping <USER##-DEV-FACERACE-DB-IP-ADDRESS>``. Let this run for a few moments to confirm communication, and then cancel it by hitting CTRL+C.
+
+   .. figure:: images/ping02.png
+
+#. To enforce the security policy we created, select :fa:`bars` **> Network & Security > Security Policies**.
+
+#. Click on your *User##-FaceRace* policy. Note that Flow is observing the traffic between the VMs in the policy.
+
+   .. figure:: images/monitor.png [TODO: Pete: Screenshot incorrect.]
+
+#. Within your *AppType ##-FaceRace*, hover the mouse cursor over the dotted line between two circles inside *AppTier ##-Web* and *AppTier ##-Database* to observe the communication within the application tiers.
+
+   .. figure:: images/webtier.png [TODO: Pete: Highlight CANNOT.]
+
+   .. figure:: images/dbtier.png [TODO: Pete: Highlight CAN.]
+
+   .. note::
+
+      If you click **Discovered** immediately below the *AppTier ##-Database** tier, you'll see the traffic from the ping commands you initiated.
 
    .. figure:: images/blocked.png
 
-#. To start blocking traffic and making this security policy work, click **Enforce**, in the upper-right corner of your screen.
+#. To enforce this security policy, click **Enforce** in the upper right-hand corner.
 
-.. figure:: images/enforce01.png
+   .. figure:: images/enforce01.png
 
-#. Type **ENFORCE** and click **Confirm**.
+#. Type **ENFORCE**, and then click **Confirm**.
 
-.. figure:: images/enforce02.png
+   .. figure:: images/enforce02.png
 
-#. Now, go back to the **Console** of the VMs (**User##-Prod-FaceRace-Web** and **User##-Prod-FaceRace-DB**) you started the pings.
-#. You should notice that, while **User##-Prod-FaceRace-Web** cannot ping **User##-Dev-FaceRace-Web**, **User##-Prod-FaceRace-DB** can ping **User##-Dev-FaceRace-DB**. Just like you configured
+#. Return to the consoles of *USER##*\-Prod-FaceRace-Web and *USER##*\-Prod-FaceRace-DB.
 
-.. figure:: images/ping03.png
+#. Restart the continuous ping commands in both console windows by hitting the up arrow, followed by enter. You should notice that, while *USER##*\-Prod-FaceRace-Web *cannot* ping *USER##*\-Dev-FaceRace-Web, *USER##*\-Prod-FaceRace-DB *can* ping *USER##*\-Dev-FaceRace-DB.
 
-Another way to test if the application is working properly is to open a browser and test its functionality.
+   .. figure:: images/ping03.png
 
-#. Get the IP of your **User##-Prod-FaceRace-Web** by going to **Prism Central**, select :fa:`bars` **> Virtual Infrastructure > VM**.
-#. Open a browser tab and type **User##-Prod-FaceRace-Web**'s IP Address.
+#. Cancel the ping command in both consoles by hitting CTRL+C, but leave both console windows open.
 
-.. figure:: images/store01.png
+   Another way to test if the application is working properly is to open a browser and test its functionality.
 
-#. Select **Stores**.
-#. Click **Add New Store**.
+#. Open a new browser tab and enter <USER##-PROD-FACERACE-WEB-IP-ADDRESS>.
 
-.. figure:: images/store02.png
+   .. figure:: images/store01.png
 
-#. Fill out the information and click **Submit**.
-#. Check if your store was created, confirm that your application is working as expected.
+#. Select **Stores > Add New Store**.
 
-.. figure:: images/store03.png
+   .. figure:: images/store02.png
 
+#. Fill out the information, and then click **Submit**.
 
-**Congratulations, your Security Policy is working to restrict the required traffic to the VMs supporting FaceRace app.**
+#. If the store was created, this confirms that your application is working as expected, and that the web tier can communicate with the database tier.
+
+   .. figure:: images/store03.png
+
+Congratulations! Your security policy is working to restrict the required traffic to the VMs supporting FaceRace app.

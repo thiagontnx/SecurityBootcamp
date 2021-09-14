@@ -50,9 +50,9 @@ Let’s create an Anomaly Rule to detect suspicious activity based on action
 
 In this step we are mimicking what an attack or deliberately mean behavior should look like. Examples are a malicious script repeatedly accessing data or someone trying to steal multiple files, private information from the company.
 
-Now, let’s generate activity on the File Server, you will be required to connect to your **User##-WinTools VM** via RDP (preferred) or console, using NTNXLAB\\adminuser## (from the :ref:`prevent_auth_dirservices` step) **pass: nutanix/4u**. You can check its IP by going to **Virtual Infrastructure > VMs > User##-WinTools VM IP column**.
+Now, let’s generate activity on the File Server, you will be required to connect to your **##-WinTools VM** via RDP (preferred) or console, using NTNXLAB\\adminuser## (from the :ref:`prevent_auth_dirservices` step) **pass: nutanix/4u**. You can check its IP by going to **Compute & Storage > VMs > User##-WinTools VM IP column**.
 
-Once you connect to your **User##WinTools VM**, ensure that you have mapped out **TheRocketFS** File Server to **drive Z:**
+Once you connect to your **##WinTools VM**, ensure that you have mapped out **TheRocketFS** File Server to **drive Z:**
 If not mapped, open **Windows Explorer**, right click on **Computer > Map Network Drive > \\\\TheRocketFS.ntnxlab.local\\User##-FaceRace**
 
    .. figure:: images/winmap.png

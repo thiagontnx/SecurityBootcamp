@@ -92,7 +92,7 @@ Installing Nutanix Guest Tools
 
 In order to take advantage of the guest script functionality, Nutanix Guest Tools (NGT) must first be installed within the guest VMs being protected.
 
-#. Within *Primary* site Prism Central, open :fa:`bars` **> Virtual Infrastructure > VMs**.
+#. Within *Primary* site Prism Central, open :fa:`bars` **> Compute & Storage > VMs**.
 
 #. Select both your *UserXX*\ **-WebServer** and *UserXX*\ **-MySQL** VMs.
 
@@ -146,7 +146,7 @@ A protection policy is where you specify your Recovery Point Objectives (RPO) an
 
    .. figure:: images/Protection/protect1.png
 
-#. Within *Primary* site Prism Central, open :fa:`bars` **> Virtual Infrastructure > VMs**.
+#. Within *Primary* site Prism Central, open :fa:`bars` **> Compute & Storage > VMs**.
 
 #. Select both your *UserXX*\ **-WebServer** and *UserXX*\ **-MySQL** VMs.
 
@@ -269,7 +269,7 @@ Before performing our failover, let's make a quick update to our application.
 
 #. Once the Recovery Plan reaches 100%, click on the **X** at the top right-hand corner. This will take approximately 5 minutes.
 
-#. Open :fa:`bars` **> Virtual Infrastructure > VMs**, and note the *Recovery* site IP address of your *UserXX*\ **-WebServer**.
+#. Open :fa:`bars` **> Compute & Storage > VMs**, and note the *Recovery* site IP address of your *UserXX*\ **-WebServer**.
 
 #. Open `<http://USERXX-WEBSERVER-VM-RECOVERYSITE-IP-ADDRESS>`_ (ex. `<http://10.42.212.50>`_) in another browser tab and verify the change you'd made to your application is present.
 
@@ -288,7 +288,7 @@ Before performing our failback, let's make another update to our application.
 
 #. Log in to Prism Central for your *Primary* site.
 
-#. Open :fa:`bars` **> Virtual Infrastructure > VMs**.
+#. Open :fa:`bars` **> Compute & Storage > VMs**.
 
 #. Select both of your VMs, and then click **Actions > Delete**. Confirm by clicking **Delete**.
 
@@ -314,7 +314,7 @@ Before performing our failback, let's make another update to our application.
 
 #. Once the Recovery Plan reaches 100%, click on the **X** at the top right-hand corner. This will take approximately 5 minutes.
 
-#. Open :fa:`bars` **> Virtual Infrastructure > VMs** and note the *Primary* site IP Address of your *UserXX*\ **-WebServer**.
+#. Open :fa:`bars` **> Compute & Storage > VMs** and note the *Primary* site IP Address of your *UserXX*\ **-WebServer**.
 
 #. Open `<http://USERXX-WEBSERVER-VM-PRIMARYSITE-IP-ADDRESS>`_ in another browser tab, and then verify the change you'd made to your application is present.
 
