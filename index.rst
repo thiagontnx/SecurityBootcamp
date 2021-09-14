@@ -49,7 +49,7 @@
    :caption: Optional Labs
    :name: _optional
    :hidden:
-   
+
    optional/infection/im
    optional/leap/leap
    optional/mine/mine
@@ -171,7 +171,7 @@ Each cluster has a dedicated domain controller VM (*AutoAD*), responsible for pr
 .. list-table::
    :widths: 25 35 40
    :header-rows: 1
-   
+
    * - Group
      - Username(s)
      - Password

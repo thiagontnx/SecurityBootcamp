@@ -11,7 +11,7 @@ Now that we’ve defined some categories, and assigned them to the respective VM
 
 Flow is an application-centric network security product, which is tightly integrated into Nutanix AHV and Prism Central. Flow provides rich network traffic visualization, automation, and security for VMs running on AHV.
 
-Microsegmentation is a component of Flow that uses simple policy-based management to secure VM networking. Using Prism Central categories, you can create a powerful distributed firewall. Combining this with Calm [TODO: Pete: Do they know what Calm is?] allows automated deployment of applications that are secured as they are created. 
+Microsegmentation is a component of Flow that uses simple policy-based management to secure VM networking. Using Prism Central categories, you can create a powerful distributed firewall. Combining this with Calm [TODO: Pete: Do they know what Calm is?] allows automated deployment of applications that are secured as they are created.
 
 #. Within **Prism Central**, select :fa:`bars` **> Network & Security > Security Policies**.
 
@@ -50,7 +50,7 @@ Microsegmentation is a component of Flow that uses simple policy-based managemen
    - **Enter a subnet.** - 0.0.0.0/0
 
    .. note::
-      
+
       Sources can also be specified by category, allowing for greater flexibility as this data can follow a VM regardless of changes to its network location.
 
 #. To create an inbound rule, ensure the *Subnet/IP* of 0.0.0.0/0 is still highlighted, and then select :fa:`fa-plus-circle` to the left of **AppTier ##-Web**.
@@ -63,7 +63,7 @@ Microsegmentation is a component of Flow that uses simple policy-based managemen
    .. figure:: images/inbound.png [TODO: Pete: Screenshot incorrect.]
 
    .. note::
-      
+
       Multiple protocols and ports can be added to a single rule.
 
 #. Under **Inbounds**, click :fa:`fa-plus-circle` **Add Source**.
@@ -154,7 +154,7 @@ Note that we configured our policy in *Monitor* mode, which means that we are no
 
    .. figure:: images/ping01.png
 
-. Within **Prism Central**, select :fa:`bars` **> Compute & Storage > VM**.
+#. Within **Prism Central**, select :fa:`bars` **> Compute & Storage > VM**.
 
 #. Note the IP address for *USER##*\-Dev-FaceRace-DB.
 

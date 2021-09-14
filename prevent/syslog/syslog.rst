@@ -45,6 +45,6 @@ Takeaways:
 
    - Nutanix is hardened using built-in STIGs which are aligned to NIST SP800-53 guidelines. This alleviates a great deal of labor and cost for our customers, and provides a platform ready to begin deploying workloads much faster.
 
-   - Nutanix nodes are kept in alignment with their secure configuration state throughout their lifecycle. They Self-heal from security deviations, providing assurance to our customers that security won’t degrade over time. 
+   - Nutanix nodes are kept in alignment with their secure configuration state throughout their lifecycle. They Self-heal from security deviations, providing assurance to our customers that security won’t degrade over time.
 
    - The simplicity of operation is a critical part of the security framework. Complexity is the enemy of execution, and never more so when complexity is centered around security principles. Nutanix simplifies configuration, management, and ongoing operations to provide a simple, elegant, intuitive, and invisible platform.

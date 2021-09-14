@@ -7,11 +7,11 @@ Protecting Your Environment
 Creating a Protection Policy
 +++++++++++++++++++++++++++++
 
-#. In **Prism Central**, select :fa:`bars`  **> Policies > Protection Policies**.
+#. In **Prism Central**, select :fa:`bars`  **> Data Protection and Recovery > Protection Policies**.
 #. Click **Create Protection Policy** and fill out the following:
 
-   - Policy name - **##-Local** (ex. USER01-Local)
-   - Primary Location > Location - **Local AZ:<Your Cluster>**
+   - Policy name - **USER##-Local** (ex. USER01-Local)
+   - Primary Location > Location: **Local AZ** Cluster: **<Your Cluster>**
 
 .. figure:: images/localaz.png
 
@@ -20,30 +20,30 @@ Creating a Protection Policy
 #. Set:
 
    - Take Snapshot every **1 Hour**
-   - Retention Type: **Linear** 
+   - Retention Type: **Linear**
    - Retention on Local AZ to **5 Recover Points**
- 
+
 
 #. Click **Save Schedule**
 #. Within the **Recovery Location**, click **Cancel**.
 #. Click **Next**.
- 
+
 Now, type **your user ##** in the search box  and select **AppType:##-FaceRace** (ex: 01-FaceRace)
- 
+
 #. Click **Add**.
 #. Click **Create**.
- 
+
 You now have a continuous stream of snapshots protecting these VMs, making it possible to roll back your FaceRace Application to a previous point in time.
 
 
-Recover from an attack on an isolated VM 
+Recover from an attack on an isolated VM
 ++++++++++++++++++++++++++++++++++++++++++++
 
 
 You've identified that your **##-Dev-FaceRace-Web** VM was attacked and is now compromised by Ransomware, so you want to act fast and disable any sort of communication coming from or going to the VM. To do this, we're going to **Quarantine** the VM.
 
-   #. In Prism Central, select :fa:`bars`, ** > Compute & Storage > VMs**.
-   #. Check **##-Dev-FaceRace-Web** VM, click **Action > Quarantine VMs**.
+   #. In Prism Central, select :fa:`bars`, **> Compute and Storage > VMs**.
+   #. Check **User##-Dev-FaceRace-Web** VM, click **Action > Quarantine VMs**.
 
    .. figure:: images/quar01.png
 
@@ -69,8 +69,8 @@ Bring an infected VM back to a stable state
 
 Your first tasks was to create a Protection Policy and apply it to your assigned VMs, now that easily accomplished task will pay off.
 
-   #. In **Prism Central**, select :fa:`bars` **> Compute & Storage > VMs**.
-   #. Click on any of your **##-FaceRace** VMs
+   #. In **Prism Central**, select :fa:`bars` **> Compute and Storage > VMs**.
+   #. Click on any of your **User##-FaceRace** VMs
    #. Look for Recovery Point tab on the top taskbar and click on it.
 
    #. Check the list of the **Recovery Points** created by your policy.
@@ -81,7 +81,6 @@ Your first tasks was to create a Protection Policy and apply it to your assigned
 
    #. Click **Restore**
 
-   #. Go back to :fa:`bars` **> Compute & Storage > VMs**.
+   #. Go back to :fa:`bars` **> Compute and Storage > VMs**.
    #. Look for the newly-created clone (ex: **User01-Dev-FaceRace-Web_clone1**).
    #. Confirm you are able to access it and the VM is working properly.
-

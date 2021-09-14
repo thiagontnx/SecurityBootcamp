@@ -40,14 +40,14 @@ Prism Central uses categories as metadata to tag VMs to determine how policies w
 
 #. Select the checkbox for **AppTier**, and then click **Actions > Update**.
 
-#. Click the :fa:`fa-plus-circle` icon to add additional category values: 
+#. Click the :fa:`fa-plus-circle` icon to add additional category values:
 
    - **##-Web**
    - **##-Database**
-   
+
 .. figure:: images/12.png  [TODO: Pete: Screenshot incorrect.]
 
-#. Click **Save**. 
+#. Click **Save**.
 
 Assigning Categories to VMs
 ===========================
@@ -76,7 +76,7 @@ In this exercise, you’ll assign your custom categories to the VMs supporting K
 
    .. figure:: images/categweb.png [TODO: Pete: Screenshot incorrect.]
 
-#. De-select the **##-FaceRace-Web** VMs, select the **##-FaceRace-DB** VMs, and then click **Actions > Manage Categories**. 
+#. De-select the **##-FaceRace-Web** VMs, select the **##-FaceRace-DB** VMs, and then click **Actions > Manage Categories**.
 
 #. In the search bar, type **AppTier:##-Database**, click the :fa:`fa-plus-circle`, and then click **Save**.
 

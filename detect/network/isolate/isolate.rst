@@ -34,13 +34,13 @@ The environments we will create environments to enable isolation between the car
 
    .. figure:: images/cdecat02.png [TODO: Pete: Screenshot incorrect.]
 
-   Now that category values have been created and appropriately assigned to the VMs, we can create an isolation policy. 
+   Now that category values have been created and appropriately assigned to the VMs, we can create an isolation policy.
 
 #. Within **Prism Central**, select :fa:`bars` **> Network & Security > Security Policies**.
 
 #. Click **Create Security Policy > Isolate Environments (Isolation Policy) > Create**.
 
-#. In the fields enter the following information: 
+#. In the fields enter the following information:
 
    - **Name** - User##-PCIPolicy
    - **Purpose** - Isolate the CDE from the Non-CDE
@@ -64,7 +64,7 @@ Just like we did during our security policy testing, we will enforce the new iso
 
 #. To activate the isolation policy, click **Enforce**, in the upper-right corner of your screen.
 
-   .. figure:: images/enforce01.png 
+   .. figure:: images/enforce01.png
 
 #. Type **ENFORCE**, and then click **Confirm**.
 

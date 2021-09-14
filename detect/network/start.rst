@@ -30,6 +30,6 @@ Nutanix Flow has already been enabled for this environment, however we've includ
 
    .. figure:: images/enableflow.gif [TODO: Pete: Recreate this as there's a weird grid effect going on, it can be sped up plus zoomed in on to better show what's happening.]
 
-   .. glossary:: 
+   .. glossary::
          “Compared to competitive products, this is the easiest microsegmentation product I've ever seen.”
          Roy, CSO for Blips and Chitz

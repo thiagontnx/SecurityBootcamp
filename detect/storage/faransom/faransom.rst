@@ -35,19 +35,19 @@ Optionally, you can add an email address to receive notifications
 
    .. note::
 
-      This feature leverages the underlying Nutanix Files capability to block certain extensions, you can overwrite this setting by going back to **File Server > Share/Export >** click the share you’d like to change and select **Update**. The Update a share/export wizard will open, **click next**, check **Block File Types**, and customize with whichever file types you need. 
-      This operation will **override** the File Server settings, in the illustrative case below, it is **only blocking** files with **.matt extension**, ignoring the Ransomware Protection. 
+      This feature leverages the underlying Nutanix Files capability to block certain extensions, you can overwrite this setting by going back to **File Server > Share/Export >** click the share you’d like to change and select **Update**. The Update a share/export wizard will open, **click next**, check **Block File Types**, and customize with whichever file types you need.
+      This operation will **override** the File Server settings, in the illustrative case below, it is **only blocking** files with **.matt extension**, ignoring the Ransomware Protection.
 
       .. figure:: images/matt.png
 
       This is **informational only** - don’t change the default Blocked File Types or the rest of the lab won’t work as desired.
- 
- 
+
+
 #. Back to your **##-WinTools** VM, using your NTNXLAB\adminuser##, open folder **Z:\Sample Data_Small\Sample Data\Documents** and create a .txt file
 #. Rename to Bootcamp.txt
 #. Rename it again, changing only the extension to Bootcamp**.jpg**
 
-#. Once again, try to change the extension to Bootcamp**.Valley** (which is one of the blocked extensions by Ransomware Protection)
+#. Once again, try to change the extension to Bootcamp **.Valley** (which is one of the blocked extensions by Ransomware Protection)
 
 .. figure:: images/block.png
 

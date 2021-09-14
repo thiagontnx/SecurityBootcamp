@@ -8,7 +8,7 @@ Defining Anomalies
 ++++++++++++++++++++
 
 #. In **Prism Central**, select :fa:`bars` **> Services > Files > click on File Servers**
-#. Click on **Manage** in the **Actions** column from the File Server **TheRocketFS** 
+#. Click on **Manage** in the **Actions** column from the File Server **TheRocketFS**
 
    .. figure:: images/manage.png
 
@@ -63,7 +63,7 @@ If not mapped, open **Windows Explorer**, right click on **Computer > Map Networ
 
 .. code-block::
 
-   Z:\Sample Data_Small\Sample Data\Technical PDFs 
+   Z:\Sample Data\Technical PDFs
 
 
 #. Run the following command:

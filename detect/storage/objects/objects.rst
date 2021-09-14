@@ -22,7 +22,7 @@ A bucket is a repository within an object store that can have policies applied t
 
    .. figure:: images/worm.png
 
-You realize your colleagues didn’t enable **WORM** and **Versioning** settings, so you have to do it yourself to protect the company’s data from attackers and for audit purposes.
+You realize your colleagues didn’t enable **WORM** and **Expiration** settings, so you have to do it yourself to protect the company’s data from attackers and for audit purposes.
 
 #. Click **Enable Version**.
 #. Click **Enable WORM** and set the **Retention Period** to 3 years.
@@ -31,26 +31,35 @@ You realize your colleagues didn’t enable **WORM** and **Versioning** settings
    .. figure:: images/enableworm.png
 
 
-#. Go back to **Object Store landing page** and check your bucket (**##-bucket**) again then **Actions > Update**.
-#. Now set **Permanently delete past versions after** 3 months
+#. Go back to **Object Store landing page** and click on your bucket (**user##-bucket**) and select **Lifecycle** on the left-side menu.
 
-   .. figure:: images/worm01.png
+   .. figure:: images/createrule.png
+
+#. Click **Create Rule** and set the following parameteres:
+   Name: User##-Expiration Rule
+   Scope: All Objects
+#. Then, click next and check **Expiration**.
+#. Set Expire **Curent Version** to **3 years**.
+
+   .. figure:: images/exp.png
 
    .. note::
 
-      You can configure WORM settings to align with your company’s security policy.
-      After you commit to these configurations, you will have a 24-hour grace period window where you can disable its settings, after 24 hours you can no longer change it and the system will follow this behavior. Not even Nutanix support can modify it.
+      You can configure WORM and Expire settings to align with your company’s security policy.
+      After you commit to the WORM configuration, you will have a 24-hour grace period window where you can disable its settings, after 24 hours you can no longer change it and the system will follow this behavior. Not even Nutanix support can modify it.
 
-#. Click **Save**.
+#. Click **Next** and **Done**.
 
    .. note::
 
       WORM storage prevents the editing, overwriting, renaming, or deleting of data and is crucial in heavily regulated industries (finance, healthcare, public agencies, etc.) where sensitive data is collected and stored. Examples include emails, account information, voice mails, and more.
+      Note that if WORM is enabled on the bucket, this will supersede any lifecycle expiration policy, in this case, you set it to 3 years.
 
 
    .. note::
 
-      Note that if WORM is enabled on the bucket, this will supersede any lifecycle policy, in this case, you set it to 3 years.
+      Tiering allows for infrequently used objects to be moved to the configured endpoints according to the configured lifecycle rule for tiering. The supported endpoints are AWS S3 and a different Objects instance.
+
 
 
 User Management
@@ -89,7 +98,7 @@ In this exercise, you will generate access and secret keys to access the object 
    Keep the text files open so that you have the access and secret keys readily available for future labs.
 
 
-.. warning:: 
+.. warning::
 
    INFORMATIONAL ONLY - NO NEED TO TAKE ACTION.
 
@@ -104,7 +113,7 @@ In this exercise, you will generate access and secret keys to access the object 
 .. figure:: images/keys02.png
 
 
- 
+
 Adding Users to buckets_share
 ++++++++++++++++++++++++++++++
 
@@ -112,7 +121,7 @@ Adding Users to buckets_share
 #. Within the **Object Store list**, click **mortynightrun**.
 #. Check the box next to your **##-bucket bucket**, and click **Share** from the **Actions** dropdown.
 
-This is where you will be able to share your bucket with other users. You can configure read access (download), write access (upload), or both, on a per user 
+This is where you will be able to share your bucket with other users. You can configure read access (download), write access (upload), or both, on a per user
 basis.
 
 #. Select the user you created earlier, with **Read and Write** permissions.
@@ -160,8 +169,8 @@ Object versioning allows the upload of new versions of the same object for requi
 #. In **Objects Browser**, upload the text file to your **##-bucket** bucket.
 #. Make changes to the text file in Notepad and save it with the same name, **overwriting** the original file.
 #. Upload the **modified file** to your bucket. If desired, you can update and upload the file multiple times.
-#. Back on the **Objects UI**, click on the **ntnx-objects** Object Store.
-#. Look at the **Num. Objects** column for your **##-bucket** bucket.
+#. Back on the **Objects UI**, click on the **mortynightrun** Object Store.
+#. Look at the **Num. Objects** column for your **user##-bucket** bucket.
 
 .. figure:: images/props.png
 
