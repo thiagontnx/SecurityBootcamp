@@ -14,4 +14,4 @@ Jerry, who oversees storage and data services, has told you that he has deployed
 
 We'll now move on to protecting the company's data, and making sure you have the means to recover and take action upon suspicious activities.
 
-On the surface, Files Analytics seems to be a very powerful, very useful tool in the effort to detect and prevent ransomware execution at its most likely ingress: the endpoint. Detecting that activity in the file systems could be critical to the continued smooth operation of Blips and Chitz, Inc.
+On the surface, File Analytics seems to be a very powerful, very useful tool in the effort to detect and prevent ransomware execution at its most likely ingress: the endpoint. Detecting that activity in the file systems could be critical to the continued smooth operation of Blips and Chitz, Inc.

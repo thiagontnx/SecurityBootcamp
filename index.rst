@@ -36,8 +36,8 @@
 
 .. toctree::
    :maxdepth: 2
-   :caption: Recover
-   :name: _recover
+   :caption: Protect and Recover
+   :name: _protect_recover
    :hidden:
 
    recover/start
@@ -52,7 +52,7 @@
 
    optional/infection/im
    optional/leap/leap
-   optional/mine/mine
+  ..  optional/mine/mine
 
 ##########
 Background
@@ -62,7 +62,7 @@ Blips and Chitz Inc. is a hugely popular entertainment arcade that supports gami
 
 All of the collected customer information and payment card details must be kept confidential due to strict regulatory guidelines including PCI DSS, CCPA, and GDPR. From a strategic perspective, properly protecting this data helps maintain the company's competitive advantages. TODO: Pete: Add a note with a blurb to explain each of these acronyms.
 
-Blips and Chitz Inc. have just purchased a Nutanix cluster, along with Files, Files Analytics, Objects, and Flow to support production workloads.
+Blips and Chitz Inc. have just purchased a Nutanix cluster, along with Files, File Analytics, Objects, and Flow to support production workloads.
 
    .. figure:: images/1.png
 
@@ -110,7 +110,7 @@ Security Labs
 
 - Prevent: Platform security: STIGs, SCMA, Auth, syslog
 - Detect - Networking: Data security: Flow, uSeg, NetSec
-- Detect - Data Services: Monitoring - Files, Files Analytics, Objects, FSC [TODO: Pete: Isn't FSC an optional lab?], Testing
+- Detect - Data Services: Monitoring - Files, File Analytics, Objects, FSC [TODO: Pete: Isn't FSC an optional lab?], Testing
 - Recover - Snapshots, Quarantine
 
 TODO: Add more context to what happens in each of the above sections.

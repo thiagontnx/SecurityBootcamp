@@ -1,102 +1,94 @@
 .. _detect_fa:
 
-------------------------------------------------
-Files Analytics
-------------------------------------------------
+##############
+File Analytics
+##############
 
 Defining Anomalies
-++++++++++++++++++++
+==================
 
-#. In **Prism Central**, select :fa:`bars` **> Services > Files > click on File Servers**
-#. Click on **Manage** in the **Actions** column from the File Server **TheRocketFS**
+#. Within **Prism Central**, select :fa:`bars` **> Services > Files**.
+
+#. Click on **File Servers** from the left-hand menu, and then click on **Manage** within the **Actions** column for **TheRocketFS**.
 
    .. figure:: images/manage.png
 
-A new window will appear sending you to **Prism Element**
+   A new window will appear sending you to **Prism Element**
 
-#. Click on **TheRocketFS** and select **File Analytics** from the menu
+#. Click on **TheRocketFS**, and then select **File Analytics**.
 
    .. figure:: images/fa01.png
 
-Your Files Analytics Dashboard will show metrics like Top 5 active users, Top 5 accessed files and File Operations
+   Your *File Analytics* dashboard will show metrics like *Top 5 active users*, *Top 5 accessed files* and *File Operations*.
 
    .. figure:: images/fa02.png
 
-While in your environment everything looks normal, those widgets are essential to detect unusual or anomalous behavior – such as repeated failed authentications, an increase in network traffic, or a large volume of file updates and touchpoints.
+   While everything looks normal right now, those widgets are essential to detect unusual or anomalous behavior – such as repeated failed authentications, an increase in network traffic, or a large volume of file updates and touchpoints.
 
-Let’s create an Anomaly Rule to detect suspicious activity based on action
+   Let’s create an *Anomaly Rule* to detect suspicious activity based on action.
 
-#. Click on the **gear icon** on the upper-right > **Define Anomaly Rules**
+#. Click on the :fa:`fa-cog` **> + Define Anomaly Rules**
 
-   .. figure:: images/anomalyrules.png
+   .. figure:: images/anomalyrules.png [TODO: Pete: Screenshot incorrect.]
 
-#. Click on **+ Configure new anomaly**, with the following information:
+#. Fill out the following information, click :fa:`fa-check-circle`, and then click **Save**.
 
-   - In Events, select Rename
-   - Minimum Operation % 10
-   - Minimum Operation Count 50
-   - User All Users
-   - Select Hourly
-   - Interval 1
+   - **Events** - Rename
+   - **Minimum Operation %** - 10
+   - **Minimum Operation Count** - 50
+   - **User** - All Users
+   - **Type** - Hourly
+   - **Interval** - 1
 
-   Alternatively, you can send an Anomaly Alert to one or more email addresses
-
-#. Click Check Mark, and then Save.
+   Alternatively, you can send an *Anomaly Alert* to one or more email addresses
 
    .. figure:: images/defineanomaly.png
 
    .. note::
-      This is a one time configuration, if you see this step already performed, that means that you are sharing your cluster with someone who has gone through it already so just skip to the next step.
 
-In this step we are mimicking what an attack or deliberately mean behavior should look like. Examples are a malicious script repeatedly accessing data or someone trying to steal multiple files, private information from the company.
+      This is a one time configuration. If you see this step already performed, proceed to the next step.
 
-Now, let’s generate activity on the File Server, you will be required to connect to your **##-WinTools VM** via RDP (preferred) or console, using NTNXLAB\\adminuser## (from the :ref:`prevent_auth_dirservices` step) **pass: nutanix/4u**. You can check its IP by going to **Compute & Storage > VMs > User##-WinTools VM IP column**.
+   In this step, we are mimicking what an attack or deliberately malicious behavior could look like. For example, a malicious script repeatedly accessing data, or someone trying to steal private information from the company.
 
-Once you connect to your **##WinTools VM**, ensure that you have mapped out **TheRocketFS** File Server to **drive Z:**
-If not mapped, open **Windows Explorer**, right click on **Computer > Map Network Drive > \\\\TheRocketFS.ntnxlab.local\\User##-FaceRace**
+   Let’s generate activity on the Files Server.
+   
+#. Within Prism Central, identify the IP address for your *USER##*\-WinTools VM, and utilizing RDP, log in using the following credentials:
 
-   .. figure:: images/winmap.png
+   - **User Name** - administrator@ntnxlab.local
+   - **Password** - nutanix/4u
 
-#. First, download the `Sample Data <https://peerresources.blob.core.windows.net/sample-data/SampleData_Small.zip>`_ and extract it to your newly mapped **Z: Drive**.
+#. Open *Windows Explorer*, right click on **This PC > Map Network Drive > \\\TheRocketFS.ntnxlab.local\\User##-FaceRace**
 
-#. Open **PowerShell** console and navigate to:
+   .. figure:: images/winmap.png [TODO: Pete: This needs a better screenshot.]
 
-.. code-block::
+#. Within your *USER##*\-WinTools VM, download `Sample Data <https://peerresources.blob.core.windows.net/sample-data/SampleData_Small.zip>`_, and extract it to **Z:\**.
 
-   Z:\Sample Data\Technical PDFs
+#. Open **PowerShell**, and navigate to:
 
+   .. code-block::
 
-#. Run the following command:
+      Z:\Sample Data\Technical PDFs
 
-.. code-block:: PowerShell
+#. Run the command: ``Get-ChildItem *.pdf | foreach {start-process $_.fullname}``.
 
-   Get-ChildItem *.pdf | foreach {start-process $_.fullname}
-
-
-.. figure:: images/ps.png
-
-Notice that your WinTools VM will open almost 100 pdf files at once.
+   Your WinTools VM will open 99 .PDF files within your browser.
 
    .. figure:: images/pdf.png
 
-Now, let's go back to File Analytics, :fa:`bars` **> Audit Trails**.
+#. Return to *File Analytics*, and then select :fa:`bars` **> Audit Trails**.
 
 #. Check **Users** and search for **adminuser##**
-#. Under **Action** column, select **Audit Trail**
-#. In Filter by **Operations**, select **Read**, and then click **Apply**.
+
+#. Under the **Action** column, click **View Audit**.
+
+#. Within the *Filter by Operations* box, select **Read**, and then click **Apply**.
 
    .. figure:: images/audit.png
 
-Since you define such behavior as an Anomaly, if you go back to the Files Analytics menu, you should see a warning message under Anomalies Alerts
+#. Since you have already defined such behavior as an anomaly, navigate to :fa:`bars` **> Anomalies**. You may see a warning message under *Anomalies Alerts*. This may take up to one hour.
 
    .. figure:: images/anomalerts.png
 
-   .. warning::
-      It takes 1 hour for the Anomaly scan to work, you might want to finish the next section and come back here
-
-Go to :fa:`bars` **> Anomalies** and check the in-depth **Anomaly** report
-
    .. figure:: images/anomareport.png
 
-   .. note::
-      This is the exact expected behavior when your environment is being attacked and File Analytics helps identify Anomaly trends in your environment.
+   This is the exact expected behavior when your environment is being attacked, and *File Analytics* helps identify anomaly trends in your environment.
