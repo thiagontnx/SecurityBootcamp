@@ -1,19 +1,19 @@
 .. _detect_faransom:
 
-------------------------------------------------
+####################################
 File Analytics Ransomware Protection
-------------------------------------------------
-Starting in AOS 5.19 and FA 3.0, you can enable Ransomware protection on FA
+####################################
 
-File Analytics scans files for ransomware in real-time and notifies you through email in the event of a ransomware attack. By using the Nutanix Files file blocking mechanism, File Analytics prevents files with signatures of potential ransomware from carrying out malicious operations. Ransomware protection automatically scans for ransomware based on a curated list of signatures that frequently appear in ransomware files. You can modify the list by manually adding other signatures.
+Starting with AOS 5.19 and File Analytics 3.0, you can enable ransomware protection.
 
-File Analytics also monitors shares for self-service restore (SSR) policies and identifies shares that do not have SSR enabled in the ransomware dashboard. You can enable SSR through the ransomware dashboard by selecting shares identified by File Analytics.
+File Analytics scans files for ransomware in real-time, and notifies you via email in the event of a ransomware attack. By using the Nutanix Files file blocking mechanism, File Analytics prevents files with signatures of potential ransomware from carrying out malicious operations. Ransomware protection automatically scans for ransomware based on a curated list of signatures that frequently appear in ransomware files. Optionally, you can add additional signatures to the list.
 
+File Analytics also monitors file shares for self-service restore (SSR) policies, and identifies shares that do not have SSR enabled in the ransomware dashboard. You can enable SSR through the ransomware dashboard by selecting shares identified by File Analytics.
 
 Enabling Ransomware Protection
-+++++++++++++++++++++++++++++++
+==============================
 
-#. To Enable Ransomware Protection, click :fa:`bars` **> Ransomware**
+#. To enable Ransomware Protection, click :fa:`bars` **> Ransomware**
 
    .. figure:: images/enable.png
 
@@ -23,51 +23,50 @@ Enabling Ransomware Protection
 
    .. note::
 
-      This is also a one-time setting, meaning that if you see that Ransomware Protection is enabled, you can review the options but no action is required.
+      This is also a one-time setting. If you see that *Ransomware Protection* is enabled, you can review the options but no action is required.
 
+   Optionally, you can add an email address to receive notifications. [TODO: Pete: You explained that the notification is via e-mail, so is this really optional? How else would they be notified?]
 
-Optionally, you can add an email address to receive notifications
-
-#. Click Download (.CSV) to learn more about which file extensions FA will start blocking
+#. Click **Download (.csv)** to view which file extensions File Analytics will block by default.
 
    .. figure:: images/csv.png
 
+#. Within the *Z:\\Sample Data\\Documents* folder, create a *.txt* file.
 
-   .. note::
+#. Rename to **Bootcamp.txt**.
 
-      This feature leverages the underlying Nutanix Files capability to block certain extensions, you can overwrite this setting by going back to **File Server > Share/Export >** click the share you’d like to change and select **Update**. The Update a share/export wizard will open, **click next**, check **Block File Types**, and customize with whichever file types you need. 
-      This operation will **override** the File Server settings, in the illustrative case below, it is **only blocking** files with **.matt extension**, ignoring the Ransomware Protection. 
+#. Rename it again, changing only the file extension to **.jpg**.
 
-      .. figure:: images/matt.png
+#. Once again, change the file extension once more to **.Valley**.
 
-      This is **informational only** - don’t change the default Blocked File Types or the rest of the lab won’t work as desired.
- 
- 
-#. Back to your **User##-WinTools** VM, using your NTNXLAB\adminuser##, open folder **Z:\Sample Data_Small\Sample Data\Documents** and create a Bootcamp.txt file
-#. Rename it, changing only the extension to Bootcamp **.jpg**
+   .. figure:: images/block.png
 
-#. Once again, try to change the extension to Bootcamp **.Valley** (which is one of the blocked extensions by Ransomware Protection)
+   This operation will fail as **.Valley** is one of the extensions that are blocked by Ransomware protection.
 
-.. figure:: images/block.png
+#. Click **Cancel** on the error prompt you received when you attempted to change the file extension.
 
-#. Go back to the FA UI and click **Ransomware**
+#. Return to File Analytics, and then click :fa:`bars` **> Ransomware**.
 
-#. Check that the Vulnerability section has been updated with the recent malicious attempts of creating a **.Valley** file.
+#. Within the *Vulnerabilities* section, observe that this now displays the malicious attempt of creating a **.Valley** file. [TODO: Pete: Screenshot incorrect.]
 
-.. figure:: images/attempt01.png
+   .. figure:: images/attempt01.png
 
 Custom Reports
-+++++++++++++++
+==============
 
-Now, let’s explore how to build a report in Files Analytics:
+   Let’s explore how to build a report in File Analytics.
 
-#. Click on the :fa:`bars` **> Reports > Create a new report**
-#. Select **Pre-canned Report Templates**
-#. Based on **Events**
-#. Under **Define Filters**, choose **Permission Denied {File Blocking} Events**
-#. Click on **Run Preview**
+#. Click on the :fa:`bars` **> Reports > + Create a new report**.
 
-   .. figure:: images/preview.png
+#. Select **Pre-canned Report Templates**.
+
+#. Select **Events** from the *Based on* drop-down.
+
+#. Under *Define Filters*, select **Permission Denied {File Blocking} Events** from the *Pre-canned report template* drop-down.
+
+#. Click on **Run Preview**.
+
+   .. figure:: images/preview.png [TODO: Pete: Screenshot incorrect.]
 
    .. note::
 

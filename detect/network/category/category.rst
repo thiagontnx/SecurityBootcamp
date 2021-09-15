@@ -1,93 +1,85 @@
 .. _detect_category:
 
-------------------------------------------------
-Configuring Flow
-------------------------------------------------
-
+##############
 Categorization
-+++++++++++++++
-Logging into **Prism Central**, and navigating to the **Compute and Storage > VMs** page, you can see VM’s are already being created to support one of the most popular gaming apps, King Drog FaceRace. This workload is supported centrally by the Nutanix cluster compute and storage and delivered via the gaming machines on the game floor by the following VMs: 
+##############
+
+You observe that VMs are already being created to support one of the most popular gaming apps, King Drog FaceRace. This workload is supported centrally by the Nutanix cluster, and delivered via the gaming machines on the game floor by the following VMs:
 
 .. raw:: html
-
-   <strong><font color="red">(## = User number, assigned by your instructor).</font></strong></br></br>
 
 -  **User**\ *##*-FaceRace-Web
 -  **User**\ *##*-FaceRace-DB
 
 .. figure:: images/9.png
 
-Customers insert or swipe their payment cards for access to game credits and login with their IDs to track high scores. These machines collect Cardholder data (CHD) such as the Primary Account Number (PAN) and other Personally Identifiable Information (PII) and as such need to be isolated from the rest of the network in order to meet PCI DSS guidelines for segmentation of the Cardholder Data Environment (CDE). The payment and user information must be protected from unauthorized access.
+Customers swipe their payment cards for access to game credits, and log in to track high scores. These machines collect cardholder data (CHD) such as the primary account number (PAN) and other personally identifiable information (PII). These VMs need to be isolated from the rest of the network in order to meet PCI DSS guidelines for segmentation of the cardholder data environment (CDE). The payment and user information must be protected from unauthorized access.
+
 Prism Central uses categories as metadata to tag VMs to determine how policies will be applied. We need to add categories to identify all of our FaceRace application VMs.
 
-#. In **Prism Central**, select :fa:`bars` **> Adminstration > Categories**.
-#. Select the checkbox for **AppType** and click **Actions > Update**.
+#. Within **Prism Central**, select :fa:`bars` **> Administration > Categories**.
 
-.. figure:: images/10.png
+#. Select the checkbox for **AppType**, and then click **Actions > Update**.
 
-#. Click the **“+ icon”** to add an additional Category value.
-#. Specify **##-FaceRace** as the value name.   (## = Your user number)
+   .. figure:: images/10.png
 
-.. figure:: images/apptype01.png
+#. Click the :fa:`fa-plus-circle` icon to add an additional category value.
+
+#. Specify **##-FaceRace** as the value name, and then click **Save**.
+
+   .. figure:: images/apptype01.png
+
+   Next, we need to define the different tiers of the FaceRace application.
+
+   - **##**-Prod-FaceRace-Web       (*Production* Web tier)
+   - **##**-Prod-FaceRace-DB        (*Production* Database tier)
+   - **##**-Dev-FaceRace-Web        (*Development* Web tier)
+   - **##**-Dev-FaceRace-DB         (*Development* Database tier)
+
+#. Within **Prism Central**, select :fa:`bars` **> Administration > Categories**.
+
+#. Select the checkbox for **AppTier**, and then click **Actions > Update**.
+
+#. Click the :fa:`fa-plus-circle` icon to add additional category values:
+
+   - **##-Web**
+   - **##-Database**
+
+.. figure:: images/12.png  [TODO: Pete: Screenshot incorrect.]
 
 #. Click **Save**.
 
+Assigning Categories to VMs
+===========================
 
-Next up, we need to create values to begin to define the different tiers of the FaceRace application. The names given the VM’s thankfully help you to identify the possible tiers that are necessary to support this particular application. 
+In this exercise, you’ll assign your custom categories to the VMs supporting King Drog FaceRace. This will help align access to the proper resources, and security and protection policies within the environment.
 
-- **User##**-Prod-FaceRace-Web  	(Production Web tier)
-- **User##**-Prod-FaceRace-DB	(Production Database tier)
-- **User##**-Dev-FaceRace-Web  	(Development Web tier)
-- **User##**-Dev-FaceRace-DB (Development Database tier)
+#. Within **Prism Central**, select :fa:`bars` **> Compute & Storage > VMs**.
 
-Now within Prism Central; 
+#. Select your **##-FaceRace** VMs, and then click **Actions > Manage Categories**.
 
-#. Select  :fa:`bars` **> Administration > Categories**.
-#. Select the checkbox for **AppTier** and click **Actions > Update**.
-#. Again, using the **"+ icon"** you can create more category values, create a category for: 
+   .. figure:: images/categ001.png
 
-- **##-Web**   (## = Your user number)
-- **##-Database**   (## = Your user number)
-   
-.. figure:: images/12.png
+   .. note::
 
-#. Click **Save**. 
+      By selecting more than one VM, we’re simultaneouly defining categories values that will be common to them: the AppType category value that we defined earlier.
 
+ #. In the search bar, enter **AppType:##**, click :fa:`fa-plus-circle`, and then click **Save**.
 
-Adding Categories to VMs
-+++++++++++++++++++++++++
+   .. figure:: images/categ02.png
 
-In this exercise, you’ll add your newly-created custom categories to the VMs supporting King Drog FaceRace. This will help align access to the proper resources and help with both security and protection policies within the environment
+   We now need to assign the appropriate tier category value to each of the VMs.
 
-#. Select :fa:`bars` **> Compute and Storage > VMs**.
-#. Using the checkboxes, select all the **User##-FaceRace** VM’s, and click **Actions > Manage Categories**.
+#. Deselect both **##-FaceRace-DB** VMs, and then click **Actions > Manage Categories**.
 
-.. figure:: images/categ001.png
+#. In the search bar, type **AppTier:##-Web**, click the :fa:`fa-plus-circle`, and then click **Save**.
 
-.. note::
+   .. figure:: images/categweb.png [TODO: Pete: Screenshot incorrect.]
 
-   By selecting more than one Virtual Machines we’re defining categories values that will be common to all of them. Namely the AppType Category value that we defined earlier.
+#. De-select the **##-FaceRace-Web** VMs, select the **##-FaceRace-DB** VMs, and then click **Actions > Manage Categories**.
 
- 
-#. In the search bar, begin typing **AppType:##** auto-complete should help you complete the search query, and now you can click the **+ icon** and hit **Save**.
+#. In the search bar, type **AppTier:##-Database**, click the :fa:`fa-plus-circle`, and then click **Save**.
 
-.. figure:: images/categ02.png
+   .. figure:: images/categdb.png [TODO: Pete: Screenshot incorrect.]
 
-We now need to assign the appropriate tier category value to each of the VM’s.
-
-#. Deselect both **User##-Prod-FaceRace-DB** and **User##-Dev-FaceRace-DB** VMs and proceed to **Actions > Manage Categories** for **User##-Prod-FaceRace-Web** and **User##-Dev-FaceRace-Web**
-
-#. In the search bar, begin typing your user number (ie: **01-Web**) and hit the **"+ icon"** before you click **Save**.
-
-.. figure:: images/categweb.png
-
-Now we can assign the **User##-Database** category to the **User##-Prod-FaceRace-DB** and **User##-Dev-FaceRace-DB** VMs. 
-
-#. De-select the Web VMs and select the DB VM, and proceed to click **Actions > Manage Categories**. 
-
-#. In the search bar, begin typing your user number (ie: **01-Database** and hit the **"+ icon"** before you click save.
-
-.. figure:: images/categdb.png
-
-
-Now, we can proceed to creating a security policy.
+Next, we'll create a security policy.

@@ -1,32 +1,41 @@
 .. _prevent_stig:
 
------
-STIG
------
+################################################
+Security Technical Implementation Guides (STIGs)
+################################################
 
-Security is in our DNA at Nutanix. A significant proportion of our business is from sectors of industry that care deeply about security, including Federal Government, State Government, Local Government, Financial Services, Healthcare, Retail and more. This is why we build in security as an automated part of every configuration and deployment and by default it is on, and it is continuously monitored for compliance against the security baselines and Security Technical Implementation Guides. Unlike some vendors in the HCI space Nutanix doesn’t just have a single STIG, we apply multiple STIG’s, automatically, and continuously verify against them. But what is this STIG anyway?
+Security is in the DNA of the Nutanix platform. As a result, a significant proportion of our business is from sectors of industry that care deeply about security, including federal, local, and state governments, financial services, healthcare, retail, and beyond. Security is automatically part of every configuration and deployment, and is enabled by default, and is continuously monitored for compliance against the security baselines and Security Technical Implementation Guides. Unlike some vendors in the HCI space Nutanix doesn’t just have a single STIG, we apply multiple STIGs automatically, and continuously verify against them.
 
-The description of what STIG’s are is available on the Defense Information Systems Agency, Information Assurance Support Environment web site:
+What is a STIG?
+
+The description of a STIG is publically available on the Defense Information Systems Agency, Information Assurance Support Environment web site:
 
 “The Security Technical Implementation Guides (STIGs) are the configuration standards for DOD IA and IA-enabled devices/systems. Since 1998, DISA has played a critical role enhancing the security posture of DoD’s security systems by providing the Security Technical Implementation Guides (STIGs). The STIGs contain technical guidance to “lock down” information systems/software that might otherwise be vulnerable to a malicious computer attack.”
 
 
 STIG Reports on Nutanix Nodes
-+++++++++++++++++++++++++++++
+=============================
 
-You can run a STIG report, which will check on all the individual STIG controls and verify which are compliant with your system and which are not.
+You can run a STIG report, which will check on all the individual STIG controls, and verify which are compliant with your system, and which are not.
+
+[TODO: Pete: Add a final screenshot or two showing sample outputs at the end of this section of commands.]
+
 The steps to run the STIG report are as follows:
-#. Connect to any Controller VM (CVM) as the nutanix user via SSH (Using Terminal, PuTTy, or similar program)
+
+#. SSH into any CVM via Terminal, PuTTy, or similar using the following credentials:
+
+      - **User Name** - nutanix
+      - **Password**  - nutanix/4u
 
 #. Change to the root directory of the CVM:
 
-   ``cd /`` 
+   ``cd /``
 
 #. List the files available to the root user within the /root directory:
 
    ``sudo -u root ls -l /root``
 
-   Executable files contain x in the permission string. You should see a similar output:
+   Executable files contain x in the permission string. You should see a similar output: [TODO: Pete: This is confusing.]
    
    .. code-block:: bash
 
@@ -44,15 +53,15 @@ The steps to run the STIG report are as follows:
       drwxr-x---. 2 root root   4096 Dec 13 23:17 sretools
       -rw-r-----. 1 root root    840 May  3  2018 sshdlocal.pp
    
-   There should be three **.sh** files that end in **_stig.sh** and the name corresponds to the output format. You’ll want to run the one that outputs in the format you prefer.
+   There are three files that end in **_stig.sh**, with its name corresponding to the output format it will display.
 
-#. In this example, we’ll run the generic text output ``“report_stig.sh”``
+#. In this example, we’ll run the generic text output:
 
    ``sudo -u root ./root/report_stig.sh``
 
-The output will go into the root user log folder.
+   The output will be written to the root user log folder.
 
-#. List the files in the folder and note the name of the report.
+#. List the files in the folder, and note the name of the report.
 
    ``sudo -u root ls -l /home/log | grep STIG``
 
@@ -68,16 +77,16 @@ The output will go into the root user log folder.
 
    ``sudo -u root chown nutanix:nutanix /home/nutanix/STIG-report-**-**-****-**-**-**``
 
-#. Access your WinTools## VM (user: Administrator password: Nutanix/4u) to use a secure copy tool (SCP, WINSCP, PSCP, etc) to copy the report results file to your workstation from the CVM. Be sure to login to the CVM using the nutanix username and password provided by the instructor to browse to its home directory to find the file we created above.
+#. Access your WinTools## VM (user: Administrator password: Nutanix/4u) to use a secure copy tool (SCP, WINSCP, PSCP, etc) to copy the report results file to your workstation from the CVM. Be sure to login to the CVM using the nutanix username and password provided by the instructor to browse to its home directory to find the file we created above. [TODO: Pete: This needs more explanation and screen shot(s)]
 
    .. figure:: images/winscp.png
 
 Analyzing the STIG Report
-++++++++++++++++++++++++++
+=========================
 
-Obtain the STIG report generated in the previous step and use it to gather the current compliance state of the system.
-You can leverage this report for validation and accreditation requirements for security compliance.
-This will report the results of all elements that make up the Nutanix STIG, and the report will show the compliance result for each of the checks inside the STIG.
+You now have the STIG report, and can use it to evaluate the current compliance state of the system, or for validation and accreditation requirements for security compliance.
+
+This will report the results of all elements that make up the Nutanix STIG, and the report will show the compliance result for each of the checks contained within the STIG.
 
 **Report Format**
 
@@ -109,14 +118,14 @@ This will report the results of all elements that make up the Nutanix STIG, and 
    yes
    Completed.
 
-Ricks’ SCMA (Saltstack) Self-Healing Lab
-+++++++++++++++++++++++++++++++++++++++++
+Rick’s SCMA (Saltstack) Self-Healing Lab
+========================================
 
-To make a system truly scalable you need to build a system that can address security misconfigurations automatically. Whether you’re managing 4 nodes or 400, security shouldn’t be compromised by an inability to have more SecOps minions typing into keyboards.
-With Nutanix nodes, Security Configuration Management is Automated, with SCMA. SCMA is a saltstack daemon that runs as a scheduled cron job. If the daemon spots an inconsistency it corrects it and logs the event. The CVM self-corrects and heals from deviations to the secure state. This state is established according to industry best practices and our own experience in the Hyper-Converged Infrastructure space.
+To make a system truly scalable, it must address security misconfigurations automatically. Whether you’re managing four nodes or four hundred, security shouldn’t be compromised by an inability to have more SecOps minions typing into keyboards. [TODO: Pete: Huh?]
 
+With Nutanix, Security Configuration Management is automated with SCMA. SCMA is a saltstack daemon that runs as a scheduled cron job. If the daemon spots an inconsistency, it both corrects and logs the event. The CVM self-heals deviations to the secure state. This state is established according to industry best practices, along with inforation we've gathered over the years from our customers.
 
-**It’s not necessary to complete the following section but read through it and see the effectiveness of self-healing technology.**
+**It’s not necessary to complete the following section but read through it and see the effectiveness of self-healing technology.** [TODO: Pete: If this is just a demonstration, it shouldn't be called a lab. And if we want folks to run through this, it needs more explanation and screen shots. I stopped here and didn't review the section until it gets updated.]
 
 **Testing Automation:**
 
