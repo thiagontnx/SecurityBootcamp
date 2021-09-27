@@ -36,7 +36,7 @@ Now, type **your user ##** in the search box  and select **AppType:##-FaceRace**
 You now have a continuous stream of snapshots protecting these VMs, making it possible to roll back your FaceRace Application to a previous point in time.
 
 
-Recover from an attack on an isolated VM 
+Recover of a compromised VM 
 ++++++++++++++++++++++++++++++++++++++++++++
 
 

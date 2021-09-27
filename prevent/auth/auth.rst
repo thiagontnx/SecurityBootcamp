@@ -76,7 +76,7 @@ A local account is great for when you’re in a jam and need access when other a
 
       As you may have noticed, In Prism Central if you visit the Authentication Configuration menu, you have the option to connect to an Identity Provider (IdP), this further enhances access protocols by leveraging technologies like Single Sign On (SSO) and Multi-Factor Authentication (MFA). 
 
-      Currently Prism Central only supports ADFS as part of the SAML protocol. But you can register your appropriate account metadata in the same Authentication Configuration menu used above. 
+      Currently Prism Central only supports Active Directory Federation Services (ADFS) as part of the SAML protocol. But you can register your appropriate account metadata in the same Authentication Configuration menu used above. 
 
 #. Click **Cancel**.
 

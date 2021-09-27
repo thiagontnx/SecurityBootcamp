@@ -21,11 +21,10 @@ The Bootcamp is structured as follows:
  - **Detect - Networking**
    - Data security: Flow, uSeg, NetSec
  - **Detect - Data Services**
-   - Monitoring: Files, FA, Objects, FSC, Testing
- - **Recover**
+   - Monitoring: Files, FA, Objects, Testing
+ - **Protect and Recover**
    - Snapshots, Quarantine
- - **Optional labs**
-   - Flow Security Central, Leap, Mine
+
 
 
 Introductions
