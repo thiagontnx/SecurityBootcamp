@@ -1,7 +1,7 @@
 .. _recover_start:
 
 ------------------------------------------------
-Restoring Your Applications
+Preparing For Disaster
 ------------------------------------------------
 
 
