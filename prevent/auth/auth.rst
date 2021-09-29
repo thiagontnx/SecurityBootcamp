@@ -11,8 +11,8 @@ Changing vendor default passwords is an essential first step in the adoption of 
 
 In a Nutanix deployment, there are several default passwords that we'll demonstrate how to change.
 
-   .. note: 
-      
+   .. note:
+
       Even though the Nutanix cluster you are using is dedicated to the Bootcamp, all of our automation is based on the current configured passwords. Changing those passwords will break our internal automation system. Instead, we are providing you with a video describing the process. We do have the process documented, if you need to perform the steps showed below, let your instructor know. [TODO: Pete: Recommend we add these steps within a note]
 
 The first of which is Prism Element. Upon first log in, you are required to create a new, secure password for the local *Admin* account.
@@ -35,7 +35,7 @@ The Intelligent Platform Management Interface (IPMI) is a way for remote adminis
    - Password = <NODE-SERIAL-NUMBER>
 
     .. raw:: html
- 
+
      <iframe width="560" height="315" src="https://players.brightcove.net/5850956868001/default_default/index.html?videoId=6262879977001" frameborder="0" allowfullscreen></iframe>
 
 Cluster Lockdown
@@ -68,9 +68,9 @@ A local account is great for when you’re in a jam and need access when other a
 
    .. note::
 
-      As you may have noticed in Prism Central, if you visit the Authentication Configuration menu, you have the option to connect to an Identity Provider (IdP), this further enhances access protocols by leveraging technologies like Single Sign On (SSO) and Multi-Factor Authentication (MFA). 
+      As you may have noticed in Prism Central, if you visit the Authentication Configuration menu, you have the option to connect to an Identity Provider (IdP), this further enhances access protocols by leveraging technologies like Single Sign On (SSO) and Multi-Factor Authentication (MFA).
 
-      Currently Prism Central only supports ADFS as part of the SAML protocol, but you can register your appropriate account metadata in the same Authentication Configuration menu used above. TODO: Pete: This is confusing.
+      Currently Prism Central only supports Active Directory Federation Services (ADFS) as part of the SAML protocol. But you can register your appropriate account metadata in the same Authentication Configuration menu used above.
 
 #. Once you are finished reviewing the *Authentication Configuration* section, click **Back**.
 
@@ -97,5 +97,5 @@ A local account is great for when you’re in a jam and need access when other a
 .. raw:: html
 
    .. note::
-      
+
       Throughout the rest of the bootcamp, you'll log in to Prism Central using this username.
