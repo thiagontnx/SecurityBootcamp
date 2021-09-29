@@ -10,7 +10,7 @@ After just two days (at most!) you’ve managed to secure the Nutanix platform b
 
 But if it is, you’re ready to start leveraging more tools to help in the monitoring and alerting of potentially malicious activity.
 
-Jerry, who oversees storage and data services, has told you that he has deployed Nutanix Files, which includes an analytics dashboard. He thinks you’d like to explore this, as it will store users saved games files and departamental shares of the company. He also mentioned it has an *anti-ransomware* component to it. He had your curiosity, but now he has your attention.
+Jerry, who oversees storage and data services, has told you that he has deployed Nutanix Files, which includes an analytics dashboard. He thinks you’d like to explore this, as it will store users saved games files and departmental shares of the company. He also mentioned it has an *anti-ransomware* component to it. He had your curiosity, but now he has your attention.
 
 We'll now move on to protecting the company's data, and making sure you have the means to recover and take action upon suspicious activities.
 

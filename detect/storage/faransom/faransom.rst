@@ -25,9 +25,7 @@ Enabling Ransomware Protection
 
       This is also a one-time setting. If you see that *Ransomware Protection* is enabled, you can review the options but no action is required.
 
-   Optionally, you can add an email address to receive notifications. [TODO: Pete: You explained that the notification is via e-mail, so is this really optional? How else would they be notified?]
-
-#. Click **Download (.csv)** to view which file extensions File Analytics will block by default.
+   #. Click **Download (.csv)** to view which file extensions File Analytics will block by default.
 
    .. figure:: images/csv.png
 

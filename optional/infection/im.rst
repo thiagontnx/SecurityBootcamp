@@ -6,7 +6,7 @@ Simulating An Attack
 
 .. raw:: html
 
-   <strong><font color="red">This lab is an intructor-led exercise, and should be planned in advance to integrate with Flow Security Policies to show traffic discovered before and after Enforcing the Flow Policies.</font></strong>
+   <strong><font color="red">This lab is an instructor-led exercise, and should be planned in advance to integrate with Flow Security Policies to show traffic discovered before and after Enforcing the Flow Policies.</font></strong>
 
 You’re impressed so far, but like the old Russian proverb states: Доверяй, но проверяй; Trust, but verify. How can you simulate an attack against Blips and Chitz, Inc.? You don’t have the necessary experience to conduct a penetration test yourself, so you go about trying to find a tool that can simulate an Advanced Persistent Threat (APT).
 

@@ -13,7 +13,7 @@ In a Nutanix deployment, there are several default passwords that we'll demonstr
 
    .. note:
 
-      Even though the Nutanix cluster you are using is dedicated to the Bootcamp, all of our automation is based on the current configured passwords. Changing those passwords will break our internal automation system. Instead, we are providing you with a video describing the process. We do have the process documented, if you need to perform the steps showed below, let your instructor know. [TODO: Pete: Recommend we add these steps within a note]
+      Even though the Nutanix cluster you are using is dedicated to the Bootcamp, all of our automation is based on the current configured passwords. Changing those passwords will break our internal automation system. Instead, we are providing you with a video describing the process.
 
 The first of which is Prism Element. Upon first log in, you are required to create a new, secure password for the local *Admin* account.
 
@@ -29,7 +29,7 @@ The CVM has two local accounts: *Nutanix* and *Admin*.
 
     <iframe width="560" height="315" src="https://players.brightcove.net/5850956868001/default_default/index.html?videoId=6262879852001" frameborder="0" allowfullscreen></iframe>
 
-The Intelligent Platform Management Interface (IPMI) is a way for remote administrators to ascertain the hardware state of the infrastructure Nutanix is running upon. In compliance with California statute SB-327, BMC [TODO: Pete: explain the statute? What is BMC?] 7.08 and later use a unique password.
+The Intelligent Platform Management Interface (IPMI) is a way for remote administrators to ascertain the hardware state of the infrastructure Nutanix is running upon. In compliance with California statute SB-327, these are set using a unique password.
 
    - Username: *admin*
    - Password = <NODE-SERIAL-NUMBER>
@@ -41,7 +41,7 @@ The Intelligent Platform Management Interface (IPMI) is a way for remote adminis
 Cluster Lockdown
 ================
 
-To further protect access to your cluster, introduce a layer of non-repudiation [TODO: Pete: Will people know what this means?] to your access method. With Cluster Lockdown, you can replace SSH password-based authentication with a public SSH key. Only the holder of the corresponding private key will be able to login.
+To further protect access to your cluster, introduce a layer of non-repudiation (assurance that the sender of information is provided with proof of delivery and the recipient is provided with proof of the sender’s identity, so neither can later deny having processed the information.) to your access method. With Cluster Lockdown, you can replace SSH password-based authentication with a public SSH key. Only the holder of the corresponding private key will be able to login.
 
 #. Open `https://<PRISM-CENTRAL-IP>/` in a new browser tab, and log in.
 

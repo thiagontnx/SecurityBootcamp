@@ -60,7 +60,11 @@ Background
 
 Blips and Chitz Inc. is a hugely popular entertainment arcade that supports gaming machines, a payment application, desktops for corporate staff, and a customer information database.
 
-All of the collected customer information and payment card details must be kept confidential due to strict regulatory guidelines including PCI DSS, CCPA, and GDPR. From a strategic perspective, properly protecting this data helps maintain the company's competitive advantages. TODO: Pete: Add a note with a blurb to explain each of these acronyms.
+From a strategic perspective, properly protecting this data helps maintain the company's competitive advantages. All of the collected customer information and payment card details must be kept confidential due to strict regulatory guidelines including:
+
+  - PCI DSS - The Payment Card Industry Data Security Standard (PCI DSS) is a set of security standards designed to ensure that ALL companies that accept, process, store or transmit credit card information maintain a secure environment.
+  - CCPA - The California Consumer Privacy Act is a state statute intended to enhance privacy rights and consumer protection for residents of California, United States.
+  - GDPR - The General Data Protection Regulation is a regulation in EU law on data protection and privacy in the European Union (EU) and the European Economic Area (EEA).
 
 Blips and Chitz Inc. have just purchased a Nutanix cluster, along with Files, File Analytics, Objects, and Flow to support production workloads.
 
@@ -70,11 +74,11 @@ You are the sole Security Engineer, and your responsibilities are both varied an
 
 In terms of your background, you have some familiarity with the Linux command line, but would likely need help with certain commands. You understand basic networking security principles, but you’re unfamiliar with new technologies like micro-segmentation. Lastly, you have zero experience with analytics platforms, and data archiving technologies like object based write-one ready-many (WORM) enabled data protection.
 
-Due to resource constraints, you forward all logs to a syslog server, then use a SIEM (Security Incident Event Management) which is used by an outsourced SOC (Security Operations Center) for altering. For audit purposes, you have to be able to show evidence of log collection for the platform and for the virtual infrastructure powering Blips and Chitz Inc. TODO: Pete: I don't understand the link between resource constraints statement and the use of log server. We need more clarity on what this flow is, what the significance of the outsourcing piece and what altering is. This is confusing.
+You forward all logs to a syslog server, then use a SIEM (Security Incident Event Management) which is used by an outsourced SOC (Security Operations Center) for altering. For audit purposes, you have to be able to show evidence of log collection for the platform and for the virtual infrastructure powering Blips and Chitz Inc.
 
 Your boss Roy has requested that the Nutanix cluster be ready to support production workloads by the end of the week. This tight timeline is driven in part because a new Qualified Security Assessor (QSA) will be visiting next week to begin to conduct the annual Blips and Chitz Inc. security audit for PCI DSS. While you immediately voiced your concerns that this time frame isn’t feasible, but Roy knows you’ll try your best to implement this new platform ahead of the audit.
 
-While you drank this morning's coffee, you read about a new variant of ransomware known as Krombopulous. It is gaining notoriety, and has recently been effective at disrupting the local hospital. This new malware variant is highly adaptable and pervasive, which is what prompted Blips and Chitz Inc. to additionally purchase Flow, Files, and Objects since those products further protect the company's sensitive data on this cluster. Rick [TODO: Pete: Who is Rick?] sent you a `Tech Brief <https://www.nutanix.com/viewer?type=pdf&path=/content/dam/nutanix/resources/solution-briefs/tb-ransomware.pdf>`_ which outlines the benefits to utilizing these products.
+While you drank this morning's coffee, you read about a new variant of ransomware known as Krombopulous. It is gaining notoriety, and has recently been effective at disrupting the local hospital. This new malware variant is highly adaptable and pervasive, which is what prompted Blips and Chitz Inc. to additionally purchase Flow, Files, and Objects since those products further protect the company's sensitive data on this cluster. Rick Sanchez, the Systems Architect, sent you a `Tech Brief <https://www.nutanix.com/viewer?type=pdf&path=/content/dam/nutanix/resources/solution-briefs/tb-ransomware.pdf>`_ which outlines the benefits to utilizing these products.
 
 Finally, Roy wants you to demonstrate to the board how these tools can be used to limit the exposure of ransomware within the Nutanix cluster, thus giving the board members peace of mind when considering expansion of the Nutanix environment. The board meeting is at the end of the week.
 
@@ -86,11 +90,7 @@ Welcome to the Nutanix Security Bootcamp!
 
 This bootcamp highlights the intrinsic security benefits of our core platform, and the data plane security enhancements available via microsegmentation, analytics, and any automation that can be leveraged (where possible) to prevent, detect, and recover from malware attacks such as ransomware.
 
-The training should resonate with both Security Engineers and Systems Engineers with a narrative that is easy to understand, relevant, and aligned to real-world tasks and events.
-
-In order to make this training consumable and not overly long/ laborious the process could be episodic/bite-sized consumable segment with information dumps which participants can take away and use immediately in their own environments. TODO: Pete: Are these previous two paragraphs this meant to be in here? Sounds like instructions to SEs, but everyone can see this.
-
-What's New (Last updated 9-13-21)
+What's New (Last updated 9-28-21)
 =================================
 
 Labs are updated for the following software versions:
@@ -110,17 +110,14 @@ Security Labs
 
 - Prevent: Platform security: STIGs, SCMA, Auth, syslog
 - Detect - Networking: Data security: Flow, uSeg, NetSec
-- Detect - Data Services: Monitoring - Files, File Analytics, Objects, FSC [TODO: Pete: Isn't FSC an optional lab?], Testing
+- Detect - Data Services: Monitoring - Files, File Analytics, Objects, Testing
 - Recover - Snapshots, Quarantine
-
-TODO: Add more context to what happens in each of the above sections.
 
 Optional Labs
 =============
 
 - Flow Security Central
 - Leap
-- Mine
 
 Introductions
 =============

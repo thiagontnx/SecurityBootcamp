@@ -11,7 +11,7 @@ Now that we’ve defined some categories, and assigned them to the respective VM
 
 Flow is an application-centric network security product, which is tightly integrated into Nutanix AHV and Prism Central. Flow provides rich network traffic visualization, automation, and security for VMs running on AHV.
 
-Microsegmentation is a component of Flow that uses simple policy-based management to secure VM networking. Using Prism Central categories, you can create a powerful distributed firewall. Combining this with Calm [TODO: Pete: Do they know what Calm is?] allows automated deployment of applications that are secured as they are created.
+Microsegmentation is a component of Flow that uses simple policy-based management to secure VM networking. Using Prism Central categories, you can create a powerful distributed firewall.
 
 #. Within **Prism Central**, select :fa:`bars` **> Network & Security > Security Policies**.
 

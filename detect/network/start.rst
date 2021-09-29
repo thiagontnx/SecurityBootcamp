@@ -6,11 +6,7 @@ Securing the Virtual Infrastructure
 
 Your first hands-on experience with Nutanix was productive. You were impressed that it was all accomplished in less than a day. The automation helped alleviate much of the "grunt work" you used to complete on a quarterly basis, if not more often.
 
-Now that you’re happy with the progress you've made securing the platform plane, the work begins to secure the data plane. [TODO: Pete: Will everyone understand the platform and data plane concepts?]
-
 As you sit down at your desk, sipping your coffee, you log into the Nutanix console to notice that VMs are already starting to be created. Your peers don’t waste any time, do they?
-
-   .. figure:: images/cafe.png
 
 This gives you pause. This cloud-like consumption method, while great for end-users, could quite easily get out of hand if the VMs they create aren’t appropriately (and automatically!) protected. You recall a session that Rick gave on Flow micro-segmentation. It began by assigning categories to VMs, so they could later be acted upon as a logical group, such as being protected with policies for security and backup.
 
@@ -29,7 +25,3 @@ Nutanix Flow has already been enabled for this environment, however we've includ
 #. Select the **Enable Microsegmentation** check box, and then click **Save**.
 
    .. figure:: images/enableflow.gif [TODO: Pete: Recreate this as there's a weird grid effect going on, it can be sped up plus zoomed in on to better show what's happening.]
-
-   .. glossary::
-         “Compared to competitive products, this is the easiest microsegmentation product I've ever seen.”
-         Roy, CSO for Blips and Chitz

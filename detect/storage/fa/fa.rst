@@ -23,7 +23,7 @@ Defining Anomalies
 
    .. figure:: images/fa02.png
 
-   While everything looks normal right now, those widgets are essential to detect unusual or anomalous behavior – such as repeated failed authentications, an increase in network traffic, or a large volume of file updates and touchpoints.
+   While everything looks normal right now, those widgets are essential to detect unusual or anomalous behavior – such as repeated failed authentications, an increase in network traffic, or a large volume of file updates and touch-points.
 
    Let’s create an *Anomaly Rule* to detect suspicious activity based on action.
 
