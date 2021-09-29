@@ -10,7 +10,7 @@ What is a STIG?
 
 The description of a STIG is publicly available on the Defense Information Systems Agency, Information Assurance Support Environment web site:
 
-“The Security Technical Implementation Guides (STIGs) are the configuration standards for DOD IA and IA-enabled devices/systems. Since 1998, DISA has played a critical role enhancing the security posture of DoD’s security systems by providing the Security Technical Implementation Guides (STIGs). The STIGs contain technical guidance to “lock down” information systems/software that might otherwise be vulnerable to a malicious computer attack.”
+“The Security Technical Implementation Guides (STIGs) are the configuration standards for DOD IA and IA-enabled devices/systems. Since 1998, Defense Information Systems Agency (DISA) has played a critical role enhancing the security posture of DoD’s security systems by providing the Security Technical Implementation Guides (STIGs). The STIGs contain technical guidance to “lock down” information systems/software that might otherwise be vulnerable to a malicious computer attack.”
 
 
 STIG Reports on Nutanix Nodes
@@ -51,7 +51,7 @@ The steps to run the STIG report are as follows:
       drwxr-x---. 2 root root   4096 Dec 13 23:17 sretools
       -rw-r-----. 1 root root    840 May  3  2018 sshdlocal.pp
    
-   There are three files that end in **_stig.sh**, with its name corresponding to the output format it will display.
+   There are three files that end in `_stig.sh` with its name corresponding to the output format it will display.
 
 #. In this example, we’ll run the generic text output:
 
@@ -121,7 +121,7 @@ This will report the results of all elements that make up the Nutanix STIG, and 
 
 .. To make a system truly scalable, it must address security misconfigurations automatically, whether you’re managing four nodes or four hundred.
 
-.. With Nutanix, Security Configuration Management is automated with SCMA. SCMA is a saltstack daemon that runs as a scheduled cron job. If the daemon spots an inconsistency, it both corrects and logs the event. The CVM self-heals deviations to the secure state. This state is established according to industry best practices, along with inforation we've gathered over the years from our customers.
+.. With Nutanix, Security Configuration Management is automated with SCMA. SCMA is a saltstack daemon that runs as a scheduled cron job. If the daemon spots an inconsistency, it both corrects and logs the event. The CVM self-heals deviations to the secure state. This state is established according to industry best practices, along with information we've gathered over the years from our customers.
 
 .. **It’s not necessary to complete the following section but read through it and see the effectiveness of self-healing technology.** [TODO: Pete: If this is just a demonstration, it shouldn't be called a lab. And if we want folks to run through this, it needs more explanation and screen shots. I stopped here and didn't review the section until it gets updated.]
 

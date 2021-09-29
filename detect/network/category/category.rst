@@ -6,12 +6,10 @@ Categorization
 
 You observe that VMs are already being created to support one of the most popular gaming apps, King Drog FaceRace. This workload is supported centrally by the Nutanix cluster, and delivered via the gaming machines on the game floor by the following VMs:
 
-.. raw:: html
+   -  **User**\ *##*-FaceRace-Web
+   -  **User**\ *##*-FaceRace-DB
 
--  **User**\ *##*-FaceRace-Web
--  **User**\ *##*-FaceRace-DB
-
-.. figure:: images/9.png
+   .. figure:: images/9.png
 
 Customers swipe their payment cards for access to game credits, and log in to track high scores. These machines collect cardholder data (CHD) such as the primary account number (PAN) and other personally identifiable information (PII). These VMs need to be isolated from the rest of the network in order to meet PCI DSS guidelines for segmentation of the cardholder data environment (CDE). The payment and user information must be protected from unauthorized access.
 
@@ -62,7 +60,7 @@ In this exercise, you’ll assign your custom categories to the VMs supporting K
 
    .. note::
 
-      By selecting more than one VM, we’re simultaneouly defining categories values that will be common to them: the AppType category value that we defined earlier.
+      By selecting more than one VM, we’re simultaneously defining categories values that will be common to them: the AppType category value that we defined earlier.
 
  #. In the search bar, enter **AppType:##**, click :fa:`fa-plus-circle`, and then click **Save**.
 

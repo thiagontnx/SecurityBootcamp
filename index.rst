@@ -51,8 +51,7 @@
    :hidden:
 
    optional/infection/im
-   optional/leap/leap
-  ..  optional/mine/mine
+  ..  optional/leap/leap
 
 ##########
 Background

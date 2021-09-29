@@ -80,7 +80,7 @@ Run Infection Monkey
 
    Infection Monkey will require approximately 10 minutes to discover machines on the network.
 
-#. Select **Infection Map**. This provides a visual map of the discovered machines, expoloits, etc. You can also view the *Security Reports* while it is running, but I suggest waiting until the scan has completed. This will provide more complete information on the findings.
+#. Select **Infection Map**. This provides a visual map of the discovered machines, exploits, etc. You can also view the *Security Reports* while it is running, but I suggest waiting until the scan has completed. This will provide more complete information on the findings.
 
    .. figure:: images/image022.png
 

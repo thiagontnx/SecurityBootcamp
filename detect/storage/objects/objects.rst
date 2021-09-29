@@ -43,7 +43,7 @@ You realize your colleagues didn’t enable *WORM* and *Expiration* settings, so
 
 #. Click **Next**.
 
-#. Click **Expiration**, and within the *Expire* section, set **Curent Version 3 years** after last creation date.
+#. Click **Expiration**, and within the *Expire* section, set **Current Version 3 years** after last creation date.
 
    .. figure:: images/exp.png
 
