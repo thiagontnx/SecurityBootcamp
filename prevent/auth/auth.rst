@@ -17,7 +17,7 @@ In a Nutanix deployment, there are several default passwords that we'll demonstr
 
 The first of which is Prism Element. Upon first log in, you are required to create a new, secure password for the local *Admin* account.
 
-AHV is protected with a local account, with credentials hashed and salted for further protection from potential brute force or dictionary attacks.
+AHV is protected with a local account, with credentials `hashed <https://en.wikipedia.org/wiki/Cryptographic_hash_function>`_` and `salted <https://en.wikipedia.org/wiki/Salt_(cryptography)>`_ for further protection from potential `brute force <https://en.wikipedia.org/wiki/Brute-force_attack>`_ or `dictionary attacks <https://en.wikipedia.org/wiki/Dictionary_attack>`_.
 
    .. raw:: html
 
@@ -41,7 +41,7 @@ The Intelligent Platform Management Interface (IPMI) is a way for remote adminis
 Cluster Lockdown
 ================
 
-To further protect access to your cluster, introduce a layer of non-repudiation (assurance that the sender of information is provided with proof of delivery and the recipient is provided with proof of the sender’s identity, so neither can later deny having processed the information.) to your access method. With Cluster Lockdown, you can replace SSH password-based authentication with a public SSH key. Only the holder of the corresponding private key will be able to login.
+To further protect access to your cluster, you'll introduce a layer of `non-repudiation <https://en.wikipedia.org/wiki/Non-repudiation>`_ to your access method. With *Cluster Lockdown*, you can replace SSH password-based authentication with a public SSH key. Only the holder of the corresponding private key will be able to login.
 
 #. Open `https://<PRISM-CENTRAL-IP>/` in a new browser tab, and log in.
 
@@ -56,29 +56,27 @@ To further protect access to your cluster, introduce a layer of non-repudiation 
 Directory Services and Identity Providers
 =========================================
 
-A local account is great for when you’re in a jam and need access when other authentication measures have failed, hence why this Local Admin user account should be protected via SSH keys rather than a password. For regular day-to-day access by team members and end-users, a more secure way to provide member access to Prism is with the use of Directory Services. No passwords or hashes are stored on the cluster for directory services users and authentication is passed through to the directory.
+The local Admin user account should be protected via SSH keys rather than a password. For regular day-to-day access by team members and end-users, a more secure way to provide member access to Prism is with the use of *Directory Services*. No passwords or hashes are stored on the cluster for directory services users, and authentication is passed through to the directory.
 
    .. note::
 
-      We have already provided an Active Directory server (AutoAD) as part of the Bootcamp, but feel free to understand what information you need to add you own AD.
+      We have already provided an Active Directory server (AutoAD) as part of the Bootcamp, but have provided the below steps so thata you understand what's required to use your own Active Directory (AD) environment.
 
 #. Within Prism Central, select :fa:`bars` **> Prism Central Settings > Users and Roles > Authentication**, and then click **+ New Directory**.
-
-   .. figure:: images/dirlist.png
 
    .. note::
 
       As you may have noticed in Prism Central, if you visit the Authentication Configuration menu, you have the option to connect to an Identity Provider (IdP), this further enhances access protocols by leveraging technologies like Single Sign On (SSO) and Multi-Factor Authentication (MFA).
 
-      Currently Prism Central only supports Active Directory Federation Services (ADFS) as part of the SAML protocol. But you can register your appropriate account metadata in the same Authentication Configuration menu used above.
+      Currently Prism Central only supports Active Directory Federation Services (ADFS) as part of the SAML protocol. But you can register your appropriate account metadata in the same *Authentication Configuration* menu used above.
 
 #. Once you are finished reviewing the *Authentication Configuration* section, click **Back**.
 
    To complete Active Directory configuration, you must map AD users to Prism Central roles.
 
-#. Under **Users and Roles**, select **Role Mapping**, and then click **+ New Mapping**.
+#. Under *Users and Roles*, select **Role Mapping**, and then click **+ New Mapping**.
 
-#. Specify **adminuser##** within *Values*. Select **Cluster Admin** from the *Role* drop-down, and then click **Save**.
+#. Specify **adminuser##** within the *Values* field, select **Cluster Admin** from the *ROLE* drop-down, and then click **Save**.
 
    .. figure:: images/rolemapping.png
 
@@ -90,12 +88,10 @@ A local account is great for when you’re in a jam and need access when other a
 
    .. figure:: images/signout.png
 
-#. Log into Prism Central as the AD user mapped in the previous step (ex. adminuser05@ntnxlab.local).
+#. Log into Prism Central as *adminuser##*. (ex. adminuser01@ntnxlab.local).
 
    .. figure:: images/login.png
 
-.. raw:: html
-
    .. note::
 
-      Throughout the rest of the bootcamp, you'll log in to Prism Central using this username.
+      Throughout the rest of the bootcamp, you'll continue to use *adminuser##* for Prism Central.

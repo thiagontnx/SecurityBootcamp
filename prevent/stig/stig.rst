@@ -4,13 +4,13 @@
 Security Technical Implementation Guides (STIGs)
 ################################################
 
-Security is in the DNA of the Nutanix platform. As a result, a significant proportion of our business is from sectors of industry that care deeply about security, including federal, local, and state governments, financial services, healthcare, retail, and beyond. Security is automatically part of every configuration and deployment, and is enabled by default, and is continuously monitored for compliance against the security baselines and Security Technical Implementation Guides. Unlike some vendors in the HCI space Nutanix doesn’t just have a single STIG, we apply multiple STIGs automatically, and continuously verify against them.
+Security is in the DNA of the Nutanix platform. As a result, a significant proportion of our business is from sectors of industry that care deeply about security, including federal, local, and state governments, financial services, healthcare, retail, and beyond. Security is automatically part of every configuration and deployment, enabled by default, and continuously monitored for compliance against the security baselines and Security Technical Implementation Guides.  Nutanix doesn’t just have a single STIG, we apply multiple STIGs automatically, and continuously verify against them.
 
 What is a STIG?
 
 The description of a STIG is publicly available on the Defense Information Systems Agency, Information Assurance Support Environment web site:
 
-“The Security Technical Implementation Guides (STIGs) are the configuration standards for DOD IA and IA-enabled devices/systems. Since 1998, Defense Information Systems Agency (DISA) has played a critical role enhancing the security posture of DoD’s security systems by providing the Security Technical Implementation Guides (STIGs). The STIGs contain technical guidance to “lock down” information systems/software that might otherwise be vulnerable to a malicious computer attack.”
+“The Security Technical Implementation Guides (STIGs) are the configuration standards for DOD IA and IA-enabled devices/systems. Since 1998, Defense Information Systems Agency (DISA) has played a critical role enhancing the security posture of DoD’s security systems by providing the Security Technical Implementation Guides (STIGs). The STIGs contain technical guidance to lock down information systems and software that might otherwise be vulnerable to a malicious computer attack.”
 
 
 STIG Reports on Nutanix Nodes
@@ -29,7 +29,7 @@ The steps to run the STIG report are as follows:
 
    ``cd /``
 
-#. List the files available to the root user within the /root directory:
+#. List the files available to the root user within the `/root` directory:
 
    ``sudo -u root ls -l /root``
 
@@ -75,7 +75,21 @@ The steps to run the STIG report are as follows:
 
    ``sudo -u root chown nutanix:nutanix /home/nutanix/STIG-report-**-**-****-**-**-**``
 
-#. Access your *USER##*\-WinTools VM to use a secure copy tool (SCP, WINSCP, PSCP, etc) to copy the report results file to your workstation from the CVM. Be sure to login to the CVM using the nutanix username and password provided by the instructor to browse to its home directory to find the file we created above. [TODO: Pete: This needs more explanation and screen shot(s)]
+#. Log into your your *USER##*\-WinTools VM using the following credentials:
+
+      - **User Name** - administrator
+      - **Password**  - nutanix/4u
+      
+#. Open **WinSCP** from within the *Tools* folder on the desktop.
+
+#.  to copy the report results file to your workstation from the CVM. 
+
+using the following credentials:
+
+      - **User Name** - administrator
+      - **Password**  - nutanix/4u
+
+Be sure to login to the CVM using the nutanix username and password provided by the instructor to browse to its home directory to find the file we created above.
 
    .. figure:: images/winscp.png
 
