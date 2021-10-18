@@ -8,10 +8,8 @@ If you have any questions or issues with:
 
  - The cluster (ex. RX, password not working, Foundation failed, cluster in a degraded state, etc.): `#rx-and-hpoc <https://nutanix.slack.com/archives/C0JSE04TA>`_.
 
- - The Bootcamp's lab content (ex. instructions incorrect or unclear, typos, feedback, etc.) or staging (ex. images or blueprints missing): `#technology-bootcamps <slack://channel?id=C0RAC0CHX&team=T0252CLM8>`_. Feedback and suggestions can also be submitted to mailto:bootcamps@nutanix.com.
+ - The Bootcamp's lab content (ex. instructions incorrect or unclear, typos, feedback, etc.) or staging (ex. images or blueprints missing): `#technology-bootcamps <slack://channel?id=C0RAC0CHX&team=T0252CLM8>`_. Feedback and suggestions can also be submitted to bootcamps@nutanix.com.
 
-   TEST 1: `<mailto:bootcamps@nutanix.com>`_
-
-   TEST 2: `mailto:bootcamps@nutanix.com`_
+   TEST - `bootcamps@nutanix.com`_
 
  - Frame, Parallels VDI, or Pulse VPN access: `#x-labs <slack://channel?id=CF6GRQ4TU&team=T0252CLM8>`_.

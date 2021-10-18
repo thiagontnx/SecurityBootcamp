@@ -105,7 +105,7 @@ What's New (Last updated 10-22-21)
 
 Labs are updated for the following software versions:
 
-- AOS: 5.20.1.1 LTS
+- AOS: 5.20.2 LTS
 - PC : pc.2021.9
 
 Agenda
@@ -126,7 +126,6 @@ Optional Labs
 =============
 
 - Flow Security Central
-- Leap
 
 Introductions
 =============
@@ -138,127 +137,4 @@ Initial Setup
 =============
 
 - Take note of the passwords being used.
-- Log into your virtual desktops (connection info below).
-
-Environment Details
-===================
-
-Nutanix Bootcamps are intended to be run within the Nutanix Hosted POC environment. Your cluster will be provisioned with all necessary images, networks, and VMs required to complete the exercises.
-
-Credentials
------------
-
-.. note::
-
-  The *<CLUSTER-PASSWORD>* is unique to each cluster and will be provided by the leader of the Bootcamp.
-
-.. list-table::
-   :widths: 25 35 40
-   :header-rows: 1
-
-   * - Credential
-     - Username
-     - Password
-   * - Prism Element
-     - admin
-     - *<CLUSTER-PASSWORD>*
-   * - Prism Central
-     - admin
-     - *<CLUSTER-PASSWORD>*
-   * - Controller VM
-     - nutanix
-     - *<CLUSTER-PASSWORD>*
-   * - Prism Central VM
-     - nutanix
-     - *<CLUSTER-PASSWORD>*
-
-Each cluster has a dedicated domain controller VM (*AutoAD*), responsible for providing AD services for the *NTNXLAB.LOCAL* domain. The domain is populated with the following Users and Groups:
-
-.. list-table::
-   :widths: 25 35 40
-   :header-rows: 1
-
-   * - Group
-     - Username(s)
-     - Password
-   * - Administrators
-     - Administrator
-     - nutanix/4u
-   * - SSP Admins
-     - adminuser01-adminuser25
-     - nutanix/4u
-   * - SSP Developers
-     - devuser01-devuser25
-     - nutanix/4u
-   * - SSP Consumers
-     - consumer01-consumer25
-     - nutanix/4u
-   * - SSP Operators
-     - operator01-operator25
-     - nutanix/4u
-   * - SSP Custom
-     - custom01-custom25
-     - nutanix/4u
-   * - Bootcamp Users
-     - user01-user25
-     - nutanix/4u
-
-Access Instructions
--------------------
-
-The Nutanix Hosted POC environment can be accessed a number of different ways:
-
-Lab Access User Credentials
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-PHX Based Clusters:
-**Username:** PHX-POCxxx-User01 (up to PHX-POCxxx-User20), **Password:** *<PROVIDED-BY-INSTRUCTOR>*
-
-RTP Based Clusters:
-**Username:** RTP-POCxxx-User01 (up to RTP-POCxxx-User20), **Password:** *<PROVIDED-BY-INSTRUCTOR>*
-
-Frame VDI
-^^^^^^^^^
-
-Login to: https://frame.nutanix.com/x/labs
-
-**Nutanix Employees** - Use your **NUTANIXDC** credentials
-**Non-Employees** - Use **Lab Access User** credentials
-
-Parallels VDI
-^^^^^^^^^^^^^
-
-PHX Based Clusters Login to: https://xld-uswest1.nutanix.com
-
-RTP Based Clusters Login to: https://xld-useast1.nutanix.com
-
-**Nutanix Employees** - Use your **NUTANIXDC** credentials
-**Non-Employees** - Use **Lab Access User** credentials
-
-Employee Pulse Secure VPN
-^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Download the client:
-
-PHX Based Clusters Login to: https://xld-uswest1.nutanix.com
-
-RTP Based Clusters Login to: https://xld-useast1.nutanix.com
-
-**Nutanix Employees** - Use your **NUTANIXDC** credentials
-**Non-Employees** - Use **Lab Access User** credentials
-
-Install the client.
-
-In Pulse Secure Client, **Add** a connection:
-
-For PHX:
-
-- **Type** - Policy Secure (UAC) or Connection Server
-- **Name** - X-Labs - PHX
-- **Server URL** - xlv-uswest1.nutanix.com
-
-For RTP:
-
-- **Type** - Policy Secure (UAC) or Connection Server
-- **Name** - X-Labs - RTP
-- **Server URL** - xlv-useast1.nutanix.com
+- Log into your virtual desktops.
