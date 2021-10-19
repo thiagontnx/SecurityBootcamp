@@ -14,18 +14,25 @@ Security is in the DNA of the Nutanix platform. As a result, a significant porti
 
       The Security Technical Implementation Guides (STIGs) are the configuration standards for DOD IA and IA-enabled devices/systems. Since 1998, Defense Information Systems Agency (DISA) has played a critical role enhancing the security posture of DoD’s security systems by providing the Security Technical Implementation Guides (STIGs). The STIGs contain technical guidance to lock down information systems and software that might otherwise be vulnerable to a malicious computer attack.
 
+.. _stig_reports:
 
 STIG Reports on Nutanix Nodes
 =============================
 
 You can run a STIG report, which will check on all the individual STIG controls, and verify which are compliant with your system, and which are not.
 
-The steps to run the STIG report are as follows:
+#. Within **Prism Central**, select :fa:`bars` **> Compute * Storage > VMs**.
+
+#. If there are any filters listed in the search bar in the top left-hand corner, click the :fa:`times` to clear them.
+
+#. Observe the IP address of any CVM, which will be named as *NTNX-<DATACENTER>-<CLUSTER>-#-CVM* as shown below.
+
+   .. figure:: images/cvmipaddress.png
 
 #. SSH into any CVM via Terminal, PuTTy, or similar using the following credentials:
 
-      - **User Name** - nutanix
-      - **Password**  - nutanix/4u
+      - **User Name** - `nutanix`
+      - **Password**  - `nutanix/4u`
 
 #. Change to the root directory of the CVM:
 
@@ -35,11 +42,11 @@ The steps to run the STIG report are as follows:
 
    ``sudo -u root ls -l /root``
 
-   Executable files contain *x* in the permission string. You should see a similar output:
+   Executable files contain *x* in the permission string, as shown in this sample output:
    
    .. figure:: images/sudoroot.png
 
-   There are three files that end in `_stig.sh` with its name corresponding to the output format it will display.
+   There are three files that end in `_stig.sh`, where its name corresponding to the output format it will display.
 
 #. In this example, we’ll run the generic text output:
 
@@ -63,23 +70,28 @@ The steps to run the STIG report are as follows:
 
    ``sudo -u root chown nutanix:nutanix /home/nutanix/STIG-report-**-**-****-**-**-**``
 
-#. Log into your your *USER##*\-WinTools VM using the following credentials:
+#. Log in to your *USER##*\-WinTools VM using the following credentials:
 
-      - **User Name** - administrator
-      - **Password**  - nutanix/4u
+      - **User Name** - `administrator`
+      - **Password**  - `nutanix/4u`
       
 #. Open **WinSCP** from within the *Tools* folder on the desktop.
 
-#.  to copy the report results file to your workstation from the CVM. 
+#. Fill out the following fields, click **Save**, and then click **Login**.
 
-using the following credentials:
+      - **Host name** - <CVM-IP-ADDRESS>
+      - **User name**  - `nutanix`
+      - **Password**  - <CVM-PASSWORD>
 
-      - **User Name** - administrator
-      - **Password**  - nutanix/4u
+   .. figure:: images/winscp1.png
 
-Be sure to login to the CVM using the nutanix username and password provided by the instructor to browse to its home directory to find the file we created above.
+#. Within *WinSCP*, select **Desktop** from the top left-hand corner drop-down.
 
-   .. figure:: images/winscp.png
+#. Select the `STIG-report-**-**-****-**-**-**` file, click **Download**, and then click **OK**.
+
+   .. figure:: images/winscp2.png
+
+#. Close *WinSCP* and the *Tools* folder window.
 
 Analyzing the STIG Report
 =========================
@@ -87,6 +99,8 @@ Analyzing the STIG Report
 You now have the STIG report, and can use it to evaluate the current compliance state of the system, or for validation and accreditation requirements for security compliance.
 
 This will report the results of all elements that make up the Nutanix STIG, and the report will show the compliance result for each of the checks contained within the STIG.
+
+#. Right-click on the `STIG-report-**-**-****-**-**-**` file on your *USER##*\-WinTools VM desktop, and choose **Open with Sublime Text**.
 
 **Report Format**
 
@@ -118,84 +132,68 @@ This will report the results of all elements that make up the Nutanix STIG, and 
    yes
    Completed.
 
-.. Rick’s SCMA (Saltstack) Self-Healing Lab
-.. ========================================
+Security Configuration Management Automation (SCMA) Self-Healing Lab
+===========================================================================
 
-.. To make a system truly scalable, it must address security misconfigurations automatically, whether you’re managing four nodes or four hundred.
+To make a system truly scalable, it must address security misconfigurations automatically, whether you’re managing four nodes or four hundred.
 
-.. With Nutanix, Security Configuration Management is automated with SCMA. SCMA is a saltstack daemon that runs as a scheduled cron job. If the daemon spots an inconsistency, it both corrects and logs the event. The CVM self-heals deviations to the secure state. This state is established according to industry best practices, along with information we've gathered over the years from our customers.
+With Nutanix, Security Configuration Management is automated with SCMA. SCMA is a `saltstack <https://en.wikipedia.org/wiki/Salt_(software)>`_ `daemon <https://en.wikipedia.org/wiki/Daemon_(computing)>`_ that runs as a scheduled `cron <https://en.wikipedia.org/wiki/Cron>`_ job. If the daemon spots an inconsistency, it both corrects and logs the event. The CVM self-heals deviations to the secure state. This state is established according to industry best practices, along with information we've gathered over the years from our customers.
 
-.. **It’s not necessary to complete the following section but read through it and see the effectiveness of self-healing technology.** [TODO: Pete: If this is just a demonstration, it shouldn't be called a lab. And if we want folks to run through this, it needs more explanation and screen shots. I stopped here and didn't review the section until it gets updated.]
+Testing Automation
+------------------
 
-.. **Testing Automation:**
+From the report you generated in :ref:`STIG Reports on Nutanix Nodes`, download it or access it from the console in order to get the state of the check *All world-writable directories must be group-owned by root, sys, bin, or an application group*. The result of the check should be *yes*.
 
-.. From the report you generated in `STIG Reports on Nutanix Nodes`_, download it or access it from the console in order to get the state of the following check:
-.. All world-writable directories must be group-owned by root, sys, bin, or an application group. The result of the check should be yes.
+#. Return to your SSH session.
 
-.. Let us test if self-healing from security violations works with SCMA: 
-.. #. Connect to any Controller VM (CVM) as the nutanix user via SSH (Using Terminal, PuTTy, or similar program)
-.. #. Change to the root directory of the CVM
+#. We will now test to confirm the system is self-healing from security violations via SCMA. The result of the check should be *yes*, as shown below.
 
-.. ``cd /``
+   ``sudo -u root grep -A 4 -B 1 "All world-writable directories " /home/log/STIG-report-**-**-****-**-**-**``
 
-.. You can search for this specific report from the CVM console where the report was run and using the following command, substituting the actual file name for the asterisks:
+   .. figure:: images/scma1.png
 
-.. ``sudo -u root grep -A 4 -B 1 "All world-writable directories " /home/log/STIG-report-**-**-****-**-**-**``
+Now we'll compromise the system, so that the result of this check is *no*, and then manually fix the issue.
 
-.. It should say **yes** by default.
+#. Verify the current ownership.
 
-.. Let’s compromise the system so that this check says **“no”** and then manually fix the issue.
+   ``sudo -u root ls -l / | grep tmp``
 
-.. #. Verify the current ownership, type:
+   .. figure:: images/scma2.png
 
-.. ``sudo -u root ls -l / | grep tmp``
+#. Change the group ownership.
 
-.. You should see a similar output:
+   ``sudo -u root chown root:nutanix /tmp``
 
-..    ::
+#. Verify the ownership change:
 
-..       drwxrwxrwt.  14 root root  1024 Dec 21 02:59 tmp
+``sudo -u root ls -l / | grep  tmp``
 
-.. #. Change the group ownership by running:
+   .. figure:: images/scma3.png
 
+#. Re-run the report to see if this change has been detected. 
 
-.. ``sudo -u root chown root:nutanix /tmp``
+   ``sudo -u root ./root/report_stig.sh``
 
-.. #. Verify the ownership change:
+   ``sudo -u root grep -A 4 -B 1 "All world-writable directories " /home/log/STIG-report-**-**-****-**-**-**``
 
-.. ``sudo -u root ls -l / | grep  tmp``
+   The result of the check is *no*, indicating a finding.
 
-.. You should see a similar output:
+   .. figure:: images/scma4.png
 
-..    ::
+#. Run the *salt-call* command to fix this vulnerability.
 
-..       drwxrwxrwt.  14 root **nutanix**  1024 Dec 21 03:16 tmp
+   ``sudo -u root salt-call state.sls security/CVM/fdpermsownerCVM``
 
-.. After we have achieved this, let’s re-run the report to see if this change has been detected.
+#. List the directory again, and note that the "compromise" has been reverted.
 
-.. #. Run the following commands:
+   ``sudo -u root ls -l / | grep tmp``
 
-.. ``sudo -u root ./root/report_stig.sh``
-
-.. ``sudo -u root grep -A 4 -B 1 "All world-writable directories " /home/log/STIG-report-**-**-****-**-**-**``
-
-.. You should see a “no” this time, indicating a finding. 
-.. #. So now you can manually run the salt call to fix this vulnerability:
-
-.. ``sudo -u root salt-call state.sls security/CVM/fdpermsownerCVM``
-
-.. #. List the / directory again and note that the ‘compromise’ has been reverted back.
-
-.. ``sudo -u root ls -l / | grep tmp``
-
-..    ::
-
-..       drwxrwxrwt.  14 root root  1024 Dec 21 03:42 tmp
+   .. figure:: images/scma5.png
  
-..    .. note::
-..       In this example we manually ran the salt call, which is set to run against all checks daily by default. You can adjust the cadence of this check to run hourly if desired. 
+   In this example, we manually ran the *salt-call* command. It is set to automatically run all checks on a daily basis by default. You can adjust the cadence of this check to run hourly, if so desired.
 
+#. Close your SSH session.
 
-..    - Takeaways
-..       - Nutanix uses STIGs to verify compliance.
-..       - Nutanix uses daily checks to self-remediate issues
+Takeaways
+   - Nutanix uses STIGs to verify compliance.
+   - Nutanix uses daily checks to self-remediate issues.

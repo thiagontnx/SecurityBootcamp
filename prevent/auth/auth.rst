@@ -94,7 +94,7 @@ The local *admin* user account should be protected via SSH keys, rather than a p
 
    .. figure:: images/signout.png
 
-#. Log into Prism Central as *adminuser##*. (ex. `adminuser01@ntnxlab.local`).
+#. Log in to Prism Central as *adminuser##*. (ex. `adminuser01@ntnxlab.local`).
 
    .. figure:: images/login.png
 

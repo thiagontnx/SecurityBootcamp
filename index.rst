@@ -139,4 +139,4 @@ Initial Setup
 =============
 
 - Take note of the passwords being used.
-- Log into your virtual desktops.
+- Log in to your virtual desktops.
