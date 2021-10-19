@@ -4,13 +4,15 @@
 Security Technical Implementation Guides (STIGs)
 ################################################
 
-Security is in the DNA of the Nutanix platform. As a result, a significant proportion of our business is from sectors of industry that care deeply about security, including federal, local, and state governments, financial services, healthcare, retail, and beyond. Security is automatically part of every configuration and deployment, enabled by default, and continuously monitored for compliance against the security baselines and Security Technical Implementation Guides.  Nutanix doesn’t just have a single STIG, we apply multiple STIGs automatically, and continuously verify against them.
+Security is in the DNA of the Nutanix platform. As a result, a significant portion of our business is from sectors of industry that care deeply about security, including federal, local, and state governments, financial services, healthcare, retail, and beyond. Security is automatically part of every configuration and deployment, enabled by default, and continuously monitored for compliance against the security baselines.  Nutanix doesn’t just have a single STIG, we apply multiple STIGs automatically, and continuously verify against them.
 
-What is a STIG?
+   ..note ::
+      
+      What is a STIG?
 
-The description of a STIG is publicly available on the Defense Information Systems Agency, Information Assurance Support Environment web site:
+      The description of a STIG is publicly available on the Defense Information Systems Agency, Information Assurance Support Environment web site:
 
-“The Security Technical Implementation Guides (STIGs) are the configuration standards for DOD IA and IA-enabled devices/systems. Since 1998, Defense Information Systems Agency (DISA) has played a critical role enhancing the security posture of DoD’s security systems by providing the Security Technical Implementation Guides (STIGs). The STIGs contain technical guidance to lock down information systems and software that might otherwise be vulnerable to a malicious computer attack.”
+      The Security Technical Implementation Guides (STIGs) are the configuration standards for DOD IA and IA-enabled devices/systems. Since 1998, Defense Information Systems Agency (DISA) has played a critical role enhancing the security posture of DoD’s security systems by providing the Security Technical Implementation Guides (STIGs). The STIGs contain technical guidance to lock down information systems and software that might otherwise be vulnerable to a malicious computer attack.
 
 
 STIG Reports on Nutanix Nodes
@@ -35,22 +37,8 @@ The steps to run the STIG report are as follows:
 
    Executable files contain *x* in the permission string. You should see a similar output:
    
-   .. code-block:: bash
+   .. figure:: images/sudoroot.png
 
-      nutanix@NTNX-14SX35100046-A-CVM:10.21.71.29:~# sudo -u root ls -l /root
-      total 248
-      -rw-------. 1 root root   3314 Sep 11  2017 anaconda-ks.cfg
-      drwxr-x---. 2 root root   4096 Dec 13 23:04 filesystems
-      -rw-r-----. 1 root root   1132 May  3  2018 homeaudit.pp
-      -rw-r-----. 1 root root   1231 May  3  2018 my-runcon.pp
-      -rw-r-----. 1 root root    464 May  3  2018 my-runcon.te
-      -rw-------. 1 root root   3222 Sep 11  2017 original-ks.cfg
-      -rwxr-x---. 1 root root  10034 May  3  2018 report_open_jre8_stig.sh
-      -rwx------. 1 root root 132760 Aug 30 23:50 report_stig.sh
-      -rwxr-x---. 1 root root  72376 May  3  2018 report_web_stig.sh
-      drwxr-x---. 2 root root   4096 Dec 13 23:17 sretools
-      -rw-r-----. 1 root root    840 May  3  2018 sshdlocal.pp
-   
    There are three files that end in `_stig.sh` with its name corresponding to the output format it will display.
 
 #. In this example, we’ll run the generic text output:
@@ -65,7 +53,7 @@ The steps to run the STIG report are as follows:
 
 #. Copy the report to the nutanix home directory, substituting the actual file name for the asterisks.
 
-   ``sudo -u root cp /home/log STIG-report-**-**-****-**-**-** /home/nutanix``
+   ``sudo -u root cp /home/log/STIG-report-**-**-****-**-**-** /home/nutanix``
 
 #. List the files in the /home/nutanix folder.
 

@@ -10,6 +10,4 @@ If you have any questions or issues with:
 
  - The Bootcamp's lab content (ex. instructions incorrect or unclear, typos, feedback, etc.) or staging (ex. images or blueprints missing): `#technology-bootcamps <slack://channel?id=C0RAC0CHX&team=T0252CLM8>`_. Feedback and suggestions can also be submitted to bootcamps@nutanix.com.
 
-   TEST - `bootcamps@nutanix.com`_
-
  - Frame, Parallels VDI, or Pulse VPN access: `#x-labs <slack://channel?id=CF6GRQ4TU&team=T0252CLM8>`_.

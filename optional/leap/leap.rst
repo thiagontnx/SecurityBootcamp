@@ -180,11 +180,11 @@ Creating A Recovery Plan
 
    If you do not see your VMs, the synchronization hasn't completed between sites. This is typically caused by attempting this step before the replication completes, but could indicate a communication issue between clusters. Check Prism Central for any errors, and if you are seeing issues initiating the stretch cluster, revisit the initial firewall instructions, and ensure those steps were performed correctly.
 
-#. Under **Power On Sequence** we will add our VMs in stages to the plan. Click **+ Add Entities**.
+#. Under **Power On Sequence** we will add our VMs in stages to the plan. Click :fa:`plus` **Add Entities**.
 
 #. Select your *UserXX*\ **-MySQL** VM, and then click **Add**.
 
-#. Click **+ Add New Stage**. Within **Stage 2**, click **+ Add Entities**.
+#. Click :fa:`plus` **Add New Stage**. Within **Stage 2**, click :fa:`plus` ** Add Entities**.
 
    .. figure:: images/Recovery/3.png
 
@@ -196,7 +196,7 @@ Creating A Recovery Plan
 
 #. Select your *UserXX*\ **-WebServer** VM, and click **Manage Scripts > Enable**. This will trigger the *production_vm_recovery* script to run within the guest VM whenever a failover or failback occurs.
 
-#. Click the **+ Add Delay**, shown in-between your two stages.
+#. Click the :fa:`plus` **Add Delay**, shown in-between your two stages.
 
    .. figure:: images/Recovery/5.png
 

@@ -107,6 +107,8 @@ Labs are updated for the following software versions:
 
 - AOS: 5.20.2 LTS
 - PC : pc.2021.9
+- Files: 3.8.1.3
+- Files Analytics: 3.0
 
 Agenda
 ======

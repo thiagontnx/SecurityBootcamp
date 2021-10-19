@@ -27,7 +27,7 @@ Defining Anomalies
 
    Let’s create an *Anomaly Rule* to detect suspicious activity based on action.
 
-#. Click on the :fa:`fa-cog` **> + Define Anomaly Rules**
+#. Click on the :fa:`fa-cog` **>** :fa:`plus` **Define Anomaly Rules**
 
    .. figure:: images/anomalyrules.png [TODO: Pete: Screenshot incorrect.]
 

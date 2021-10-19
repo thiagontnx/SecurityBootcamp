@@ -54,7 +54,7 @@ Custom Reports
 
    Let’s explore how to build a report in File Analytics.
 
-#. Click on the :fa:`bars` **> Reports > + Create a new report**.
+#. Click on the :fa:`bars` **> Reports >** :fa:`plus` **Create a new report**.
 
 #. Select **Pre-canned Report Templates**.
 
