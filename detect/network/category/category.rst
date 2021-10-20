@@ -41,7 +41,7 @@ Prism Central uses categories as metadata to tag VMs to determine how policies w
    - **##-Web**
    - **##-Database**
 
-.. figure:: images/12.png
+   .. figure:: images/12.png
 
 #. Click **Save**.
 
@@ -56,26 +56,24 @@ In this exercise, you’ll assign your custom categories to the VMs supporting *
 
    .. figure:: images/categ001.png
 
-      .. note::
+   By selecting more than one VM, we’re simultaneously defining categories values that will be common to them: the AppType category value that we defined earlier.
 
-         By selecting more than one VM, we’re simultaneously defining categories values that will be common to them: the AppType category value that we defined earlier.
-
- #. In the search bar, enter **AppType:##**, click :fa:`plus-circle`, and then click **Save**.
+ #. In the search bar, enter **AppType:##-FaceRace**, click :fa:`plus-circle`, and then click **Save**.
 
    .. figure:: images/categ02.png
 
    We now need to assign the appropriate tier category value to each of the VMs.
 
-#. Deselect both **##-FaceRace-DB** VMs, and then click **Actions > Manage Categories**.
+#. Deselect both **User##-FaceRace-DB** VMs, and then click **Actions > Manage Categories**.
 
 #. In the search bar, type **AppTier:##-Web**, click the :fa:`plus-circle`, and then click **Save**.
 
-   .. figure:: images/categweb.png [TODO: Pete: Screenshot incorrect.]
+   .. figure:: images/categweb.png
 
-#. De-select the **##-FaceRace-Web** VMs, select the **##-FaceRace-DB** VMs, and then click **Actions > Manage Categories**.
+#. De-select the **User##-FaceRace-Web** VMs, select the **##-FaceRace-DB** VMs, and then click **Actions > Manage Categories**.
 
 #. In the search bar, type **AppTier:##-Database**, click the :fa:`plus-circle`, and then click **Save**.
 
-   .. figure:: images/categdb.png [TODO: Pete: Screenshot incorrect.]
+   .. figure:: images/categdb.png
 
 Next, we'll create a security policy.
