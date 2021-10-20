@@ -6,76 +6,72 @@ Isolate Environments
 
 Our FaceRace gaming machines are now properly secured from network activity outside the cluster. We want to ensure that we prevent access from other VMs from within the cluster. To achieve this, we can provide isolation policies to all the VMs in our environment.
 
-The environments we will create environments to enable isolation between the cardholder data environment (CDE) and the non-CDE (i.e. everything else). Similar to the previous section, we will add two more environmental categories: *CDE* and *Non-CDE*.
+The environments we will create enable isolation between the cardholder data environment (CDE) and the non-CDE (i.e. everything else). Similar to the previous section, we will add two more environmental categories: *CDE* and *Non-CDE*.
 
 #. Within **Prism Central**, select :fa:`bars` **> Administration > Categories**.
 
 #. Select **Environment > Actions > Update**.
 
-#. Under **Values**, click :fa:`plus-circle` and create **##-CDE** and **##-Non-CDE** entries, and then click **Save**.
+#. Under **Values**, click :fa:`plus-circle`, create **##-CDE** and **##-Non-CDE** entries, and then click **Save**.
 
-   .. figure:: images/envcat.png [TODO: Pete: Screenshot incorrect.]
+   .. figure:: images/envcat.png
 
    Next we will assign the *CDE* category value to the **##-Prod-FaceRace** VMs, and the *Non-CDE* category value to "everything else".
 
-#. Within **Prism Central**, select :fa:`bars` **> Compute & Storage > VMs**.
+#. Select :fa:`bars` **> Compute & Storage > VMs**.
 
 #. Select both the *USER##*\-Prod-FaceRace-Web and *USER##*\-Prod-FaceRace-DB VMs, and then click **Actions > Manage Categories**.
 
-#. In the search box type **Environment:##-CDE**, and click **Save**.
+#. Specify **Environment:##-CDE** (ex. `Environment:01-CDE`) as the value name, and then click **Save**.
 
    .. figure:: images/cdecat01.png
 
-#. Within **Prism Central**, select :fa:`bars` **> Compute & Storage > VMs**.
+#. Deselect both the *USER##*\-Prod-FaceRace-Web VMs, select both the *##-Dev-FaceRace-Web* and *##-Dev-FaceRace-DB* VMs, and click **Actions > Manage Categories**.
 
-#. Select both the *##-Dev-FaceRace-Web* and *##-Dev-FaceRace-DB* VMs, and click **Actions > Manage Categories**.
+#. Specify **Environment:##-Non-CDE** (ex. `Environment:01-Non-CDE`) as the value name, and then click **Save**.
 
-#. In the search box type **Environment:##-Non-CDE**, and then click **Save**.
-
-   .. figure:: images/cdecat02.png [TODO: Pete: Screenshot incorrect.]
+   .. figure:: images/cdecat02.png
 
    Now that category values have been created and appropriately assigned to the VMs, we can create an isolation policy.
 
-#. Within **Prism Central**, select :fa:`bars` **> Network & Security > Security Policies**.
+#. Select :fa:`bars` **> Network & Security > Security Policies**.
 
 #. Click **Create Security Policy > Isolate Environments (Isolation Policy) > Create**.
 
 #. In the fields enter the following information:
 
    - **Name** - User##-PCIPolicy
-   - **Purpose** - Isolate the CDE from the Non-CDE
-   - **Isolate this category** - Environment:CDE
-   - **From this category** - Environment:Non-CDE
+   - **Purpose** - Isolate CDE from Non-CDE
+   - **Isolate this category** - Environment:##-CDE
+   - **From this category** - Environment:##-Non-CDE
 
 #. Click **Save and Monitor**.
 
-   .. figure:: images/pci.png [TODO: Pete: Screenshot incorrect.]
+   .. figure:: images/pci.png
 
-   When enforced, this type of policy is a simple and effective way to achieve the desired isolation between sensitive environments that might contain personal customer data, or for the creation of network security best practices (i.e. creating a DMZ, or honeypots).
+   This type of policy is a simple and effective way to achieve the desired isolation between sensitive environments that might contain personal customer data, or for the creation of network security best practices (i.e. creating a DMZ, or honeypots).
 
 Testing the Isolation Policy
 ============================
 
-Just like we did during our security policy testing, we will enforce the new isolation policy, and then confirm it is working.
+As we did during our security policy testing, we will enforce the new isolation policy, and confirm it is working as expected.
 
-#. Within Prism Central, select :fa:`bars` **> Network & Security > Security Policies**, and then click on your **##-PCIPolicy**.
+#. Return to the consoles of *USER##*\-Prod-FaceRace-DB, and restart the continuous ping command by hitting the up arrow, followed by enter.
 
-   You'll notice that Flow is observing the traffic between the VMs in the policy.
+#. Click on your **USER##-PCIPolicy**.
 
-#. To activate the isolation policy, click **Enforce**, in the upper-right corner of your screen.
+#. Hover your mouse over the dotted line to the right of *Environment ##-CDE*. You'll notice that Flow is observing the traffic between the VMs in the policy.
 
-   .. figure:: images/enforce01.png
+   .. figure:: images/traffic.png
+
+#. To activate the isolation policy, click **Enforce** in the upper  right-hand corner of your screen.
 
 #. Type **ENFORCE**, and then click **Confirm**.
 
-   .. figure:: images/enforce002.png
+   .. figure:: images/enforce.png
 
-#. Return to your **##-Prod-FaceRace-DB** console.
+#. Return to your **##-Prod-FaceRace-DB** console. Observe that the pings now fail, as we are blocking the Production (CDE) environment from Development (Non-CDE).
 
-#. Restart the continuous ping commands within both console windows by hitting the up arrow, followed by enter.
-
-#. Observe that the pings will now fail, as we are blocking the Production (CDE) environment from Development (Non-CDE).
-
-#. You may cancel the ping commands in both console windows, log out of both sessions, and close the console windows.
+#. You may cancel the ping command, log out of both console sessions, and then close the console windows.
 
 Congratulations for going above and beyond and isolate your production application environment.

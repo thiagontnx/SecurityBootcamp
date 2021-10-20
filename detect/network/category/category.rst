@@ -54,15 +54,15 @@ In this exercise, you’ll assign your custom categories to the VMs supporting *
 
 #. Select all four of your **User##-FaceRace** VMs, and then click **Actions > Manage Categories**.
 
-   .. figure:: images/categ001.png
+	.. figure:: images/categ001.png
+		
+	By selecting more than one VM, we’re simultaneously defining categories values that will be common to them: the AppType category value that we defined earlier.
+	
+#. In the search bar, enter **AppType:##-FaceRace**, click :fa:`plus-circle`, and then click **Save**.
 
-   By selecting more than one VM, we’re simultaneously defining categories values that will be common to them: the AppType category value that we defined earlier.
+	.. figure:: images/categ02.png
 
- #. In the search bar, enter **AppType:##-FaceRace**, click :fa:`plus-circle`, and then click **Save**.
-
-   .. figure:: images/categ02.png
-
-   We now need to assign the appropriate tier category value to each of the VMs.
+   We now need to assign the appropriate tier category value to each of the VMs
 
 #. Deselect both **User##-FaceRace-DB** VMs, and then click **Actions > Manage Categories**.
 

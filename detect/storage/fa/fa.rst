@@ -13,23 +13,21 @@ Defining Anomalies
 
    .. figure:: images/manage.png
 
-   A new window will appear sending you to **Prism Element**
+   A new browser tab will open.
 
 #. Click on **TheRocketFS**, and then select **File Analytics**.
 
-   .. figure:: images/fa01.png
+   .. figure:: images/fa.png
 
-   Your *File Analytics* dashboard will show metrics like *Top 5 active users*, *Top 5 accessed files* and *File Operations*.
+   Your *File Analytics* dashboard will show metrics for *Top 5 active users*, *Top 5 accessed files*, *File Operations*, and more.
 
-   .. figure:: images/fa02.png
-
-   While everything looks normal right now, those widgets are essential to detect unusual or anomalous behavior – such as repeated failed authentications, an increase in network traffic, or a large volume of file updates and touch-points.
+   Everything looks normal right now. These widgets are essential to detect unusual or anomalous behavior,  – such as repeated failed authentications, an increase in network traffic, or a large volume of file updates and touch-points.
 
    Let’s create an *Anomaly Rule* to detect suspicious activity based on action.
 
-#. Click on the :fa:`cog` **>** :fa:`plus` **Define Anomaly Rules**
+#. Click on the :fa:`cog` **> Define Anomaly Rules >** :fa:`plus` **Define Anomaly Rules**.
 
-   .. figure:: images/anomalyrules.png [TODO: Pete: Screenshot incorrect.]
+   .. figure:: images/anomalyrules.png
 
 #. Fill out the following information, click :fa:`check-circle`, and then click **Save**.
 
@@ -52,7 +50,7 @@ Defining Anomalies
 
    Let’s generate activity on the Files Server.
    
-#. Within Prism Central, identify the IP address for your *USER##*\-WinTools VM, and utilizing RDP, log in using the following credentials:
+#. Within Prism Central, identify the IP address for your *USER##*\-WinTools VM, and utilizing Windows Remote Desktop, log in using the following credentials:
 
    - **User Name** - administrator@ntnxlab.local
    - **Password** - nutanix/4u
