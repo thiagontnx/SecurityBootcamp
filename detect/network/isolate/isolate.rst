@@ -12,7 +12,7 @@ The environments we will create environments to enable isolation between the car
 
 #. Select **Environment > Actions > Update**.
 
-#. Under **Values**, click :fa:`fa-plus-circle` and create **##-CDE** and **##-Non-CDE** entries, and then click **Save**.
+#. Under **Values**, click :fa:`plus-circle` and create **##-CDE** and **##-Non-CDE** entries, and then click **Save**.
 
    .. figure:: images/envcat.png [TODO: Pete: Screenshot incorrect.]
 

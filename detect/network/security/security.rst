@@ -42,7 +42,7 @@ Microsegmentation is a component of Flow that uses simple policy-based managemen
 
    In this scenario, we will allow inbound TCP traffic to the FaceRace web tier on TCP port 80 from all clients.
 
-#. Under **Inbounds**, click :fa:`fa-plus-circle` **Add Source**.
+#. Under **Inbounds**, click :fa:`plus-circle` **Add Source**.
 
 #. Fill out the following fields to allow all inbound IP addresses, and then click **Add**.
 
@@ -53,7 +53,7 @@ Microsegmentation is a component of Flow that uses simple policy-based managemen
 
       Sources can also be specified by category, allowing for greater flexibility as this data can follow a VM regardless of changes to its network location.
 
-#. To create an inbound rule, ensure the *Subnet/IP* of 0.0.0.0/0 is still highlighted, and then select :fa:`fa-plus-circle` to the left of **AppTier ##-Web**.
+#. To create an inbound rule, ensure the *Subnet/IP* of 0.0.0.0/0 is still highlighted, and then select :fa:`plus-circle` to the left of **AppTier ##-Web**.
 
 #. Choose **Select a Service**, fill out the following fields, and then click **Save**:
 
@@ -66,7 +66,7 @@ Microsegmentation is a component of Flow that uses simple policy-based managemen
 
       Multiple protocols and ports can be added to a single rule.
 
-#. Under **Inbounds**, click :fa:`fa-plus-circle` **Add Source**.
+#. Under **Inbounds**, click :fa:`plus-circle` **Add Source**.
 
 #. Fill out the following fields, and then click **Add**.
 
@@ -88,7 +88,7 @@ Microsegmentation is a component of Flow that uses simple policy-based managemen
 
    By default, the security policy allows the application to send all outbound traffic to any destination. The only outbound communication required for your application is to communicate with your DNS server.
 
-#. Under **Outbound**, select **Allowed List Only** from the drop-down menu, and then click :fa:`fa-plus-circle` **Add Destination**.
+#. Under **Outbound**, select **Allowed List Only** from the drop-down menu, and then click :fa:`plus-circle` **Add Destination**.
 
 #. Fill out the following fields, and then click **Add**:
 
@@ -97,7 +97,7 @@ Microsegmentation is a component of Flow that uses simple policy-based managemen
 
    .. figure:: images/domainip.png [TODO: Pete: Screenshot is super blurry.]
 
-#. Select :fa:`fa-plus-circle` to the right of **AppTier ##-Web**.
+#. Select :fa:`plus-circle` to the right of **AppTier ##-Web**.
 
 #. Choose **Select a Service**, fill out the following fields, and then click **Save**:
 
@@ -118,7 +118,7 @@ Each tier of the application communicates with other tiers, and the policy must 
 
    There are only two VMs (Prod and Dev) within the tier currently, but scale-out operations will apply this policy to all VMs in this category preventing their ability to communicate with one another - regardless of how many VMs are deployed.
 
-#. While **AppTier:Web** is still selected, click :fa:`fa-plus-circle` to the right of **AppTier ##-Database** to create a tier-to-tier rule.
+#. While **AppTier:Web** is still selected, click :fa:`plus-circle` to the right of **AppTier ##-Database** to create a tier-to-tier rule.
 
 #. Choose **Select a Service**, fill out the following fields, and then click **Save**:
 

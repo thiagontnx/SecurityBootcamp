@@ -4,7 +4,7 @@
 Categorization
 ##############
 
-You observe that VMs are already being created to support one of the most popular gaming apps, King Drog FaceRace. This workload is supported centrally by the Nutanix cluster, and delivered via the gaming machines on the game floor by the following VMs:
+You observe that VMs are already being created to support one of the most popular gaming apps, King Drog FaceRace. This workload is supported centrally by the Nutanix cluster, and delivered via the gaming machines on the game floor via the following VMs:
 
    -  **User**\ *##*-FaceRace-Web
    -  **User**\ *##*-FaceRace-DB
@@ -13,7 +13,7 @@ You observe that VMs are already being created to support one of the most popula
 
 Customers swipe their payment cards for access to game credits, and log in to track high scores. These machines collect cardholder data (CHD) such as the primary account number (PAN) and other personally identifiable information (PII). These VMs need to be isolated from the rest of the network in order to meet PCI DSS guidelines for segmentation of the cardholder data environment (CDE). The payment and user information must be protected from unauthorized access.
 
-Prism Central uses categories as metadata to tag VMs to determine how policies will be applied. We need to add categories to identify all of our FaceRace application VMs.
+Prism Central uses categories as metadata to tag VMs to determine how policies will be applied. We need to add categories to identify all of our *King Drog FaceRace* application VMs.
 
 #. Within **Prism Central**, select :fa:`bars` **> Administration > Categories**.
 
@@ -21,9 +21,9 @@ Prism Central uses categories as metadata to tag VMs to determine how policies w
 
    .. figure:: images/10.png
 
-#. Click the :fa:`fa-plus-circle` icon to add an additional category value.
+#. Click the :fa:`plus-circle` icon to add an additional category value.
 
-#. Specify **##-FaceRace** as the value name, and then click **Save**.
+#. Specify **##-FaceRace** (ex. 01-FaceRace) as the value name, and then click **Save**.
 
    .. figure:: images/apptype01.png
 
@@ -34,35 +34,33 @@ Prism Central uses categories as metadata to tag VMs to determine how policies w
    - **##**-Dev-FaceRace-Web        (*Development* Web tier)
    - **##**-Dev-FaceRace-DB         (*Development* Database tier)
 
-#. Within **Prism Central**, select :fa:`bars` **> Administration > Categories**.
+#. Deselect the checkbox for **AppType**, select the checkbox for **AppTier**, and then click **Actions > Update**.
 
-#. Select the checkbox for **AppTier**, and then click **Actions > Update**.
-
-#. Click the :fa:`fa-plus-circle` icon to add additional category values:
+#. Click the :fa:`plus-circle` icon for each additional category values:
 
    - **##-Web**
    - **##-Database**
 
-.. figure:: images/12.png  [TODO: Pete: Screenshot incorrect.]
+.. figure:: images/12.png
 
 #. Click **Save**.
 
 Assigning Categories to VMs
 ===========================
 
-In this exercise, you’ll assign your custom categories to the VMs supporting King Drog FaceRace. This will help align access to the proper resources, and security and protection policies within the environment.
+In this exercise, you’ll assign your custom categories to the VMs supporting *King Drog FaceRace*. This will help align access to the proper resources, security, and protection policies within the environment.
 
-#. Within **Prism Central**, select :fa:`bars` **> Compute & Storage > VMs**.
+#. Select :fa:`bars` **> Compute & Storage > VMs**.
 
-#. Select your **##-FaceRace** VMs, and then click **Actions > Manage Categories**.
+#. Select all four of your **User##-FaceRace** VMs, and then click **Actions > Manage Categories**.
 
    .. figure:: images/categ001.png
 
-   .. note::
+      .. note::
 
-      By selecting more than one VM, we’re simultaneously defining categories values that will be common to them: the AppType category value that we defined earlier.
+         By selecting more than one VM, we’re simultaneously defining categories values that will be common to them: the AppType category value that we defined earlier.
 
- #. In the search bar, enter **AppType:##**, click :fa:`fa-plus-circle`, and then click **Save**.
+ #. In the search bar, enter **AppType:##**, click :fa:`plus-circle`, and then click **Save**.
 
    .. figure:: images/categ02.png
 
@@ -70,13 +68,13 @@ In this exercise, you’ll assign your custom categories to the VMs supporting K
 
 #. Deselect both **##-FaceRace-DB** VMs, and then click **Actions > Manage Categories**.
 
-#. In the search bar, type **AppTier:##-Web**, click the :fa:`fa-plus-circle`, and then click **Save**.
+#. In the search bar, type **AppTier:##-Web**, click the :fa:`plus-circle`, and then click **Save**.
 
    .. figure:: images/categweb.png [TODO: Pete: Screenshot incorrect.]
 
 #. De-select the **##-FaceRace-Web** VMs, select the **##-FaceRace-DB** VMs, and then click **Actions > Manage Categories**.
 
-#. In the search bar, type **AppTier:##-Database**, click the :fa:`fa-plus-circle`, and then click **Save**.
+#. In the search bar, type **AppTier:##-Database**, click the :fa:`plus-circle`, and then click **Save**.
 
    .. figure:: images/categdb.png [TODO: Pete: Screenshot incorrect.]
 

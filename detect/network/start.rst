@@ -16,12 +16,12 @@ Nutanix Flow provides:
 
    - A detailed visualization of communications between VMs, which can aid in categorizing and grouping workloads, making it simple and straight-forward to set the right policies for the environment.
 
-Nutanix Flow has already been enabled for this environment, however we've include the steps required below, as well as a demonstration video.
+Nutanix Flow has already been enabled for this environment, however we've include the steps required below.
 
-#. #. Within Prism Central, select :fa:`bars` **> Prism Central Settings**.
+#. Within Prism Central, select :fa:`bars` **> Prism Central Settings**.
 
 #. Under *Flow*, select **Microsegmentation**.
 
 #. Select the **Enable Microsegmentation** check box, and then click **Save**.
 
-   .. figure:: images/enableflow.gif [TODO: Pete: Recreate this as there's a weird grid effect going on, it can be sped up plus zoomed in on to better show what's happening.]
+   .. figure:: images/enableflow.png
