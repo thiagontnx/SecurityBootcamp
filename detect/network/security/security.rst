@@ -13,7 +13,7 @@ Flow is an application-centric network security product, which is tightly integr
 
 Microsegmentation is a component of Flow that uses simple policy-based management to secure VM networking. Using Prism Central categories, you can create a powerful distributed firewall.
 
-#. Within **Prism Central**, select :fa:`bars` **> Network & Security > Security Policies**.
+#. Within *Prism Central*, select :fa:`bars` **> Network & Security > Security Policies**.
 
 #. Click **Create Security Policy > Secure Applications (App Policy) > Create**.
 

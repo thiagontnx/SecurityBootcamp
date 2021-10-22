@@ -9,7 +9,6 @@
    prevent/start/start
    prevent/auth/auth
    prevent/stig/stig
-   prevent/syslog/syslog
 
 .. toctree::
    :maxdepth: 2
@@ -46,11 +45,12 @@
 
 .. toctree::
    :maxdepth: 2
-   :caption: Optional Labs
+   :caption: Optional Labs (Instructor Led)
    :name: _optional
    :hidden:
 
    optional/infection/im
+	optional/syslog/syslog
 
 .. toctree::
    :maxdepth: 2
@@ -124,10 +124,10 @@ Security Labs
 - Detect - Data Services: Monitoring - Files, File Analytics, Objects, Testing
 - Recover - Snapshots, Quarantine
 
-Optional Labs
-=============
+Optional Labs (Instructor Led)
+==============================
 
-- Flow Security Central
+- Simulating An Attack
 
 Introductions
 =============

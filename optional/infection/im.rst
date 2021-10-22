@@ -4,18 +4,14 @@
 Simulating An Attack 
 ####################
 
-.. raw:: html
-
-   <strong><font color="red">This lab is an instructor-led exercise, and should be planned in advance to integrate with Flow Security Policies to show traffic discovered before and after Enforcing the Flow Policies.</font></strong>
-
 You’re impressed so far, but like the old Russian proverb states: Доверяй, но проверяй; Trust, but verify. How can you simulate an attack against Blips and Chitz, Inc.? You don’t have the necessary experience to conduct a penetration test yourself, so you go about trying to find a tool that can simulate an Advanced Persistent Threat (APT).
 
 What is Infection Monkey?
 =========================
 
-Infection Monkey, by Guardicore, is a tool that can be used to simulate and automate many of the same actions a penetration test would typically perform. While penetration tests by skilled professionals are more thorough and accurate, this can serve as an initial attempt to expose potential critical vulnerabilities in this new system.
+Infection Monkey by Guardicore, is a tool that can be used to simulate and automate many of the same actions a penetration test would typically perform. While penetration tests by skilled professionals are more thorough and accurate, this can serve as an initial attempt to expose potential critical vulnerabilities in this new system.
 
-Infection Monkey is an open source breach and attack simulation (BAS) platform that allows you to discover security gaps and fix them. It uses various methods to self propagate across a data center, and reports success to a centralized *Monkey Island* server. You can simulate credential theft, compromised machines, and other security flaws, and mimic the what is commonly observed in Ransomware attacks, albeit non-destructively. Infection Monkey is executed from a user-friendly, web-based GUI.
+Infection Monkey is an open source breach and attack simulation (BAS) platform that allows you to discover security gaps and fix them. It uses various methods to self propagate across a data center, and reports success to a centralized *Monkey Island* server. You can simulate credential theft, compromised machines and other security flaws, and mimic the what is commonly observed in ransomware attacks, albeit non-destructively. Infection Monkey is executed from a user-friendly, web-based GUI.
 
 The Infection Monkey is comprised of two parts:
 
@@ -25,9 +21,12 @@ The Infection Monkey is comprised of two parts:
 Installing Infection Monkey
 ===========================
 
-#. Connect to the *InfectionMonkey* VM using RDP or console.
+#. Log in to your *USER##*\-WinTools VM using the following credentials:
 
-   The Infection Monkey software package requires Microsoft Visual C++ package. Both are found `here <http://10.42.194.11/workshop_staging/InfectionMonkey/>`_.
+      - **User Name** - `administrator`
+      - **Password**  - `nutanix/4u`
+
+#. Download Infection Monkey, and the required Microsoft Visual C++ package. Both are found here: `http://10.42.194.11/workshop_staging/InfectionMonkey/`.
  
 #. You will first install the Microsoft Visual C++ package *VC_redist.x64* followed by *InfectionMonkey*.
 
@@ -35,12 +34,9 @@ Installing Infection Monkey
 
    .. figure:: images/image012.png
 
-#. Additionally, Chrome will launch. This session may initially time-out, as it takes a few minutes for the Mongo DB and C&C Server to start. Once they are ready, you can refresh Chrome, and continue.
+#. Additionally, Chrome will launch. This session may initially time-out, as it takes a few minutes for the *MongoDB* and *C&C Server* services to start. Once they are ready, you can refresh Chrome, and continue.
 
-   .. figure:: images/image013.png
-   .. figure:: images/image014.png
-
-#. When connecting to the web interface for the first time, you will have an option to setup a username and password or continue without a username/password. The instructor will create this login.
+#. When connecting to the web interface for the first time, you will be prompted to setup a username and password, or continue without a username/password. The instructor will create this login.
 
 Configuring Infection Monkey
 ============================

@@ -15,7 +15,7 @@ Customers swipe their payment cards for access to game credits, and log in to tr
 
 Prism Central uses categories as metadata to tag VMs to determine how policies will be applied. We need to add categories to identify all of our *King Drog FaceRace* application VMs.
 
-#. Within **Prism Central**, select :fa:`bars` **> Administration > Categories**.
+#. Within *Prism Central*, select :fa:`bars` **> Administration > Categories**.
 
 #. Select the checkbox for **AppType**, and then click **Actions > Update**.
 

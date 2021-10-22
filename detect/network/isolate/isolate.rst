@@ -8,7 +8,7 @@ Our FaceRace gaming machines are now properly secured from network activity outs
 
 The environments we will create enable isolation between the cardholder data environment (CDE) and the non-CDE (i.e. everything else). Similar to the previous section, we will add two more environmental categories: *CDE* and *Non-CDE*.
 
-#. Within **Prism Central**, select :fa:`bars` **> Administration > Categories**.
+#. Within *Prism Central*, select :fa:`bars` **> Administration > Categories**.
 
 #. Select **Environment > Actions > Update**.
 

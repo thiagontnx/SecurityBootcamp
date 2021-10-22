@@ -21,7 +21,7 @@ STIG Reports on Nutanix Nodes
 
 You can run a STIG report, which will check on all the individual STIG controls, and verify which are compliant with your system, and which are not.
 
-#. Within **Prism Central**, select :fa:`bars` **> Compute * Storage > VMs**.
+#. Within *Prism Central*, select :fa:`bars` **> Compute * Storage > VMs**.
 
 #. If there are any filters listed in the search bar in the top left-hand corner, click the :fa:`times` to clear them.
 

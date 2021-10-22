@@ -12,7 +12,7 @@ The storage administrators for Blips and Chitz, Inc. have created an object stor
 Create Bucket
 =============
 
-A bucket is a repository within an object store that can have policies applied to it, such as versioning, WORM (Write Once, Read Many), etc. By default, a newly created bucket is a private resource to the creator. The creator of the bucket by default has read/write permissions, and can grant permissions to other users.
+A bucket is a repository within an object store that can have policies applied to it, such as versioning, and WORM (Write Once, Read Many). By default, a newly created bucket is a private resource to the creator. By default, the creator of the bucket has read/write permissions, and can grant permissions to other users.
 
 #. Within Prism Central, select :fa:`bars` **> Services > Objects**.
 
@@ -30,7 +30,7 @@ You realize your colleagues didn’t enable *WORM* and *Expiration* settings, so
 
 #. Click **Enable WORM** to save the changes.
 
-   .. figure:: images/enableworm.png [TODO: Pete: Screenshot incorrect.]
+   .. figure:: images/enableworm.png
 
 #. Click on **user##-bucket**, and then select **Lifecycle** from the left-hand menu.
 
@@ -68,9 +68,9 @@ User Management
 
 In this exercise, you will generate access and secret keys to access the Object store that will be used throughout the lab.
 
-#. Within **Prism Central**, select :fa:`bars` **> Services > Objects**.
+#. Within *Prism Central*, select :fa:`bars` **> Services > Objects**.
 
-#. Click on **Access Keys > Add People**.
+#. Click on **Access Keys** :fa:`plus` **Add People**.
 
    .. figure:: images/addpeople03.png
 
@@ -79,9 +79,6 @@ In this exercise, you will generate access and secret keys to access the Object 
    .. figure:: images/addpeople.png
 
 #. Click **Next**, and then click **Generate Keys**.
-
-   .. figure:: images/addpeople02.png
-
 
 #. Click **Download Keys** to download a .txt file containing the *Access Key* and *Secret Key*.
 
@@ -93,9 +90,9 @@ In this exercise, you will generate access and secret keys to access the Object 
 
    .. figure:: images/keys.png
 
-.. note::
+	.. note::
 
-   Keep the text files open so that you have the access and secret keys readily available for future labs.
+		Keep the text file open, to have the access and secret keys readily available for future labs.
 
    .. note::
 
@@ -104,34 +101,30 @@ In this exercise, you will generate access and secret keys to access the Object 
 Granting Bucket Access
 ======================
 
-Next, you will grant other users with access to your bucket. You can configure read/write access on a per user basis.
+Next, you will grant other users access to your bucket. You can configure read/write access on a per user basis.
 
 #. Click on **Object Stores > mortynightrun**.
 
 #. Select **user##-bucket**, and then click **Actions > Share**.
 
-#. Under *People* enter your e-mail address, under *Permissions* select both the **Read** and **Write** checkboxes, and then click **Save**.
+#. Enter your e-mail address within the *People* field. Check both **Read** and **Write** checkboxes within the *Permissions* field, and then click **Save**.
 
    .. figure:: images/access.png
 
 Objects Browser
 ===============
 
-In this exercise, you will use *Objects Browser* to create and access buckets in the object store.
+In this exercise, you will use the *Objects Browser* to create and access buckets in the object store.
 
-#. Within your *USER##*\-WinTools VM, download `sample images <https://s3.amazonaws.com/get-ahv-images/sample-pictures.zip>`_, and extract it to your desktop.
+#. Within your *USER##*\-WinTools VM, download sample images using this link: `https://s3.amazonaws.com/get-ahv-images/sample-pictures.zip`, and extract it to your desktop. TODO: Broken link. Asked Thiago.
 
-#. Within Prism Central, select :fa:`bars` **> Services > Objects**.
+#. Within your *USER##*\-WinTools VM, open *Prism Central* and select :fa:`bars` **> Services > Objects**.
 
 #. Click on **Objects Public IPs**.
 
-   .. figure:: images/ip.png [TODO: Pete: Screenshot incorrect.]
+   .. figure:: images/ip.png
 
-   .. figure:: images/explorer03.png [TODO: Pete: Screenshot incorrect.]
-
-#. Enter the *Access Key* and *Secret Key* from the .txt file you generated and have open, and then click **Login**.
-
-   .. figure:: images/explorerkey.png
+#. Enter the *Access Key* and *Secret Key* from your .txt file, and then click **Login**.
 
 #. Click on *user##*\-bucket. From the *Upload Objects* drop-down, select **Select Files**.
 
@@ -150,17 +143,14 @@ Object versioning allows the upload of new versions of the same object, while re
 
 #. Within *Objects Browser*, upload the text file to **user##-bucket**, and then click **Close** once the upload has completed.
 
-#. Open *user##.txt* and modify the file to now display ``version 2.0``,and then save the file.
+#. Open *user##.txt*, modify the file to now contain ``version 2.0``, and then save the file.
 
 #. Upload *user##.txt* once again to your bucket.
 
-#. Within *Object Store**, click on **mortynightrun**.
+#. Return to *Prism Central*. Within *Object Stores**, click on **mortynightrun**, and then **user##-bucket**.
 
-#. Look at the *Num. Objects* column for your **user##-bucket**.
+#. Look at the *Total number of objects* entry.
 
 .. figure:: images/props.png [TODO: Pete: Screenshot incorrect.]
 
-
-.. note::
-
-      You will see that there is an Object incremented for every version of your test file. By keeping multiple versions of the same file, Nutanix Objects makes it possible to restore old versions at any point in time. Additionally, S3 compatible third-party tools can access previous versions of any given file for restoring purposes.
+You will see that there is an object created for every version of your test file. By keeping multiple versions of the same file, Nutanix Objects makes it possible to restore old versions at any point in time. Additionally, S3 compatible third-party tools can access previous versions of any given file.

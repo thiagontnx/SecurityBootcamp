@@ -4,50 +4,50 @@
 File Analytics Ransomware Protection
 ####################################
 
-Starting with AOS 5.19 and File Analytics 3.0, you can enable ransomware protection.
-
-File Analytics scans files for ransomware in real-time, and notifies you via email in the event of a ransomware attack. By using the Nutanix Files file blocking mechanism, File Analytics prevents files with signatures of potential ransomware from carrying out malicious operations. Ransomware protection automatically scans for ransomware based on a curated list of signatures that frequently appear in ransomware files. Optionally, you can add additional signatures to the list.
+File Analytics scans files for ransomware in real-time, and notifies you via email in the event of a ransomware attack. By using the Nutanix Files file blocking mechanism, File Analytics prevents files with signatures of potential ransomware from carrying out malicious operations. Ransomware Protection automatically scans for ransomware based on a curated list of signatures that frequently appear in ransomware files. Optionally, you can add additional signatures to the list.
 
 File Analytics also monitors file shares for self-service restore (SSR) policies, and identifies shares that do not have SSR enabled in the ransomware dashboard. You can enable SSR through the ransomware dashboard by selecting shares identified by File Analytics.
 
 Enabling Ransomware Protection
 ==============================
 
-#. To enable Ransomware Protection, click :fa:`bars` **> Ransomware**
-
-   .. figure:: images/enable.png
+#. Within the *Files Analytics* dashboard, click :fa:`bars` **> Ransomware**.
 
 #. Click **Enable Ransomware Protection**, and then click **Enable**.
 
-   .. figure:: images/enable2.png
-
    .. note::
 
-      This is also a one-time setting. If you see that *Ransomware Protection* is enabled, you can review the options but no action is required.
+      This is a one-time setting. If you see that *Ransomware Protection* is enabled, you can review the options but no action is required.
 
-   #. Click **Download (.csv)** to view which file extensions File Analytics will block by default.
+#. Click :fa:`fa-download` **Download (.csv)**, and then open the .csv file. It lists which file extensions File Analytics will block by default.
 
    .. figure:: images/csv.png
 
-#. Within the *Z:\\Sample Data\\Documents* folder, create a *.txt* file.
+#. Within your *USER##*\-WinTools VM, navigate to the *F:\\\Sample Data\\\Documents* folder.
 
-#. Rename to **Bootcamp.txt**.
+#. Create a new *.txt* file by right-clicking in an empty space, choosing **New** :fa:`caret-right` **Text Document**, and then hitting **Enter**. The file will be created with the name *New Text Document.txt*.
 
-#. Rename it again, changing only the file extension to **.jpg**.
+   .. figure:: images/textdoc.png
 
-#. Once again, change the file extension once more to **.Valley**.
+#. Rename the file to *bootcamp.txt*.
+
+#. Click the **View** menu, and then check the box for **File name extensions**.
+
+   .. figure:: images/fileext.png
+
+#. Change the file extension to **.jpg**, and then click **Yes**.
+
+#. Change the file extension to **.Valley**, and then click **Yes**.
 
    .. figure:: images/block.png
 
-   This operation will fail as **.Valley** is one of the extensions that are blocked by Ransomware protection.
+   This operation fails, as **.Valley** is one of the extensions that are blocked by Ransomware Protection, listed in the *.csv* file.
 
-#. Click **Cancel** on the error prompt you received when you attempted to change the file extension.
+#. Click **Cancel** on the *File Access Denied* dialogue box.
 
-#. Return to File Analytics, and then click :fa:`bars` **> Ransomware**.
+#. Return to the *File Analytics* dashboard. Within the *Vulnerabilities* section, observe that this now displays the malicious attempt of creating a **.Valley** file.
 
-#. Within the *Vulnerabilities* section, observe that this now displays the malicious attempt of creating a **.Valley** file. [TODO: Pete: Screenshot incorrect.]
-
-   .. figure:: images/attempt01.png
+   .. figure:: images/attempt.png
 
 Custom Reports
 ==============
@@ -64,7 +64,7 @@ Custom Reports
 
 #. Click on **Run Preview**.
 
-   .. figure:: images/preview.png [TODO: Pete: Screenshot incorrect.]
+   .. figure:: images/preview.png
 
    .. note::
 
