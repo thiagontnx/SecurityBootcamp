@@ -42,15 +42,14 @@
    recover/start
    recover/protect/protect
 
-
 .. toctree::
    :maxdepth: 2
    :caption: Optional Labs (Instructor Led)
    :name: _optional
    :hidden:
 
-   optional/infection/im
-	optional/syslog/syslog
+	optional/infection/im
+	detect/syslog/syslog
 
 .. toctree::
    :maxdepth: 2
@@ -58,7 +57,7 @@
    :name: _appendix
    :hidden:
 
-   appendix/glossary
+	appendix/glossary
    appendix/access/access
    appendix/network/network
    appendix/ad_scheme/ad_scheme
