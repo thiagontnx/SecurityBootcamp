@@ -48,8 +48,8 @@
    :name: _optional
    :hidden:
 
-	optional/infection/im
-	detect/syslog/syslog
+   optional/infection/im
+   detect/syslog/syslog
 
 .. toctree::
    :maxdepth: 2
