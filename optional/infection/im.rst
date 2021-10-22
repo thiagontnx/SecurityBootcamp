@@ -1,4 +1,4 @@
-.. _detect_im:
+.. _simulate:
 
 ####################
 Simulating An Attack 

@@ -119,7 +119,7 @@ Agenda
 Security Labs
 =============
 
-- Prevent: Platform security: STIGs, SCMA, Auth, syslog
+- Prevent: Platform security: STIGs, SCMA, Auth
 - Detect - Networking: Data security: Flow, uSeg, NetSec
 - Detect - Data Services: Monitoring - Files, File Analytics, Objects, Testing
 - Recover - Snapshots, Quarantine
@@ -128,6 +128,7 @@ Optional Labs (Instructor Led)
 ==============================
 
 - Simulating An Attack
+- Configuring A Syslog Server
 
 Introductions
 =============
