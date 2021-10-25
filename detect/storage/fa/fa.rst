@@ -57,13 +57,13 @@ Defining Anomalies
 
    .. figure:: images/winmap.png
 
-#. Within your *USER##*\-WinTools VM, copy and paste the following link into Chrome to download the sample data `https://peerresources.blob.core.windows.net/sample-data/SampleData_Small.zip`. Once downloaded, click on it to open, and copy/paste the *Sample Data* folder to **F:\**.
+#. Within your *USER##*\-WinTools VM, copy and paste the following link into Chrome to download the sample data `https://peerresources.blob.core.windows.net/sample-data/SampleData_Small.zip`. Once downloaded, click on it to open, and copy/paste the *Sample Data* folder to **F:\\**.
 
-#. Open **PowerShell**, and navigate to `F:\Sample Data\Technical PDFs`.
+#. Open **PowerShell**, and navigate to ``F:\\Sample Data\\Technical PDFs``.
 
 #. Run the command: ``Get-ChildItem *.pdf | foreach {start-process $_.fullname}``.
 
-   Your WinTools VM will open 99 PDF files within your browser.
+   This will open 99 PDF files within your browser.
 
 #. Return to *File Analytics*, and then select :fa:`bars` **> Audit Trails**.
 
@@ -75,14 +75,16 @@ Defining Anomalies
 
    .. figure:: images/audit.png
 
-#. Since you have already defined this behavior as an anomaly, close this window, and then navigate to :fa:`bars` **> Anomalies**. You may see a warning message under *Anomalies Alerts*.
+#. Since you have already defined this behavior as an anomaly, close this window, and then navigate to :fa:`bars` **> Anomalies**. Click on the *Anomaly Alerts* timeline.
+
+   .. figure:: images/anomalerts01.png
 
 	.. note::
 		
 		This may take up to one hour, so you may wish to move on, and circle back to check on this at a later time.
 
-   .. figure:: images/anomalerts.png TODO: Update screenshot after FA runs.
+   .. figure:: images/anomalerts02.png
 
-   .. figure:: images/anomareport.png TODO: Update screenshot after FA runs.
+   .. figure:: images/anomareport.png
 
 This is expected behavior when your environment is being attacked, and *File Analytics* helps identify anomaly trends in your environment.

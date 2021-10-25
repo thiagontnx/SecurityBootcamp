@@ -4,7 +4,7 @@
 Simulating An Attack 
 ####################
 
-You’re impressed so far, but like the old Russian proverb states: Доверяй, но проверяй; Trust, but verify. How can you simulate an attack against Blips and Chitz, Inc.? You don’t have the necessary experience to conduct a penetration test yourself, so you go about trying to find a tool that can simulate an Advanced Persistent Threat (APT).
+You’re impressed so far, but like the old Russian proverb states: Доверяй, но проверяй (Trust, but verify). How can you simulate an attack against Blips and Chitz, Inc.? You don’t have the necessary experience to conduct a penetration test yourself, so you go about trying to find a tool that can simulate an Advanced Persistent Threat (APT).
 
 What is Infection Monkey?
 =========================
@@ -26,61 +26,53 @@ Installing Infection Monkey
       - **User Name** - `administrator`
       - **Password**  - `nutanix/4u`
 
-#. Download Infection Monkey, and the required Microsoft Visual C++ package. Both are found here: `http://10.42.194.11/workshop_staging/InfectionMonkey/`.
+#. Download Infection Monkey, and the required Microsoft Visual C++ package. Both are found here: ``http://10.42.194.11/workshop_staging/InfectionMonkey/``.
  
-#. You will first install the Microsoft Visual C++ package *VC_redist.x64* followed by *InfectionMonkey*.
+#. You will first install the Microsoft Visual C++ package *VC_redist.x64*, followed by *InfectionMonkey*.
 
-#. When launching *Infection Monkey*, two terminal screens will open. These terminal sessions are for the *MongoDB* instance, and *C&C Server* (Command and Control). Minimize, but do not close these windows.
+#. Open *File Explorer*, navigate to ``C:\\Program Files\\Guardicore\\Monkey Island\\monkey_island\\MonkeyIsland.exe``, and execute it.
+
+#. Two terminal screens will open. These terminal sessions are for the *MongoDB* instance, and *C&C Server* (Command and Control). Minimize, but do not close these windows.
 
    .. figure:: images/image012.png
 
 #. Additionally, Chrome will launch. This session may initially time-out, as it takes a few minutes for the *MongoDB* and *C&C Server* services to start. Once they are ready, you can refresh Chrome, and continue.
 
-#. When connecting to the web interface for the first time, you will be prompted to setup a username and password, or continue without a username/password. The instructor will create this login.
+#. When connecting to the web interface for the first time, you will be prompted to setup a username and password, or continue without a username/password. Click the link that says **I want anyone to access this island**.
 
 Configuring Infection Monkey
 ============================
 
-[TODO: Pete: All screenshots in this section are incorrect. Use 5 pt red borders, and many can be made smaller to focus on only what we need to illustrate.]
-
-#. Select the **Network** tab.
+#. Click **Configure Monkey**, and then the **Network** tab.
 
    .. figure:: images/image016.png
 
-#. Set the *Scan depth* to **1**. This will prevent Infection Monkey from scanning other subnets and host outside of the local subnet.
+#. Set the *Scan depth* to **1**. This will prevent Infection Monkey from scanning outside of the local subnet.
 
    .. figure:: images/image017.png
 
-#. Set your **Scan Target** to the subnet of your HPOC environment. [TODO: Pete: This could use 1-2 examples for the HPOC]
+#. Click the :fa:`plus`, and enter the subnet of your HPOC environment (ex. `10.42.13.0/25`).
 
    .. figure:: images/image018.png
 
 #. Click **Submit**.
-
-   .. figure:: images/image019.png
  
-This will provide enough configuration to get going. Feel free to explore the exploits that will be run, **add any username and passwords** to the **Credentials** section under the **Exploits** tab, add a drop file or command in the **Monkey** tab. There are many options to customize the configuration. [TODO: Pete: This section needs to be rewritten, add screen shots, etc. to make it clear]
+.. This will provide enough configuration to get going. Feel free to explore the exploits that will be run, **add any username and passwords** to the **Credentials** section under the **Exploits** tab, add a drop file or command in the **Monkey** tab. There are many options to customize the configuration.
 
 Run Infection Monkey
 ====================
 
-[TODO: Pete: All screenshots in this section are incorrect. Use 5 pt red borders, and many can be made smaller to focus on only what we need to illustrate.]
-
-#. Click **Run Monkey**.
-
-   .. figure:: images/image020.png
-
-#. Click **Run on Monkey Island Server**.
+#. Click **Run Monkey** from the left-hand menu, and then click on **Run on Monkey Island Server**.
 
    .. figure:: images/image021.png
 
    Infection Monkey will require approximately 10 minutes to discover machines on the network.
 
-#. Select **Infection Map**. This provides a visual map of the discovered machines, exploits, etc. You can also view the *Security Reports* while it is running, but I suggest waiting until the scan has completed. This will provide more complete information on the findings.
+#. Click on **Infection Map**. This provides a visual map of the discovered machines, exploits, etc. You can also view the *Security Reports* while it is running, once the scan has completed. This will provide more complete information on the findings.
 
    .. figure:: images/image022.png
 
-Conclusion
-++++++++++
+.. Conclusion
+.. ==========
 
-   - Once completed with the initial runs of **Infection Monkey**, create a **Flow Security Policy** to lock down your application. Then, **rerun** Infection Monkey to determine whether your security policy is now preventing Infection Monkey from discovering and exploiting your VMs protected by the Security Policy. [TODO: Pete: This section needs to be rewritten, add screen shots, etc. to make it clear. It's not a conclusion, sounds like more steps to do to actually test!]
+.. Once completed with the initial runs of **Infection Monkey**, create a **Flow Security Policy** to lock down your application. Then, **rerun** Infection Monkey to determine whether your security policy is now preventing Infection Monkey from discovering and exploiting your VMs protected by the Security Policy. [TODO: Pete: This section needs to be rewritten, add screen shots, etc. to make it clear. It's not a conclusion, sounds like more steps to do to actually test!]

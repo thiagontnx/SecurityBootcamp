@@ -49,7 +49,7 @@
    :hidden:
 
    optional/infection/im
-   detect/syslog/syslog
+   optional/syslog/syslog
 
 .. toctree::
    :maxdepth: 2
@@ -57,7 +57,7 @@
    :name: _appendix
    :hidden:
 
-	appendix/glossary
+   appendix/glossary
    appendix/access/access
    appendix/network/network
    appendix/ad_scheme/ad_scheme
@@ -99,7 +99,7 @@ Welcome to the Nutanix Security Bootcamp!
 
 This bootcamp highlights the intrinsic security benefits of our core platform, and the data plane security enhancements available via microsegmentation, analytics, and any automation that can be leveraged to prevent, detect, and recover from malware attacks such as ransomware.
 
-What's New (Last updated 10-22-21)
+What's New (Last updated 10-29-21)
 =================================
 
 Labs are updated for the following software versions:
@@ -118,10 +118,26 @@ Agenda
 Security Labs
 =============
 
-- Prevent: Platform security: STIGs, SCMA, Auth
-- Detect - Networking: Data security: Flow, uSeg, NetSec
-- Detect - Data Services: Monitoring - Files, File Analytics, Objects, Testing
-- Recover - Snapshots, Quarantine
+Prevent
+   - Secure Access & System Hardening
+   - Authentication
+   - Security Technical Implementation Guides (STIGs)
+
+Detect - Networking
+   - Securing the Virtual Infrastructure
+   - Categorization
+   - Securing Applications
+   - Isolate Environments
+
+Detect - Data Services
+   - Monitoring Data Services
+   - File Analytics
+   - File Analytics Ransomware Protection
+   - Nutanix Objects
+
+Protect and Recover
+   - Preparing For Disaster
+   - Protecting Your Environment
 
 Optional Labs (Instructor Led)
 ==============================

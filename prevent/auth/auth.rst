@@ -31,8 +31,8 @@ The CVM has two local accounts: *Nutanix* and *Admin*.
 
 The Intelligent Platform Management Interface (IPMI) is a way for remote administrators to ascertain the hardware state of the infrastructure Nutanix is running upon. In compliance with `California statute SB-327 <https://leginfo.legislature.ca.gov/faces/billTextClient.xhtml?bill_id=201720180SB327>`_, these are set using a unique password.
 
-   - Username: *admin*
-   - Password = <NODE-SERIAL-NUMBER>
+   - Username - *admin*
+   - Password - <NODE-SERIAL-NUMBER>
 
     .. raw:: html
 
@@ -41,9 +41,9 @@ The Intelligent Platform Management Interface (IPMI) is a way for remote adminis
 Cluster Lockdown
 ================
 
-   ..note ::
-
-      For the purposes of this Bootcamp, please do not make any changes to this section. These instructions are provided for illustration purposes only.
+.. note::
+   
+   For the purposes of this Bootcamp, please do not make any changes to this section. These instructions are provided for illustration purposes only.
 
 There are several options available within *Cluster Lockdown* section. You can enable or disable remote login via password, SSH key, or both. Disabling both remote login methods will enable *Cluster Lockdown*.
 
@@ -51,13 +51,13 @@ To further protect access to your cluster, you have the option of  introducing a
 
 #. Open ``https://<PRISM-CENTRAL-IP>/`` in a new browser tab, and log in.
 
-   TODO: Look at above to see if it's what I want with that link.
-
 #. Within Prism Central, select :fa:`bars` **> Prism Central Settings > Security > Cluster Lockdown**.
 
-   This is where you would provide the name, along with your public key. As this setting is a one-time only configuration, this has already been provided for this bootcamp.
-
-   You would uncheck the *Enable Remote Login with Password* box to disable remote login via password.
+   .. note::
+      
+      Do not make any changes, as this is just for illustration purposes only.
+      
+      This is where you would provide the name, along with your public key. Lastly, uncheck the *Enable Remote Login with Password* box to disable remote login via password.
 
    .. figure:: images/clusterlockdown.png
 
@@ -98,6 +98,6 @@ The local *admin* user account should be protected via SSH keys, rather than a p
 
    .. figure:: images/login.png
 
-   .. note::
-
-      Throughout the rest of the bootcamp, you'll continue to use *adminuser##* for Prism Central.
+.. note::
+   
+   Continue to use *adminuser##* for Prism Central throughout the rest of the labs.

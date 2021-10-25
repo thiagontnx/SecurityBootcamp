@@ -151,6 +151,6 @@ Object versioning allows the upload of new versions of the same object, while re
 
 #. Look at the *Total number of objects* entry.
 
-.. figure:: images/props.png [TODO: Pete: Screenshot incorrect.]
+.. figure:: images/props.png
 
 You will see that there is an object created for every version of your test file. By keeping multiple versions of the same file, Nutanix Objects makes it possible to restore old versions at any point in time. Additionally, S3 compatible third-party tools can access previous versions of any given file.

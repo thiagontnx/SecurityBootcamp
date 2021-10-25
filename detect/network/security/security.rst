@@ -109,8 +109,8 @@ Microsegmentation is a component of Flow that uses simple policy-based managemen
 #. Repeat this for **AppTier ##-Database**.
 
    .. figure:: images/tierconfig02.png
-
-	Each tier of the application communicates with other tiers, and as such, the policy must allow this traffic. Some tiers, such as the web tier, do not require communication within the same tier.
+      
+   Each tier of the application communicates with other tiers, and as such, the policy must allow this traffic. Some tiers, such as the web tier, do not require communication within the same tier.
 
 #. To define intra-app communication, click **Set Rules within App**.
 
@@ -152,7 +152,7 @@ Note that we configured our policy in *Monitor* mode, which means that we are no
 
 #. Note the IP address for *USER##*\-Dev-FaceRace-DB.
 
-#. Right-click on *USER##*\-Prod-FaceRace-DB*, and then select **Launch Console**.
+#. Right-click on *USER##*\-Prod-FaceRace-DB, and then select **Launch Console**.
 
 #. Login using the following credentials:
 

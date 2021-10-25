@@ -6,7 +6,7 @@ Security Technical Implementation Guides (STIGs)
 
 Security is in the DNA of the Nutanix platform. As a result, a significant portion of our business is from sectors of industry that care deeply about security, including federal, local, and state governments, financial services, healthcare, retail, and beyond. Security is automatically part of every configuration and deployment, enabled by default, and continuously monitored for compliance against the security baselines.  Nutanix doesn’t just have a single STIG, we apply multiple STIGs automatically, and continuously verify against them.
 
-   ..note ::
+   .. note::
       
       What is a STIG?
 
@@ -21,7 +21,7 @@ STIG Reports on Nutanix Nodes
 
 You can run a STIG report, which will check on all the individual STIG controls, and verify which are compliant with your system, and which are not.
 
-#. Within *Prism Central*, select :fa:`bars` **> Compute * Storage > VMs**.
+#. Within *Prism Central*, select :fa:`bars` **> Compute & Storage > VMs**.
 
 #. If there are any filters listed in the search bar in the top left-hand corner, click the :fa:`times` to clear them.
 
@@ -152,7 +152,7 @@ From the report you generated in :ref:`STIG Reports on Nutanix Nodes`, download 
 
    .. figure:: images/scma1.png
 
-Now we'll compromise the system, so that the result of this check is *no*, and then manually fix the issue.
+   Now we'll compromise the system, so that the result of this check is *no*, and then manually fix the issue.
 
 #. Verify the current ownership.
 
@@ -166,7 +166,7 @@ Now we'll compromise the system, so that the result of this check is *no*, and t
 
 #. Verify the ownership change:
 
-``sudo -u root ls -l / | grep  tmp``
+   ``sudo -u root ls -l / | grep  tmp``
 
    .. figure:: images/scma3.png
 

@@ -23,5 +23,3 @@ Nutanix Flow has already been enabled for this environment, however we've includ
 #. Under *Flow*, select **Microsegmentation**.
 
 #. Select the **Enable Microsegmentation** check box, and then click **Save**.
-
-   .. figure:: images/enableflow.png
