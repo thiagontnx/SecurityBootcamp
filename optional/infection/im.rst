@@ -71,8 +71,3 @@ Run Infection Monkey
 #. Click on **Infection Map**. This provides a visual map of the discovered machines, exploits, etc. You can also view the *Security Reports* while it is running, once the scan has completed. This will provide more complete information on the findings.
 
    .. figure:: images/image022.png
-
-.. Conclusion
-.. ==========
-
-.. Once completed with the initial runs of **Infection Monkey**, create a **Flow Security Policy** to lock down your application. Then, **rerun** Infection Monkey to determine whether your security policy is now preventing Infection Monkey from discovering and exploiting your VMs protected by the Security Policy. [TODO: Pete: This section needs to be rewritten, add screen shots, etc. to make it clear. It's not a conclusion, sounds like more steps to do to actually test!]

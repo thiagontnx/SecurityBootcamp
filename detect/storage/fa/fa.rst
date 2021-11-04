@@ -50,7 +50,7 @@ Defining Anomalies
    
 #. Within Prism Central, identify the IP address for your *USER##*\-WinTools VM, and utilizing Windows Remote Desktop, log in using the following credentials:
 
-   - **User Name** - adminuser##@ntnxlab.local (ex. adminuser01@ntnxlab.local) TODO: RDP rights not granted by default. Louie and I will work on this. Need a band-aid for now.
+   - **User Name** - adminuser##@ntnxlab.local (ex. adminuser01@ntnxlab.local)
    - **Password** - nutanix/4u
 
 #. Open *Windows Explorer*, right click on **This PC > Map Network Drive > \\\TheRocketFS.ntnxlab.local\\User##-FaceRace**. From the *Drive:* drop-down, select **F:**.

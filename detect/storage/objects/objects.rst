@@ -116,7 +116,7 @@ Objects Browser
 
 In this exercise, you will use the *Objects Browser* to create and access buckets in the object store.
 
-#. Within your *USER##*\-WinTools VM, download sample images using this link: `https://s3.amazonaws.com/get-ahv-images/sample-pictures.zip`, and extract it to your desktop. TODO: Broken link. Asked Thiago.
+#. Within your *USER##*\-WinTools VM, download sample images using this link: `https://s3.amazonaws.com/get-ahv-images/sample-pictures.zip`, and extract it to your desktop.
 
 #. Within your *USER##*\-WinTools VM, open *Prism Central* and select :fa:`bars` **> Services > Objects**.
 
